@@ -1,24 +1,72 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './Pages/Home';
+import Login from './Pages/Login';
+import Signup from './Pages/Signup';
+import OpenRoute from "./components/core/Auth/OpenRoute";
+import VerifyEmail from './Pages/VerifyEmail';
+import ForgotPassword from './Pages/ForgotPassword';
+import UpdatePassword from './Pages/UpdatePassword';
+import Navbar from './components/common/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element={<Home/> }/>
+        <Route path='/login' element={<Login/> }/>
+        <Route path='/signup' element={<Signup/> }/>
+        <Route path='/verify-email' element={<VerifyEmail/> }/>
+        <Route path='/forgot-password' element={<ForgotPassword/> }/>
+        <Route path='/update-password/:id' element={<UpdatePassword/> }/>
+        
+        {/* <Route
+            path="/signup"
+            element={
+              <OpenRoute>
+                <Signup />
+              </OpenRoute>
+            }
+          />
+      <Route
+            path="/login"
+            element={
+              <OpenRoute>
+                <Login />
+              </OpenRoute>
+            }
+          />
+              
+      <Route
+            path="forgot-password"
+            element={
+              <OpenRoute>
+                <ForgotPassword />
+              </OpenRoute>
+            }
+          />  
+
+        <Route
+            path="verify-email"
+            element={
+              <OpenRoute>
+                <VerifyEmail />
+              </OpenRoute>
+            }
+          />  
+
+      <Route
+            path="update-password/:id"
+            element={
+              <OpenRoute>
+                <UpdatePassword />
+              </OpenRoute>
+            }
+          /> */}
+      </Routes>
     </div>
+    
   );
 }
 
