@@ -20,6 +20,13 @@ function App() {
         <Route path='/verify-email' element={<VerifyEmail/> }/>
         <Route path='/forgot-password' element={<ForgotPassword/> }/>
         <Route path='/update-password/:id' element={<UpdatePassword/> }/>
+        </Routes>
+    </div>
+    
+  );
+}
+
+export default App;
         
         {/* <Route
             path="/signup"
@@ -64,10 +71,4 @@ function App() {
               </OpenRoute>
             }
           /> */}
-      </Routes>
-    </div>
     
-  );
-}
-
-export default App;

@@ -40,13 +40,13 @@ function Login () {
 
         {
           loading? (
-            <div class="loader">
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="shadow"></div>
-              <div class="shadow"></div>
-              <div class="shadow"></div>
+            <div className="loader">
+              <div className="circle"></div>
+              <div className="circle"></div>
+              <div className="circle"></div>
+              <div className="shadow"></div>
+              <div className="shadow"></div>
+              <div className="shadow"></div>
           </div>
           ) : (
 
@@ -58,7 +58,7 @@ function Login () {
           <h1>Login</h1>
           <form onSubmit={handleOnSubmit} className='login-form'>
           
-            <div className="input flex">
+            <div className="input flex" style={{marginTop:'30px'}}>
             <IoMail fontSize={18} className='user-icon' />
               <input
                 required

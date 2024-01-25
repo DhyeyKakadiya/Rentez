@@ -105,13 +105,13 @@ function Signup() {
 
       {
         loading? (
-          <div class="loader">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="shadow"></div>
-            <div class="shadow"></div>
-            <div class="shadow"></div>
+          <div className="loader">
+            <div className="circle"></div>
+            <div className="circle"></div>
+            <div className="circle"></div>
+            <div className="shadow"></div>
+            <div className="shadow"></div>
+            <div className="shadow"></div>
         </div>
         ) 
         : 
@@ -129,8 +129,9 @@ function Signup() {
       {/* Form */}
         <form onSubmit={handleOnSubmit} className='login-form'>
 
+          <div className="flex" style={{gap:'15px'}}>
           <div className="input flex">
-          <BsFillPenFill className='user-icon'/>
+          <BsFillPenFill style={{width:'14px', height:'14px'}} className='user-icon'/>
             <input
               required
               type="text"
@@ -138,11 +139,11 @@ function Signup() {
               value={firstName}
               onChange={handleOnChange}
             />
-              <label for="" style={{}}>First Name <sup style={{color:'red'}}>*</sup></label>
+              <label for="">First Name <sup style={{color:'red'}}>*</sup></label>
           </div>
 
           <div className="input flex">
-          <FaPenFancy className='user-icon'/>
+          <FaPenFancy style={{width:'14px', height:'14px'}} className='user-icon'/>
             <input
               required
               type="text"
@@ -152,9 +153,10 @@ function Signup() {
             />
               <label for="">Last Name <sup style={{color:'red'}}>*</sup></label>
           </div>
+          </div>
 
           <div className="input flex">
-              <IoMail fontSize={18} className='user-icon'/>
+              <IoMail fontSize={17} className='user-icon'/>
                 <input
                   required
                   type="text"
@@ -166,7 +168,7 @@ function Signup() {
           </div>
 
           <div className="input flex">
-            <FaLock className='lock-icon'/>
+            <FaLock style={{width:'14px', height:'14px'}} className='lock-icon'/>
               <input
                 required
                 type={showPassword ? "text" : "password"}
@@ -189,7 +191,7 @@ function Signup() {
           </div>
 
           <div className="input flex">
-            <FaLock className='lock-icon'/>
+            <FaLock style={{width:'14px', height:'14px'}} className='lock-icon'/>
               <input
                 required
                 type={showConfirmPassword ? "text" : "password"}
