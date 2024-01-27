@@ -30,6 +30,12 @@ exports.auth = async (req, res, next) => {
 				.status(401)
 				.json({ success: false, message: "token is invalid" });
 		}
+		// Add this middleware after setting the cookie
+			app.use((err, req, res, next) => {
+				console.error(err.stack);
+				res.status(500).send('Cookie Something went wrong!');
+			});
+			
 
 		// If JWT is valid, move on to the next middleware or request handler
 		next();

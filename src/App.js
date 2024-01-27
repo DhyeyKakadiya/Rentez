@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
@@ -8,13 +8,21 @@ import VerifyEmail from './Pages/VerifyEmail';
 import ForgotPassword from './Pages/ForgotPassword';
 import UpdatePassword from './Pages/UpdatePassword';
 import Navbar from './components/common/Navbar';
+import Dashboard from './Pages/Dashboard';
 
 function App() {
+
+  const location = useLocation();
+  const hideNavbarPaths = ['/login', '/signup', '/verify-email', '/forgot-password', '/update-password/:id'];
+
+  const HideNavbar = hideNavbarPaths.includes(location.pathname);
+
   return (
     <div>
-      <Navbar/>
+      {!HideNavbar && <Navbar />}
       <Routes>
         <Route path='/' element={<Home/> }/>
+        <Route path='/dashboard' element={<Dashboard/> }/>
         <Route path='/login' element={<Login/> }/>
         <Route path='/signup' element={<Signup/> }/>
         <Route path='/verify-email' element={<VerifyEmail/> }/>

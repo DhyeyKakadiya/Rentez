@@ -164,7 +164,7 @@ function Signup() {
                   value={email}
                   onChange={handleOnChange}
                 />
-                <label for="">Email Address<sup style={{color:'red'}}> *</sup></label>
+                <label for="">Email Address<sup style={{color:'red',marginLeft:'5px'}}> *</sup></label>
           </div>
 
           <div className="input flex">
@@ -211,6 +211,18 @@ function Signup() {
                     <AiOutlineEye fontSize={22} fill="#000000" />
                 )}
               </span>     
+          </div>
+
+          <div className="signup-bottom">
+            <div className="tandc">
+              <input required type="checkbox"/><label>I agree to <span id="tandc">Privacy Policy</span><sup style={{color: 'red'}}>*</sup> and 
+              <span id="tandc"> Terms & Conditions</span><sup style={{color: 'red'}}>*</sup>
+              </label>
+            </div>
+            
+            {/* <div className="tandc">
+              <input required type="checkbox"/><label>I agree to all <span id="tandc">Terms & Conditions</span><sup style={{color: 'red'}}>*</sup></label>
+            </div> */}
           </div>
 
           <div className="signin-btn flex"

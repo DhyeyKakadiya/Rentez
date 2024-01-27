@@ -111,7 +111,7 @@ function Login () {
               </div>
 
               <div className="link flex wrap">
-                  Don't have account? <a href="/signup">Sign up!</a>
+                Don't have an account? <a href="/signup">Sign up!</a>
               </div>
             </div>
             
