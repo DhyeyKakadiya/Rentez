@@ -102,11 +102,14 @@ export function login(email, password, navigate) {
         throw new Error(response.data.message)
       }
 
+// `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.user.firstName} ${response.data.user.lastName}`
+// `https://api.dicebear.com/7.x/adventurer/svg?seed=${response.data.user.firstName}`
+
       toast.success("Login Successful")
       dispatch(setToken(response.data.token))
       const userImage = response.data?.user?.image
         ? response.data.user.image
-        : `https://api.dicebear.com/5.x/initials/svg?seed=${response.data.user.firstName} ${response.data.user.lastName}`
+        : `https://api.dicebear.com/7.x/bottts-neutral/svg?seed=${response.data.user.firstName}`
       dispatch(setUser({ ...response.data.user, image: userImage }))
       
       localStorage.setItem("token", JSON.stringify(response.data.token))
