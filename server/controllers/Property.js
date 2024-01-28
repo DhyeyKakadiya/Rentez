@@ -198,6 +198,7 @@ exports.getPropertyDetail = async (req, res) => {
 exports.deleteListing  = async (req, res) => {
     try {
         const { propertyId } = req.body
+        const userId = req.user.id
 
         const property = await Property.findById(propertyId)
         if (!property) {
@@ -205,6 +206,7 @@ exports.deleteListing  = async (req, res) => {
         }
 
         await Property.findByIdAndDelete(propertyId)
+        await User.findByIdAndUpdate({_id:userId},{$pull:{properties:propertyId}},{new:true})
 
         return res.status(200).json({
         success: true,

@@ -11,6 +11,6 @@ router.get("/getAllListings", getAllListings);
 
 router.get("/getPropertyDetail", getPropertyDetail);
 
-router.delete("/deleteListing", deleteListing);
+router.delete("/deleteListing", auth, isSeller, deleteListing);
 
 module.exports = router;
