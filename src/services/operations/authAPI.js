@@ -109,7 +109,7 @@ export function login(email, password, navigate) {
       dispatch(setToken(response.data.token))
       const userImage = response.data?.user?.image
         ? response.data.user.image
-        : `https://api.dicebear.com/7.x/bottts-neutral/svg?seed=${response.data.user.firstName}`
+        : `https://api.dicebear.com/7.x/bottts-neutral/svg?seed=${response.data.user.firstName}backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf`
       dispatch(setUser({ ...response.data.user, image: userImage }))
       
       localStorage.setItem("token", JSON.stringify(response.data.token))

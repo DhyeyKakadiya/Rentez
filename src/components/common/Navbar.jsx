@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate, matchPath, useLocation } from 'react-router-dom'
 import logo from '../../assests/logo/Logo-svg-rbg.svg'
 import logo1 from '../../assests/logo/new-logo.svg'
 import logo2 from '../../assests/logo/logo2.svg'
@@ -14,7 +14,32 @@ const Navbar = () => {
   const { user } = useSelector((state) => state.profile)
   const dispatch = useDispatch()
   const navigate = useNavigate();
+  const location = useLocation()
 
+  const dashboardRoutes = ['/dashboard/my-profile', '/dashboard/settings', /* Add other dashboard routes here */];
+  const isDashboardPage = dashboardRoutes.some(route => location.pathname.includes(route));
+
+  const matchRoute = (route) => {
+    return matchPath({ path: route }, location.pathname)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    // Your scroll handling logic here
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 0) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  };
 
 
   return (
@@ -27,7 +52,7 @@ const Navbar = () => {
         </div>
 
       {/*nav-middle */}
-       <div className="nav-right flex">
+       <div className="nav-middle flex">
         <ul>
           <li><button onClick={() => navigate('/')}>Home</button></li>
           <li><button onClick={() => navigate('/properties')}>Properties</button></li>
@@ -37,20 +62,7 @@ const Navbar = () => {
         </ul>
        </div>
 
-     {/* <div className="nav-right">
-      <div className="nav-right1">
-          <button onClick={() => navigate('/login')}>
-            Log In
-          </button>
-        </div>
-
-        <div className="nav-right2">
-          <button onClick={() => navigate('/signup')}>
-            Sign Up
-          </button>
-        </div>
-     </div> */}
-
+    {/* nav-right */}
     <div className="nav-right">
       {token === null && (
          <div className="nav-right1">
@@ -66,20 +78,29 @@ const Navbar = () => {
         </button>
       </div>
       )}
-        {token !== null && 
-        <Link to={'/dashboard'}>
-        <div className="profilepic">
-          <img
-            src={user?.image}
-            alt={`profile-${user?.firstName}`}
-            className=""
-          />
-        </div>
-      </Link>
-      }
-        {token !==null && (
+      {/* nav-right after login */}
+      <div >
+        <Link style={{textDecoration:'none'}} to={'dashboard/my-profile'}>
+          <button className="f-name">
+            {token !== null && <p>{user.firstName}</p>}
+            {token !== null && 
+              <div className="profilepic">
+                <img
+                  src={user?.image}
+                  alt={`profile-${user?.firstName}`}
+                  className=""
+                />
+              </div>
+            }
+          </button>
+        </Link>   
+      </div>
+
+        {token !==null && !isDashboardPage && (
           <div className="nav-right3">
-            <button className='nav-right4' onClick={() => {dispatch(logout(navigate))}}>Log out <TbLogout className='logout-icon'/></button>
+            <button className='nav-right4' onClick={() => {dispatch(logout(navigate))}}>
+              <TbLogout className='logout-icon'/>Log out
+            </button>
           </div>
         )}
     </div>
