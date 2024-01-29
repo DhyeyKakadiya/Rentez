@@ -7,13 +7,13 @@ export const sidebarLinks = [
     path: "/dashboard/my-profile",
     icon: "VscAccount",
   },
-  {
-    id: 2,
-    name: "Dashboard",
-    path: "/dashboard/seller",
-    type: ACCOUNT_TYPE.SELLER,
-    icon: "VscDashboard",
-  },
+  // {
+  //   id: 2,
+  //   name: "Dashboard",
+  //   path: "/dashboard/seller",
+  //   type: ACCOUNT_TYPE.SELLER,
+  //   icon: "VscDashboard",
+  // },
   {
     id: 3,
     name: "My Listings",
