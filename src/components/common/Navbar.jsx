@@ -7,6 +7,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { ACCOUNT_TYPE } from "../../utils/contsants"
 import { TbLogout } from "react-icons/tb";
 import { logout } from "../../services/operations/authAPI"
+import ConfirmationModal from '../common/ConfirmationModal'
+
 
 const Navbar = () => {
 
@@ -15,6 +17,8 @@ const Navbar = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const location = useLocation()
+  const [confirmationModal, setConfirmationModal] = useState(null)
+
 
   const dashboardRoutes = ['/dashboard/my-profile', '/dashboard/settings', /* Add other dashboard routes here */];
   const isDashboardPage = dashboardRoutes.some(route => location.pathname.includes(route));
@@ -98,12 +102,22 @@ const Navbar = () => {
 
         {token !==null && !isDashboardPage && (
           <div className="nav-right3">
-            <button className='nav-right4' onClick={() => {dispatch(logout(navigate))}}>
+            <button className='nav-right4' onClick={() => 
+            setConfirmationModal({
+              text1: "Are you sure?",
+              text2: "You will be logged out of your account.",
+              btn1Text: "Logout",
+              btn2Text: "Cancel",
+              btn1Handler: () => {dispatch(logout(navigate));
+                                  setConfirmationModal(null)},
+              btn2Handler: () => setConfirmationModal(null),
+          })}>
               <TbLogout className='logout-icon'/>Log out
             </button>
           </div>
         )}
     </div>
+    {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
 
     </nav>
     

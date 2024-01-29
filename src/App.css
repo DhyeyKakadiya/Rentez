@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500&display=swap');
-
+@import url('https://fonts.cdnfonts.com/css/mona-sans');
 
 *{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins','Mona-Sans', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  
+  letter-spacing: 1px;
 }
 
 *::selection{
@@ -224,7 +224,7 @@ body{
 
 .section-wrapper{
     width: 100%;
-    background-color: #daf2ff;
+    background-color: #F8F7F4;
     /* background-color: #e4ebf5; */
     /* background-color: #fff; */
     position: relative;
@@ -301,6 +301,7 @@ body{
    }
    
    .btn-1 {
+    width: fit-content;
     transition: all 0.3s ease;
     /* background: #3770FF; */
     background: linear-gradient(0deg, rgb(25, 95, 255) 0%, rgb(106, 129, 255) 100%);
@@ -690,7 +691,7 @@ form .input input:valid~i {
 }
 
 .signin-btn button{
-    width: 180px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -698,7 +699,7 @@ form .input input:valid~i {
 }
 
 .link{
-    gap:10px;
+    /* gap:10px; */
     align-items: center;
     justify-content: center;
 }
@@ -1115,12 +1116,6 @@ ul li button:after {
   
 }
 
-.line{
-  width: 100px;
-  background: black;
-  height: 10px;
-}
-
 /* Dashboard */
 /* sidebar */
 
@@ -1341,10 +1336,6 @@ ul li button:after {
   display: flex;
   width: 100%;
   height: calc(100vh - 5rem);
-  background-color: red;
-}
-.outlet-wrapper1{
-  background-color: yellow;
 }
 
 /* my profile */
@@ -1374,8 +1365,159 @@ ul li button:after {
   background-color: purple;
 }
 .profile-1-jr img{
-  height: 70px;
-  width: 70px;
+  height: 50px;
+  width: 50px;
   border-radius: 30px;
+  cursor: pointer;
 }
 
+/* .login-modal{
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+}
+.login-page {
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #000;
+}
+
+.close-button:hover {
+  color: #3770FF;
+} */
+
+.profile-card {
+  width: 100%;
+  height: calc(100vh - 5rem);
+  margin: auto;
+  background-color: #fff;
+  padding: 20px;
+}
+.profile-card h1 {
+  margin-bottom: 14px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.profile-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid #1a1a1a; */
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 14px 3%;
+}
+
+.profile-info-container img {
+  width: 78px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-details {
+  display: flex;
+  gap: 16px;
+}
+.profile-details p {
+  margin: 0;
+}
+
+.space-y-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.partition1 {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5rem; 
+  margin-bottom: 1.5rem;
+  height: 2px;
+  width: 90%; 
+  background-color: lightgray; 
+}
+
+.profile-section {
+  /* margin-top: 30px; */
+  display: flex;
+  /* gap: 50px; */
+  flex-direction: column;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* border: 1px solid #1a1a1a; */
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 8px 3%;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+}
+.details-header p{
+  font-weight: 700;
+}
+
+.edit-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1a1a1a;
+  font-size: large;
+}
+
+/* styles.css */
+
+.personal-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.detail {
+  flex-basis: calc(50% - 20px);
+}
+
+.label {
+  font-size: 14px;
+  color: #666666;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+
+/* setting ---> index.js */
+.my-profile-title {
+  margin-bottom: 14px;
+  font-size: 1.875rem; /* Equivalent to text-3xl in Tailwind */
+  font-weight: 500;    /* Equivalent to font-medium in Tailwind */
+  color: #1a1a1a;      /* Equivalent to text-richblack-5 in Tailwind */
+}

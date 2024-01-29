@@ -28,11 +28,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-wrapper flex">
       <Sidebar />
-      <div className='outlet-wrapper'>
-        <div className="outlet-wrapper1">
-          <Outlet />
-        </div>
-      </div>
+      <Outlet />
     </div>
   )
 }

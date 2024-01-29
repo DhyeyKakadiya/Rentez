@@ -110,9 +110,7 @@ function Login () {
                 </button>
               </div>
 
-              <div className="line">
-                
-              </div>
+              {/* <div className="partition1"/> */}
 
               <div className="link flex wrap">
                 Don't have an account? <a href="/signup">Sign up!</a>
