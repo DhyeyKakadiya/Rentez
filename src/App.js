@@ -12,8 +12,7 @@ import Navbar from './components/common/Navbar';
 import Dashboard from './Pages/Dashboard';
 import Error from './Pages/Error'
 import MyProfile from "./components/core/Dashboard/MyProfile";
-// import Settings from "./components/core/Dashboard/Settings";
-// import Settings from './components/core/Dashboard/Settings';
+import Settings from './components/core/Dashboard/Settings';
 
 
 function App() {
@@ -36,7 +35,7 @@ function App() {
         >
           <Route path="dashboard/my-profile" element={<MyProfile />} />
       
-          {/* <Route path="dashboard/Settings" element={<Settings />} />  */}
+          <Route path="dashboard/Settings" element={<Settings />} /> 
 
         </Route>
         <Route
@@ -86,7 +85,7 @@ function App() {
     
   );
 }
-
+// eslint-disable-next-line 
 export default App;
 
         {/* <Route
