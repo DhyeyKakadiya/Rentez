@@ -78,7 +78,7 @@ const ChangeProfilePicture = () => {
               <button
                 onClick={handleClick}
                 disabled={loading}
-                className="custom-button"
+                className="select-button"
               >
                 Select
               </button>
