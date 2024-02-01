@@ -2,6 +2,7 @@ const Property = require("../models/Property")
 const User = require("../models/User")
 const { uploadImageToCloudinary } = require("../utils/imageUploader")
 
+
 exports.createListing = async (req, res) => {
     try {
         const userId = req.user.id;
@@ -25,7 +26,6 @@ exports.createListing = async (req, res) => {
         const photos = req.files.photos;
 
         if( ! propertyType ||
-            ! bhk ||
             ! size ||
             ! price ||
             ! pricePer ||
@@ -43,23 +43,43 @@ exports.createListing = async (req, res) => {
               })
         }
 
-        const sellerDetails = await User.findById(userId, {
-            accountType: "Seller",
-          })
-      
-          if (!sellerDetails) {
+        const sellerDetails = await User.findById(userId);
+        console.log(sellerDetails)
+          if (sellerDetails.accountType !== "Seller") {
             return res.status(404).json({
               success: false,
-              message: "Seller Details Not Found",
+              message: "Only Seller can add Listing",
             })
           }
 
-          // Upload the Thumbnail to Cloudinary
+          // if(sellerDetails.subscriptionExpires.getTime() <= new Date(Date.now()).getTime()){
+          //   return res.status(404).json({
+          //     success: false,
+          //     message: "You have not Purchased our Subsciption!! Please Subscribe"
+          //   })
+          // }
+
+          // if(sellerDetails.planType === "Standard"){
+          //   if(sellerDetails.properties.length >= 20){
+          //     return res.status(404).json({
+          //           success: false,
+          //           message: "You have Reached your Limit"
+          //         })
+          //   }
+          // }
+          // else if(sellerDetails.planType === "Premium"){
+          //   if(sellerDetails.properties.length >= 50){
+          //     return res.status(404).json({
+          //           success: false,
+          //           message: "You have Reached your Limit"
+          //         })
+          //   }
+          // }
+
         const thumbnailImage = await uploadImageToCloudinary(
             thumbnail,
             process.env.FOLDER_NAME
         )
-        console.log(thumbnailImage)
         
         let images = [];
         for(let i = 0; i<photos.length; i++){
@@ -84,12 +104,12 @@ exports.createListing = async (req, res) => {
             address,
             thumbnail : thumbnailImage.secure_url,
             photos : images,
-            Seller: userId,
+            seller : userId,
         })
 
         await User.findByIdAndUpdate(
             {
-              _id: sellerDetails._id,
+              _id: userId,
             },
             {
               $push: {

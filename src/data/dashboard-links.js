@@ -24,7 +24,7 @@ export const sidebarLinks = [
   {
     id: 4,
     name: "Add Listing",
-    path: "/dashboard/add-listing",
+    path: "/dashboard/create-listing",
     type: ACCOUNT_TYPE.SELLER,
     icon: "VscAdd",
   },

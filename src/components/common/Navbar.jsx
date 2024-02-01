@@ -19,14 +19,16 @@ const Navbar = () => {
   const location = useLocation()
   const [confirmationModal, setConfirmationModal] = useState(null)
 
-
-  const dashboardRoutes = ['/dashboard/my-profile', '/dashboard/settings', /* Add other dashboard routes here */];
+  //no logout button in dashboard
+  const dashboardRoutes = ['/dashboard/my-profile', '/dashboard/settings','/dashboard/my-listing','/dashboard/create-listing'];
   const isDashboardPage = dashboardRoutes.some(route => location.pathname.includes(route));
 
+  //css active on nav routes
   const matchRoute = (route) => {
     return matchPath({ path: route }, location.pathname)
   }
 
+  // white navbar on sscroll
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
