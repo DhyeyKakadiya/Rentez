@@ -1945,3 +1945,68 @@ ul li button:after {
   }
 }
 
+/* ----------------add listing---------------- */
+
+.create-listing-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.create-listing-wrapper h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.create-listing-data label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.create-listing-data select,
+.create-listing-data input,
+.create-listing-data textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.create-listing-data button {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-listing-data button:hover {
+  background-color: #45a049;
+}
+
+.custom-file-upload {
+  position: relative;
+}
+
+.custom-file-upload button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.custom-file-upload button:hover {
+  background-color: #2980b9;
+}
+
+#inp {
+  display: none;
+}
