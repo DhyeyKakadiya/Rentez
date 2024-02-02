@@ -1,24 +1,65 @@
-import React, { useState } from 'react'
-// import { toast } from 'react-toastify';
-import { PROPERTY_STATUS } from '../../../utils/contsants';import { useDispatch, useSelector } from 'react-redux';
-import Card from '../../common/Card';
+import React from "react";
+import Card from "../../../components/common/Card";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
+import { getSellersListings } from "../../../services/operations/propertyAPI";
 
-const MyListing = ({properties}) => {
+const MyListing = () => {
 
-  // const [properties, setproperties] = useState([])
-  console.log('Properties in PropertyList component:', properties);
+  const [properties, setProperties] = useState([]);
+  const { token } = useSelector((state) => state.auth);
+  const [loading, setLoading] = useState(true);
 
+  
+  useEffect(() => {
+    const getProperty = async () => {
+      setLoading(true);
+      const result = await getSellersListings(token);
+      if (result) {
+        setProperties(result);
+        console.log('result: ',result)
+      }
+    };
+    
+    getProperty();
+    setLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
-
-    <div className='mylisting-wrapper' style={{height: '800px', width:'500px'}}>
-      <h1>My Properties</h1>
-      {properties.map((property) => (
-      <Card key={property._id} property={property} />
-      ))}
+    <div className="mylisting-container">
+      <div className="my-listings-wrapper">
+        {loading ? (
+          <span className="loader">loading...</span>
+        ) : (
+          <>
+            <h1>My Listings</h1>
+            <div className="my-listings">
+              {properties?.map((property, index) => {
+                return (
+                  <Card
+                    key={index}
+                    isSeller={true}
+                    propertyId={property._id}
+                    img={property.thumbnail}
+                    bhk={property.bhk}
+                    bath={property.bathrooms}
+                    size={property.size}
+                    price={property.price}
+                    pricePer={property.pricePer}
+                    city={property.city}
+                    state={property.state}
+                    type={property.propertyType}
+                  />
+                );
+              })}
+            </div>
+          </>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default MyListing
+export default MyListing;

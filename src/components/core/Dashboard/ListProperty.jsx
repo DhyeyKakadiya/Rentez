@@ -117,6 +117,7 @@ const ListProperty = () => {
             name="propertyType"
             value={formData.propertyType}
             onChange={handlePropertyTypeChange}
+            className="propertyType"
           >
             <option value="">Select Property Type</option>
             <option value="Flat">Flat</option>

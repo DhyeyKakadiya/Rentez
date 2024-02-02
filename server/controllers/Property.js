@@ -138,49 +138,52 @@ exports.createListing = async (req, res) => {
 
 exports.getAllListings = async (req, res) => {
     try {
-        const {propertyType, bhk, bathrooms, city, state} = req.query;
-
-        let queryObject = {};
-
-        if(propertyType){
-            queryObject.propertyType = { $regex: propertyType , $options : "i"};
-        }
-        if(bhk){
-            queryObject.bhk = { $regex: bhk , $options : "i"};
-        }
-        if(bathrooms){
-            queryObject.bathrooms = { $regex: bathrooms , $options : "i"};
-        }
-        if(city){
-            queryObject.city = { $regex: city , $options : "i"};
-        }
-        if(state){
-            queryObject.state = { $regex: state , $options : "i"};
-        }
-        console.log(queryObject);
-
-        const properties = await Property.find(queryObject).populate({
-            path: "Seller",
-            populate: {
-              path: "additionalDetails",
-            },
-        }).exec()
-        
-        return res.status(200).json({
-            success : true,
-            data : properties,
-        })
-       
-
+      const { propertyType, bhk, bathrooms, city, state, priceMin, priceMax } =
+        req.query;
+  
+      let queryObject = {};
+  
+      if (priceMin || priceMax) {
+        queryObject.price = {};
+        if (priceMin) queryObject.price.$gte = parseFloat(priceMin);
+        if (priceMax) queryObject.price.$lte = parseFloat(priceMax);
+      }
+  
+      if (propertyType) {
+        queryObject.propertyType = { $in: propertyType };
+      }
+  
+      if (bhk) {
+        queryObject.bhk = { $eq: bhk };
+      }
+      if (bathrooms) {
+        queryObject.bathrooms = { $eq: bathrooms };
+      }
+      if (city) {
+        queryObject.city = { $regex: city, $options: "i" };
+      }
+      if (state) {
+        queryObject.state = { $regex: state, $options: "i" };
+      }
+      // console.log(queryObject);
+  
+      const properties = await Property.find(queryObject)
+        .populate("seller")
+        .exec();
+  
+      return res.status(200).json({
+        success: true,
+        data: properties,
+      });
     } catch (error) {
-        console.log(error)
-        return res.status(404).json({
+      console.log(error);
+      return res.status(404).json({
         success: false,
         message: `Can't Fetch Properties Data`,
         error: error.message,
-    })
+      });
     }
-}
+  };
 
 exports.getPropertyDetail = async (req, res) => {
     try {

@@ -17,6 +17,8 @@ import { ACCOUNT_TYPE } from "./utils/contsants";
 import { useSelector } from 'react-redux';
 import ListProperty from './components/core/Dashboard/ListProperty';
 import MyListing from './components/core/Dashboard/MyListing';
+import Properties from './Pages/Properties';
+import PropertyDetails from './Pages/PropertyDetails';
 
 
 function App() {
@@ -29,9 +31,11 @@ function App() {
 
   return (
     <div>
-      {!HideNavbar && <Navbar />}
+      { !HideNavbar && <Navbar /> }
       <Routes>
-        <Route path='/' element={<Home/> }/>
+        <Route path='/' element={ <Home/> }/>
+        <Route path="property/:propertyId" element={ <PropertyDetails/> } />
+        <Route path="properties" element={ <Properties/> } />
         <Route 
           element={
             <PrivateRoute>
@@ -51,9 +55,9 @@ function App() {
           </>
         )
       }
+    </Route>
 
 
-        </Route>
         <Route
           path="login"
           element={

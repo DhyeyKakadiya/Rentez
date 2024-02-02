@@ -136,25 +136,26 @@ exports.updateDisplayPicture = async (req, res) => {
   }
 }
 
-
 exports.getSellerListings = async (req, res) => {
-    try {
-        const sellerId = req.user.id;
+  try {
+      const sellerId = req.user.id;
+      // console.log(req.user);
 
-        const Listings = await Property.find({
-            Seller: sellerId,
-        }).sort("createdAt");
+      const Listings = await Property.find({
+          seller: sellerId,
+      }).sort("createdAt");
 
-        res.status(200).json({
-            success: true,
-            data: Listings,
-        })
-     } catch (error) {
-        console.error(error)
-        res.status(500).json({
-        success: false,
-        message: "Failed to retrieve Seller's Listings",
-        error: error.message,
-    })
-    }
+      res.status(200).json({
+          success: true,
+          data: Listings,
+      })
+
+  } catch (error) {
+      console.error(error)
+      res.status(500).json({
+      success: false,
+      message: "Failed to retrieve Seller's Listings",
+      error: error.message,
+  })
+  }
 }
