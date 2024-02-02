@@ -1,39 +1,58 @@
-import React, { useEffect } from 'react'
-import { useState } from "react"
-import { FaCheck } from "react-icons/fa"
-import { FiEdit2 } from "react-icons/fi"
-import { HiClock } from "react-icons/hi"
-import { RiDeleteBin6Line } from "react-icons/ri"
-import { useNavigate } from "react-router-dom"
+import React, { useState } from 'react'
+import { FaBath } from "react-icons/fa";
+import { IoBedSharp } from "react-icons/io5";
+import { FaExternalLinkSquareAlt } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
+import { RiDeleteBinLine } from "react-icons/ri";
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteProperty } from '../../services/operations/propertyAPI';
+import ConfirmationModal from './ConfirmationModal';
 
-import {
-    getAllProperty,
-    getPropertyDetail,
-} from "../../services/operations/propertyAPI"
-import { PROPERTY_STATUS } from "../../utils/contsants"
-import { useDispatch, useSelector } from 'react-redux'
 
-const Card = (property) => {
-    console.log('Property in Card component:', property);
-
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
-    const { token } = useSelector((state) => state.auth)
-    const [loading, setLoading] = useState(false)
-    const [properties, setProperties] = useState([]);
-    // const [confirmationModal, setConfirmationModal] = useState(null)
-    const TRUNCATE_LENGTH = 30
-
-    const { thumbnail, propertyType, price, city, state } = property;
+const Card = ({img, city, state, bhk, size, bath, price, pricePer, type, propertyId, isSeller=false}) => {
+  const {token} = useSelector((state) => state.auth);
+  const [confirmationModal, setConfirmationModal] = useState(null);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
-    <div className='card-container'>
-         <img src={thumbnail} alt={propertyType} className="property-thumbnail" />
-      <div className="property-details">
-        <h3>{propertyType}</h3>
-        <p>Price: ${price}</p>
-        <p>{city}, {state}</p>
+    <div className='card'>
+      <div className='card-img'>
+        <img src={img} alt='' />
       </div>
+      <div className='card-info'>
+        <div className='card-price'>₹{price}<span>/{pricePer}</span></div>
+        <div className='card-location'>{city}, {state}</div>
+        <div className='card-property-details'>
+            <span><IoBedSharp />{bhk}</span>
+            <span><FaBath />{bath}</span>
+            <span><FaExternalLinkSquareAlt/>{size}sqft</span>
+            <span>| {type}</span>
+        </div>
+        {
+          !isSeller ? (
+            <button className='card-button' onClick={ () => navigate(`/property/${propertyId}`)}>View Details</button>
+          ) : (
+            <div className='card-buttons'>
+              <button className='card-button' onClick={ () => navigate(`/property/${propertyId}`)}>View Details</button>
+              <button className='card-delete-btn' onClick={() => setConfirmationModal({
+                text1: "Are you sure?",
+                text2: "After this you cannot access this Listing.",
+                btn1Text: "Delete",
+                btn2Text: "Cancel",
+                btn1Handler: () => dispatch(deleteProperty(token, propertyId)),
+                btn2Handler: () => setConfirmationModal(null),
+            }    
+        )}>
+          <RiDeleteBinLine/>
+        </button>
+          </div>
+          )
+        }
+      </div>
+      {
+        confirmationModal && <ConfirmationModal modalData={confirmationModal} />
+      }
     </div>
   )
 }
