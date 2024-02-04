@@ -9,7 +9,7 @@ router.post("/createListing", auth, isSeller, createListing);
 
 router.get("/getAllListings", getAllListings);
 
-router.get("/getPropertyDetail", getPropertyDetail);
+router.post("/getPropertyDetail", getPropertyDetail);
 
 router.delete("/deleteListing", auth, isSeller, deleteListing);
 

@@ -3,12 +3,13 @@ import Card from "../components/common/Card";
 import { useEffect, useState } from "react";
 
 import { getAllProperty } from "../services/operations/propertyAPI";
+import { useSelector } from 'react-redux';
 
 const Properties = () => {
 
     const [properties, setProperties] = useState([]);
     const [loading, setLoading] = useState(true);
-  
+    const { user } = useSelector((state) => state.profile)
     
     useEffect(() => {
       const getProperty = async () => {
@@ -29,7 +30,14 @@ const Properties = () => {
         <div className="myproperties-container">
           <div className="my-properties-wrapper">
             {loading ? (
-              <span className="loader">loading...</span>
+              <div className="loader">
+              <div className="circle"></div>
+              <div className="circle"></div>
+              <div className="circle"></div>
+              <div className="shadow"></div>
+              <div className="shadow"></div>
+              <div className="shadow"></div>
+          </div>
             ) : (
               <>
                 <h1>All Properties</h1>
