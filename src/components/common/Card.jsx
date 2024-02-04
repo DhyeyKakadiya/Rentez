@@ -24,10 +24,14 @@ const Card = ({img, city, state, bhk, size, bath, price, pricePer, type, propert
         <div className='card-price'>₹{price}<span>/{pricePer}</span></div>
         <div className='card-location'>{city}, {state}</div>
         <div className='card-property-details'>
+          <div>
             <span><IoBedSharp />{bhk}</span>
             <span><FaBath />{bath}</span>
+          </div>
+          <div>
             <span><FaExternalLinkSquareAlt/>{size}sqft</span>
-            <span>| {type}</span>
+            <span>{type}</span>
+          </div>   
         </div>
         {
           !isSeller ? (

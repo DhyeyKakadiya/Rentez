@@ -74,6 +74,7 @@ export const getPropertyDetail = async(propertyId) => {
     } catch (error) {
         toast.error(error.response?.data.message);
         console.log(error);
+        
     }
     return result;
 }

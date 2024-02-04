@@ -185,14 +185,15 @@ exports.getAllListings = async (req, res) => {
     }
   };
 
-exports.getPropertyDetail = async (req, res) => {
+  exports.getPropertyDetail = async (req, res) => {
     try {
         const { propertyId } = req.body
+        // console.log(propertyId)
         const propertyDetails = await Property.findOne({
         _id: propertyId,
         })
         .populate({
-            path: "Seller",
+            path: "seller",
             populate: {
             path: "additionalDetails",
             },
