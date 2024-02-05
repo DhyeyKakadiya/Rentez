@@ -26,6 +26,7 @@ const Dashboard = () => {
 
 
   return (
+
     <div className="dashboard-wrapper flex">
       <Sidebar />
       <div className="outlet-container">
@@ -33,8 +34,6 @@ const Dashboard = () => {
           <Outlet />
         </div>
       </div>
-
-
     </div>
   )
 }

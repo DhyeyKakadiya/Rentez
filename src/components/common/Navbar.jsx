@@ -10,7 +10,7 @@ import { logout } from "../../services/operations/authAPI"
 import ConfirmationModal from '../common/ConfirmationModal'
 
 
-const Navbar = () => {
+const Navbar = ({ whiteBackground }) => {
 
   const { token } = useSelector((state) => state.auth)
   const { user } = useSelector((state) => state.profile)
@@ -49,7 +49,7 @@ const Navbar = () => {
 
 
   return (
-      <nav className='navbar'>
+    <nav className={`navbar ${whiteBackground ? 'white-background' : 'blue-background'}`}>
       {/*nav-left */}
         <div className="nav-left">
           <Link to='/'>
