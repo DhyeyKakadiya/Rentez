@@ -29,9 +29,21 @@ function App() {
   const hideNavbarPaths = ['/login', '/signup', '/verify-email', '/forgot-password', '/update-password/:id'];
   const HideNavbar = hideNavbarPaths.includes(location.pathname);
 
+  const whiteNavbarPaths = [
+    '/dashboard/my-profile',
+    '/dashboard/settings',
+    '/dashboard/create-listing',
+    '/dashboard/my-listing',
+    '/property/:propertyId',
+  ];
+
+  const isWhiteNavbar = whiteNavbarPaths.some((path) => location.pathname.startsWith(path));
+
+
   return (
     <div>
-      { !HideNavbar && <Navbar /> }
+      {/* { !HideNavbar && <Navbar /> } */}
+      {!HideNavbar && (isWhiteNavbar ? <Navbar whiteBackground /> : <Navbar />)} {/* Add a prop to Navbar for white background */}
       <Routes>
         <Route path='/' element={ <Home/> }/>
         <Route path="property/:propertyId" element={ <PropertyDetails/> } />
@@ -107,48 +119,3 @@ function App() {
 }
 // eslint-disable-next-line 
 export default App;
-
-        {/* <Route
-            path="/signup"
-            element={
-              <OpenRoute>
-                <Signup />
-              </OpenRoute>
-            }
-          />
-      <Route
-            path="/login"
-            element={
-              <OpenRoute>
-                <Login />
-              </OpenRoute>
-            }
-          />
-              
-      <Route
-            path="forgot-password"
-            element={
-              <OpenRoute>
-                <ForgotPassword />
-              </OpenRoute>
-            }
-          />  
-
-        <Route
-            path="verify-email"
-            element={
-              <OpenRoute>
-                <VerifyEmail />
-              </OpenRoute>
-            }
-          />  
-
-      <Route
-            path="update-password/:id"
-            element={
-              <OpenRoute>
-                <UpdatePassword />
-              </OpenRoute>
-            }
-          /> */}
-    

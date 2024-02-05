@@ -32,6 +32,7 @@ const ListProperty = () => {
     address: "",
     thumbnail: null,
     photos: [],
+    listedOn: new Date().toISOString().split('T')[0],
   });
 
   const [propertyTypeSelected, setPropertyTypeSelected] = useState(false);
@@ -232,28 +233,40 @@ const ListProperty = () => {
                 onChange={handleInputChange}
               />
             </label>
-            <label className="custom-file-upload">
-              Thumbnail:
-              <button type="button" onClick={handleFileClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Thumbnail Image</button>
-              <input type="file" ref={fileInputRef} id="inp" name="thumbnail" onChange={handleFileChange} />
-              
-            </label>
-            <label className="custom-file-upload">
-              Photos:
-              <button type="button" onClick={handlePhotosClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Other Photos</button>
-              <input
-                type="file"
-                id="inp"
-                name="photos"
-                ref={photosInputRef}
-                multiple
-                onChange={handlePhotosChange}
-              />
-              
-            </label>
-            <button className="special-btn" type="submit">
-              Submit
-            </button>
+            
+            <div className="flex flex-col" style={{justifyContent:'center'}}>
+              <label className="custom-file-upload">
+                Thumbnail:
+                <button type="button" onClick={handleFileClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Thumbnail Image</button>
+                <input type="file" ref={fileInputRef} id="inp" name="thumbnail" onChange={handleFileChange} />
+                
+              </label>
+
+              <label className="custom-file-upload">
+                <div className="flex" style={{display:'flex', gap:'60px',justifyContent:'center', alignItems:'center'}}>
+                  Photos: 
+                  {/* <div style={{fontSize:'15px', fontWeight:'300'}}>(press 'ctrl' for multiple select)</div> */}
+                  
+                  <button type="button" onClick={handlePhotosClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Other Photos</button>
+                  <input
+                    type="file"
+                    id="inp"
+                    name="photos"
+                    ref={photosInputRef}
+                    multiple
+                    onChange={handlePhotosChange}
+                  /> 
+                </div>
+              </label>
+            </div>
+
+            {/* <p style={{margin:'20px 0px'}}>Listed On - <text style={{fontWeight:'600'}}>{formData.listedOn}</text></p> */}
+            <div className="flex" style={{width: '100%', alignItems:'center', justifyContent:'center'}}>
+              <button className="special-btn submit-add-listing" type="submit">
+                Submit
+              </button>
+            </div>
+            
           </>
         )}
       </form>
