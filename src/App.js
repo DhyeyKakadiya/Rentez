@@ -34,7 +34,7 @@ function App() {
     '/dashboard/settings',
     '/dashboard/create-listing',
     '/dashboard/my-listing',
-    '/property/:propertyId',
+    'property/:propertyId',
   ];
 
   const isWhiteNavbar = whiteNavbarPaths.some((path) => location.pathname.startsWith(path));

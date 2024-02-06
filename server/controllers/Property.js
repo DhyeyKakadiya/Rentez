@@ -1,6 +1,8 @@
+const { NewInquiry } = require("../mail/templates/NewInquiry");
 const Property = require("../models/Property")
 const User = require("../models/User")
-const { uploadImageToCloudinary } = require("../utils/imageUploader")
+const { uploadImageToCloudinary } = require("../utils/imageUploader");
+const mailSender = require("../utils/mailSender");
 
 
 exports.createListing = async (req, res) => {
@@ -244,4 +246,62 @@ exports.deleteListing  = async (req, res) => {
         error: error.message,
         })
     }
+}
+
+exports.notifySeller = async (req, res) => {
+  try {
+    // Get email and password from request body
+    // const userId = req.user.id;
+    // console.log(id)
+
+    // const user = await User.findOne({userId});
+
+    const { fullName, custEmail, sellerEmail, contactNumber, msg } = req.body
+
+    // Check if email or password is missing
+    if (!custEmail || !fullName || !contactNumber || !msg || !sellerEmail) {
+      // Return 400 Bad Request status code with error message
+      return res.status(400).json({
+        success: false,
+        message: `Please Fill up All the Required Fields`,
+      })
+    }
+
+    // Send notification email
+  try {
+      const emailResponse = await mailSender(
+        sellerEmail,
+        "New inquiry Alert",
+        NewInquiry(
+          custEmail,
+          `${fullName}`,
+          `${contactNumber}`,
+          `${msg}`
+        )
+      )
+      // console.log("Email sent successfully:", emailResponse.response)
+    } catch (error) {
+      // If there's an error sending the email, log the error and return a 500 (Internal Server Error) error
+      console.error("Error occurred while sending email:", error)
+      return res.status(500).json({
+        success: false,
+        message: "Error occurred while sending email",
+        error: error.message,
+      })
+    }
+
+    // Return success response
+    return res
+      .status(200)
+      .json({ success: true, message: "Successfully sent the details to seller!!" })
+
+
+  } catch (error) {
+    console.error(error)
+    // Return 500 Internal Server Error status code with error message
+    return res.status(500).json({
+      success: false,
+      message: `Failed Please Try Again`,
+    })
+  }
 }
