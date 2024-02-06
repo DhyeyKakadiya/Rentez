@@ -1,14 +1,19 @@
 import React, { useRef } from "react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPropertyDetail } from "../services/operations/propertyAPI";
+import { getPropertyDetail, notifySeller } from "../services/operations/propertyAPI";
 import { useNavigate, useParams } from "react-router-dom";
 import { IoIosPricetags } from "react-icons/io";
+import { SlLocationPin  } from "react-icons/sl";
+import { TbResize } from "react-icons/tb";
+import { IoBedOutline } from "react-icons/io5";
+import { LuBath } from "react-icons/lu";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "./Footer";
+import ReadMore from "./ReadMore";
 
 const PropertyDetails = () => {
 
@@ -116,9 +121,45 @@ const PropertyDetails = () => {
     ]
   };
   
+  const [formData, setFormData] = useState({
+    email: "",
+    fullName: "",
+    contactNumber: "",
+    msg: "",
+  });
+
+  const { email, fullName, contactNumber, msg } = formData;
+
+  const handleOnChange = (e) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    notifySeller(properties?.seller?.email, email, fullName, contactNumber, msg);
+    // navigate("/");
+    setFormData({
+      email: "",
+      fullName: "",
+      contactNumber: "",
+      msg: "",
+    });
+  };
+
+// key =10 digit
+  // const handleKeyDown = (event) => {
+  //   if (event.target.value.length >= 10) {
+  //     event.preventDefault();
+  //   }
+  // };
 
 
   return(
+
+    
     <div className="property-details-container">
     {/* <h1>Property Detail Page</h1> */}
 
@@ -180,33 +221,117 @@ const PropertyDetails = () => {
         </div>
         
         <div className="property-address">
-          {properties.address}, <br/> {properties.city}, {properties.state},<br/> {properties.pincode}
+          <div className="property-address-inside">
+          <SlLocationPin  style={{fontSize:'20px', color:'#3770FF',marginRight:'5px'}}/>
+          {properties.address}, {properties.city}, {properties.state} - {properties.pincode}
+          </div>
+          
         </div>
         
         <div className="property-price">
-          <div className="flex" style={{alignItems:'center',gap:'10px', color:'gray'}}>
-            <IoIosPricetags/>Price
+          <div className="flex" style={{alignItems:'center',gap:'10px',fontWeight:'500'}}>
+            <IoIosPricetags style={{ color:'#3770FF'}}/>Price:
           </div> 
-          <div>
+          <div style={{color:'#3770FF'}}>
             ₹{properties.price}/{properties.pricePer}
           </div>
         </div>
 
-        <div className="property-description">{properties.description}</div>
+        <div className="property-description">
+          <ReadMore text={properties.description}
+          maxLength={400}
+          />
+          
+        </div>
 
         <div className="property-features">
-          <div className="feature-item">BHK: {properties.bhk}</div>
-          <div className="feature-item">Bathrooms: {properties.bathrooms}</div>
-          <div className="feature-item">Size: {properties.size}</div>
+          <h2>
+            Home Details
+          </h2>
+          <div className="feature-item-container flex">
+            <div className="feature-item flex flex-col">
+            <IoBedOutline style={{color:'#3770FF', fontSize:'30px'}}/>
+              <div style={{fontSize:'20px' , gap:"5px"}}>
+                <span style={{color:'#3770FF'}}>
+                  {properties.bhk}
+                </span>
+                BHK
+              </div>
+            </div>
+            <div className="feature-item flex flex-col">
+              <LuBath style={{color:'#3770FF', fontSize:'30px'}}/>
+              <div style={{fontSize:'20px'}}>
+                <span style={{color:'#3770FF'}}>
+                  {properties.bathrooms}
+                </span> 
+                Baths
+              </div>
+            </div>
+            <div className="feature-item flex flex-col">
+              <TbResize style={{color:'#3770FF', fontSize:'30px'}}/>
+              <div style={{fontSize:'20px'}}>
+                <span style={{color:'#3770FF'}}>
+                  {properties.size}
+                </span> 
+                Sq.ft
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="seller-form">
-        <h2>seller form</h2>
+      <div className="seller-form-container">
+            <form className="seller-form" onSubmit={handleOnSubmit}>
+              <h1>Request an Inquiry</h1>
+              <input
+                required
+                type="text"
+                name="fullName"
+                value={fullName}
+                onChange={handleOnChange}
+                placeholder="Full Name*"
+                className="input-seller-form"
+                id="input-seller-form1"
+              />
+              <input
+                required
+                type="text"
+                name="email"
+                value={email}
+                onChange={handleOnChange}
+                placeholder="Email*"
+                className="input-seller-form"
+              />
+              <input
+                required
+                type="number"
+                name="contactNumber"
+                value={contactNumber}
+                max="10"
+                min="10"
+                onChange={handleOnChange}
+                placeholder="Phone Number*"
+                className="input-seller-form"
+              />
+              <input
+                required
+                type="text"
+                name="msg"
+                value={msg}
+                onChange={handleOnChange}
+                placeholder="Message*"
+                className="input-seller-form"
+              />
+              <div className="send-req">
+                <button type="submit" className="special-btn">
+                  Send Request
+                </button>
+              </div>
+            </form>
       </div>
     </div>
 
-    <Footer/>
+    {/* <Footer/> */}
             
   </div>
   );
