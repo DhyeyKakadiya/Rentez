@@ -62,64 +62,6 @@ const PropertyDetails = () => {
     beforeChange: (current, next) => setSelectedImageIndex(next),
     
   };
-
-
-  //
-
-  const sliderHighlightRef = useRef();
-
-  const sliderHighlightSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 1400,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 1300,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 900,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
   
   const [formData, setFormData] = useState({
     email: "",
@@ -149,20 +91,13 @@ const PropertyDetails = () => {
     });
   };
 
-// key =10 digit
-  // const handleKeyDown = (event) => {
-  //   if (event.target.value.length >= 10) {
-  //     event.preventDefault();
-  //   }
-  // };
-
-
   return(
 
     
     <div className="property-details-container">
     {/* <h1>Property Detail Page</h1> */}
 
+{/* main slider */}
     <div className="property-img-slider">
         {properties.photos && properties.photos.length > 0 && (
           <Slider {...sliderSettings} ref={sliderRef} initialSlide={selectedImageIndex}>
@@ -175,24 +110,8 @@ const PropertyDetails = () => {
         )}
       </div>
 
-      <div className="property-highlight-container">
-  {properties.photos && properties.photos.length > 0 && (
-    <Slider {...sliderHighlightSettings} ref={sliderHighlightRef} className="property-highlight-slider">
-      {properties.photos.map((photo, index) => (
-        <div key={index} className="slider-item">
-          <img
-            src={photo}
-            alt="photos"
-            onClick={() => handleImageClick(index)}
-            className={index === selectedImageIndex ? "selected" : ""}
-          />
-        </div>
-      ))}
-    </Slider>
-  )}
-</div>
-
-      {/* <div className="property-highlight">
+      {/* main 2 */}
+      <div className="property-highlight">
         {properties.photos && properties.photos.length > 0 && (
           properties.photos.map((photo, index) => (
             <img
@@ -204,7 +123,8 @@ const PropertyDetails = () => {
             />
           ))
         )}
-      </div> */}
+      </div>
+
 
     <div className="property-content">
       <div className="property-highlights">
@@ -238,6 +158,7 @@ const PropertyDetails = () => {
         </div>
 
         <div className="property-description">
+          <h3>Property Information</h3>
           <ReadMore text={properties.description}
           maxLength={400}
           />
@@ -251,25 +172,27 @@ const PropertyDetails = () => {
           <div className="feature-item-container flex">
             <div className="feature-item flex flex-col">
             <IoBedOutline style={{color:'#3770FF', fontSize:'30px'}}/>
-              <div style={{fontSize:'20px' , gap:"5px"}}>
+              <div style={{fontSize:'20px' , gap:"5px",display:'flex'}}>
                 <span style={{color:'#3770FF'}}>
                   {properties.bhk}
                 </span>
                 BHK
               </div>
             </div>
+
             <div className="feature-item flex flex-col">
               <LuBath style={{color:'#3770FF', fontSize:'30px'}}/>
-              <div style={{fontSize:'20px'}}>
+              <div style={{fontSize:'20px', gap:"5px",display:'flex'}}>
                 <span style={{color:'#3770FF'}}>
                   {properties.bathrooms}
                 </span> 
                 Baths
               </div>
             </div>
+
             <div className="feature-item flex flex-col">
               <TbResize style={{color:'#3770FF', fontSize:'30px'}}/>
-              <div style={{fontSize:'20px'}}>
+              <div style={{fontSize:'20px', gap:"5px",display:'flex'}}>
                 <span style={{color:'#3770FF'}}>
                   {properties.size}
                 </span> 
