@@ -2231,72 +2231,6 @@ ul li button:after {
   margin-bottom: 20px !important;
 }
 
-/* mini img slider */
-.property-highlight-container {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 20px;
-}
-
-.property-highlight-slider {
-  /* width: calc(100% + 100px); */
-  width: 100%;
-}
-
-.property-highlight-slider .slider-item {
-  height: 100%;
-}
-
-.property-highlight-slider img {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 0.7;
-}
-
-.property-highlight-slider img.selected {
-  opacity: 1;
-}
-
-/* mini slider dots */
-
-/* .slick-dots {
-  position: absolute;
-  height: 50px;
-  margin-bottom: 2px !important;
-  bottom: 20px;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slick-dots li {
-  margin: 0 5px;
-}
-
-.slick-dots li button {
-  font-size: 10px;
-  cursor: pointer;
-  color: #fff !important; 
-  background-color: #aaa !important;
-  border: none;
-  border-radius: 50%;
-  width: 10px !important;
-  height: 10px !important;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-.slick-dots li.slick-active button {
-  color: #fff !important;
-  background-color: #007bff !important; 
-}
-
-.slick-dots li button::before{
-  content: "" !important;
-} */
-
 
 .property-content{
   display: flex;
@@ -2313,8 +2247,6 @@ ul li button:after {
   width: 60%;
 }
 
-
-
 .property-title {
   font-size: 24px;
   font-weight: bold;
@@ -2330,7 +2262,6 @@ ul li button:after {
 }
 
 .property-seller {
-  color: gray;
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 10px;
@@ -2338,7 +2269,7 @@ ul li button:after {
 }
 
 .property-address {
-  font-size: 18px;
+  font-size: 21px;
   margin: 20px 0px;
   text-transform: capitalize;
   font-weight: 300;
@@ -2352,16 +2283,24 @@ ul li button:after {
 .property-price {
   display: flex;
   gap: 10px;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .property-description {
-  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
   margin-bottom: 20px;
   margin-top: 20px;
   font-weight: 300;
+  gap: 10px;
+  word-wrap: break-word; 
+} 
+.property-description h3{
+  font-size: 23px;
+  font-weight: 500;
 }
 
 .property-features {
@@ -2430,7 +2369,7 @@ ul li button:after {
   flex-direction: column;
   width: 100%;
   position: sticky !important;
-  top: 80px;
+  top: 90px;
 }
 
 #input-seller-form1{
