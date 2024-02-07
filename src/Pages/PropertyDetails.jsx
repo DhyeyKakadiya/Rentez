@@ -12,6 +12,9 @@ import { LuBath } from "react-icons/lu";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+import { Carousel } from 'react-responsive-carousel';
+
 import Footer from "./Footer";
 import ReadMore from "./ReadMore";
 
@@ -152,7 +155,7 @@ const PropertyDetails = () => {
           <div className="flex" style={{alignItems:'center',gap:'10px',fontWeight:'500'}}>
             <IoIosPricetags style={{ color:'#3770FF'}}/>Price:
           </div> 
-          <div style={{color:'#3770FF'}}>
+          <div style={{color:'#3770FF', fontWeight: '500'}}>
             ₹{properties.price}/{properties.pricePer}
           </div>
         </div>

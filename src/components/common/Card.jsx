@@ -9,14 +9,14 @@ import { deleteProperty } from '../../services/operations/propertyAPI';
 import ConfirmationModal from './ConfirmationModal';
 
 
-const Card = ({img, city, state, bhk, size, bath, price, pricePer, type, propertyId, isSeller=false}) => {
+const Card = ({className,img, city, state, bhk, size, bath, price, pricePer, type, propertyId, isSeller=false}) => {
   const {token} = useSelector((state) => state.auth);
   const [confirmationModal, setConfirmationModal] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   return (
-    <div className='card'>
+    <div className={`card ${className}`}>
       <div className='card-img'>
         <img src={img} alt='' />
       </div>
