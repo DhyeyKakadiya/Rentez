@@ -465,6 +465,30 @@ body{
       max-width: 100%;
     }
   }
+
+/* simple waves */
+.custom-shape-divider-top-1707326481 {
+  position: relative;
+  top: 1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1707326481 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 55px;
+}
+
+.custom-shape-divider-top-1707326481 .shape-fill {
+  fill: #DAf2FF;
+}
+
+
 /* section-3 */
 
 /* Common Styles */
@@ -522,6 +546,29 @@ body{
 
 .custom-shape-divider-bottom-1705730206 .shape-fill {
     fill: #daf2ff;
+}
+
+/* curvy waves */
+
+.custom-shape-divider-top-1707325734 {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  /* transform: rotate(180deg); */
+}
+
+.custom-shape-divider-top-1707325734 svg {
+  position: relative;
+  display: block;
+  width: calc(108% + 1.3px);
+  height: 95px;
+}
+
+.custom-shape-divider-top-1707325734 .shape-fill {
+  fill: #DAF2FF;
 }
 
 
@@ -844,7 +891,7 @@ form .input input:valid~i {
   /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 40px;
   margin-top: 20px;
 }
 
@@ -875,6 +922,118 @@ form .input input:valid~i {
   /* padding: 2.5px;
   border-radius: 5px; */
 }
+
+/* forgot password */
+
+.forgot-pass-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #DAF2FF;
+}
+
+.forgot-pass-page {
+  background-color: #FFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.forgot-pass-page h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.forgot-pass-page p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.reset-pass-form {
+  margin-bottom: 20px;
+}
+
+
+.reset-pass-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3770FF;
+  color: #fff;
+  cursor: pointer;
+}
+
+.reset-pass-form button:hover {
+  background-color: #0056b3;
+}
+
+.link-back {
+  margin-top: 20px;
+}
+
+.link-back a {
+  color: #3770FF;
+  text-decoration: none;
+}
+
+.link-back p{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 5px;
+}
+
+/* update password */
+
+.change-pass-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #DAF2FF;
+}
+
+.change-pass-page {
+  background-color: #FFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.change-pass-page h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #3770FF;
+}
+
+.change-pass-page p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.change-pass-page form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.change-pass-page form button:hover {
+  background-color: #0056b3;
+}
+
 
 
 /* Navbar */
@@ -2058,7 +2217,6 @@ ul li button:after {
 
 /* Add the following styles in a separate CSS file, e.g., Card.css */
 
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -2078,7 +2236,7 @@ ul li button:after {
 .card:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #DAF2FF;
+  /* background-color: #DAF2FF; */
 }
 
 .card-img{
@@ -2095,12 +2253,12 @@ ul li button:after {
   padding: 16px;
   background-color: #ffffff;
 }
-.card-info:hover{
+/* .card-info:hover{
   background-color: #DAF2FF;
-}
-.card-img:hover + .card-info {
+} */
+/* .card-img:hover + .card-info {
   background-color: #DAF2FF;
-}
+} */
 
 .card-price {
   font-size: 1.5rem;
@@ -2138,7 +2296,7 @@ ul li button:after {
 }
 
 .card-button {
-  background-color: #3498db;
+  background-color: #3770FF;
   color: #ffffff;
 }
 
@@ -2149,8 +2307,24 @@ ul li button:after {
 
 .card-button:hover,
 .card-delete-btn:hover {
-  background-color: #2980b9;
+  background-color: #3770ffd8;
 }
+
+/* properties page */
+
+.myproperties-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 100px;
+  background-color: #DAF2FF;
+}
+
+.my-properties {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} 
+
 
 /* -------------property detail----------- */
 
@@ -2425,3 +2599,7 @@ ul li button:after {
   box-shadow: 0 0 0 5px #3b83f65f;
   color: #fff;
 }
+
+
+
+

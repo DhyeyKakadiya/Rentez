@@ -31,13 +31,13 @@ const Properties = () => {
           <div className="my-properties-wrapper">
             {loading ? (
               <div className="loader">
-              <div className="circle"></div>
-              <div className="circle"></div>
-              <div className="circle"></div>
-              <div className="shadow"></div>
-              <div className="shadow"></div>
-              <div className="shadow"></div>
-          </div>
+                <div className="circle"></div>
+                <div className="circle"></div>
+                <div className="circle"></div>
+                <div className="shadow"></div>
+                <div className="shadow"></div>
+                <div className="shadow"></div>
+              </div>
             ) : (
               <>
                 <h1>All Properties</h1>
@@ -45,6 +45,7 @@ const Properties = () => {
                   {properties?.map((property, index) => {
                     return (
                       <Card
+                      className="property-card"
                         key={index}
                         isSeller={false}
                         propertyId={property._id}

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
 import { getPasswordResetToken } from "../services/operations/authAPI"
+import { IoMail } from "react-icons/io5"
 
 function ForgotPassword() {
   const [email, setEmail] = useState("")
@@ -17,34 +18,39 @@ function ForgotPassword() {
   }
 
   return (
-    <div>
+    <div className="forgot-pass-container">
       {loading ? (
-        <div className="spinner"></div>
+        <div className="loader">
+        <div className="circle"></div>
+        <div className="circle"></div>
+        <div className="circle"></div>
+        <div className="shadow"></div>
+        <div className="shadow"></div>
+        <div className="shadow"></div>
+      </div>
       ) : (
-        <div>
+        <div className="forgot-pass-page">
           <h1>
             {!emailSent ? "Reset your password" : "Check email"}
           </h1>
           <p>
             {!emailSent
-              ? "Have no fear. We'll email you instructions to reset your password. If you dont have access to your email we can try account recovery"
+              ? "An Email will be sent to you for password reset."
               : `We have sent the reset email to ${email}`}
           </p>
-          <form onSubmit={handleOnSubmit}>
+          <form onSubmit={handleOnSubmit} className="reset-pass-form">
             {!emailSent && (
-              <label className="w-full">
-                <p>
-                  Email Address <sup className="text-pink-200">*</sup>
-                </p>
+              <div className="input flex" style={{marginTop:'30px'}}>
+              <IoMail fontSize={18} className='user-icon' />
                 <input
                   required
-                  type="email"
+                  type="text"
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter email address"
                 />
-              </label>
+                <label for="">Email Address<sup style={{color:'red'}}> *</sup></label>
+              </div>
             )}
             <button
               type="submit"
@@ -52,7 +58,7 @@ function ForgotPassword() {
               {!emailSent ? "Sumbit" : "Resend Email"}
             </button>
           </form>
-          <div>
+          <div className="link-back">
             <Link to="/login">
               <p>
                 <BiArrowBack /> Back To Login
@@ -64,5 +70,5 @@ function ForgotPassword() {
     </div>
   )
 }
-
+// onChange={(e) => setEmail(e.target.value)}
 export default ForgotPassword

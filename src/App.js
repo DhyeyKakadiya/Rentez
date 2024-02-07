@@ -26,15 +26,16 @@ function App() {
   const { user } = useSelector((state) => state.profile)
 
   const location = useLocation();
-  const hideNavbarPaths = ['/login', '/signup', '/verify-email', '/forgot-password', '/update-password/:id'];
-  const HideNavbar = hideNavbarPaths.includes(location.pathname);
+  const hideNavbarPaths = ['/login', '/signup', '/verify-email', '/forgot-password', '/update-password'];
+  const HideNavbar = hideNavbarPaths.some(path => location.pathname.startsWith(path));
 
   const whiteNavbarPaths = [
     '/dashboard/my-profile',
     '/dashboard/settings',
     '/dashboard/create-listing',
     '/dashboard/my-listing',
-    'property/:propertyId',
+    '/property',
+    // '/properties'
   ];
 
   const isWhiteNavbar = whiteNavbarPaths.some((path) => location.pathname.startsWith(path));
