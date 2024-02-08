@@ -130,29 +130,29 @@ function Signup() {
         <form onSubmit={handleOnSubmit} className='login-form'>
 
           <div className="flex" style={{gap:'15px'}}>
-          <div className="input flex">
-          <BsFillPenFill style={{width:'14px', height:'14px'}} className='user-icon'/>
-            <input
-              required
-              type="text"
-              name="firstName"
-              value={firstName}
-              onChange={handleOnChange}
-            />
-              <label for="">First Name <sup style={{color:'red'}}>*</sup></label>
-          </div>
+            <div className="input flex">
+            <BsFillPenFill style={{width:'14px', height:'14px'}} className='user-icon'/>
+              <input
+                required
+                type="text"
+                name="firstName"
+                value={firstName}
+                onChange={handleOnChange}
+              />
+                <label for="">First Name <sup style={{color:'red'}}>*</sup></label>
+            </div>
 
-          <div className="input flex">
-          <FaPenFancy style={{width:'14px', height:'14px'}} className='user-icon'/>
-            <input
-              required
-              type="text"
-              name="lastName"
-              value={lastName}
-              onChange={handleOnChange}
-            />
-              <label for="">Last Name <sup style={{color:'red'}}>*</sup></label>
-          </div>
+            <div className="input flex">
+            <FaPenFancy style={{width:'14px', height:'14px'}} className='user-icon'/>
+              <input
+                required
+                type="text"
+                name="lastName"
+                value={lastName}
+                onChange={handleOnChange}
+              />
+                <label for="">Last Name <sup style={{color:'red'}}>*</sup></label>
+            </div>
           </div>
 
           <div className="input flex">

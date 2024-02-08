@@ -29,7 +29,7 @@ const Card = ({className,img, city, state, bhk, size, bath, price, pricePer, typ
             <span><FaBath />{bath}</span>
           </div>
           <div>
-            <span><FaExternalLinkSquareAlt/>{size}sqft</span>
+            <span><FaExternalLinkSquareAlt/>{size} Sq.ft</span>
             <span>{type}</span>
           </div>   
         </div>
