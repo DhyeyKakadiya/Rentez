@@ -130,6 +130,9 @@ const PropertyDetails = () => {
 
 
     <div className="property-content">
+
+     <div className="property-highlights-wrapper">
+
       <div className="property-highlights">
         <div className="property-title">
 
@@ -137,9 +140,9 @@ const PropertyDetails = () => {
             {properties.propertyType}
           </div>
 
-          <div className="property-seller">
-            Listed by - {`${properties.seller?.firstName} ${properties.seller?.lastName}`}
-          </div>
+          {/* <div className="property-seller">
+            Listed by - {`${properties.seller?.firstName} ${properties.seller?.lastName} ${properties.seller?.email}`}
+          </div> */}
 
         </div>
         
@@ -173,6 +176,7 @@ const PropertyDetails = () => {
             Home Details
           </h2>
           <div className="feature-item-container flex">
+            
             <div className="feature-item flex flex-col">
             <IoBedOutline style={{color:'#3770FF', fontSize:'30px'}}/>
               <div style={{fontSize:'20px' , gap:"5px",display:'flex'}}>
@@ -204,6 +208,29 @@ const PropertyDetails = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="property-seller">
+
+        <img src={`${properties.seller?.image}`} alt="profile-photo" style={{width:'70px', height:'70px',borderRadius: '30px'}} />
+      
+        <div className="flex flex-col" style={{ width:'100%',justifyContent:'center', gap:'10px'}}>
+
+          <div className="flex" style={{justifyContent:'space-between', width:'100%',alignItems:'center'}}>
+            <p style={{textTransform:'capitalize'}}>
+            {`${properties.seller?.firstName}
+            ${properties.seller?.lastName}`}
+            </p>
+
+            <p>{`${properties.seller?.email}`}</p>
+          </div>
+
+          <p>{properties.seller?.additionalDetails?.about ?? "About Seller"}</p>
+
+        </div>
+
+      </div>
+
       </div>
 
       <div className="seller-form-container">
@@ -255,9 +282,10 @@ const PropertyDetails = () => {
               </div>
             </form>
       </div>
+
     </div>
 
-    {/* <Footer/> */}
+    <Footer/>
             
   </div>
   );

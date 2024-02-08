@@ -112,25 +112,29 @@ const ListProperty = () => {
     <div className="create-listing-wrapper">
       <h1>Create Property Listing</h1>
       <form className="create-listing-data" onSubmit={handleSubmit}>
-        <label>
-          Property Type:
-          <select
-            name="propertyType"
-            value={formData.propertyType}
-            onChange={handlePropertyTypeChange}
-            className="propertyType"
-          >
-            <option value="">Select Property Type</option>
-            <option value="Flat">Flat</option>
-            <option value="Bunglow">Bunglow</option>
-            <option value="Villa">Villa</option>
-            <option value="Farmhouse">Farmhouse</option>
-            <option value="Land">Land</option>
-          </select>
-        </label>
+
+        <div className="row">
+         <div className="col">
+          <label >
+            Property Type:
+            <select
+              name="propertyType"
+              value={formData.propertyType}
+              onChange={handlePropertyTypeChange}
+              className="propertyType"
+            >
+              <option value="">Select Property Type</option>
+              <option value="Flat">Flat</option>
+              <option value="Bunglow">Bunglow</option>
+              <option value="Villa">Villa</option>
+              <option value="Farmhouse">Farmhouse</option>
+              <option value="Land">Land</option>
+            </select>
+          </label>
+         </div>
 
         {propertyTypeSelected && formData.propertyType !== "Land" && (
-          <>
+          <div className="col">
             <label>
               BHK:
               <input
@@ -140,6 +144,14 @@ const ListProperty = () => {
                 onChange={handleInputChange}
               />
             </label>
+            </div>
+        )}
+        </div>
+        
+
+        {propertyTypeSelected && formData.propertyType !== "Land" && (
+          <div className="row">
+            <div className="col">
             <label>
               Bathrooms:
               <input
@@ -149,99 +161,141 @@ const ListProperty = () => {
                 onChange={handleInputChange}
               />
             </label>
-          </>
-        )}
+            </div>
+            
+            <div className="col">
+              <label>
+                Size:
+                <input
+                  type="number"
+                  name="size"
+                  value={formData.size}
+                  onChange={handleInputChange}
+                />
+              </label>
+            </div>
+            </div>
+          )}
+
+          {propertyTypeSelected && (
+          <div className="row">
+            <div className="col">
+              <label>
+                Price:
+                <input
+                  type="number"
+                  name="price"
+                  value={formData.price}
+                  onChange={handleInputChange}
+                />
+              </label>
+              </div>
+
+              <div className="col">
+                <label>
+                  Price per:
+                  <select
+                    name="pricePer"
+                    value={formData.pricePer}
+                    onChange={handleInputChange}
+                  >
+                    <option value="">Select Price Per</option>
+                    <option value="Day">Day</option>
+                    <option value="Week">Week</option>
+                    <option value="Month">Month</option>
+                    <option value="Year">Year</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          )}
 
         {propertyTypeSelected && (
-          <>
-            <label>
-              Size:
-              <input
-                type="number"
-                name="size"
-                value={formData.size}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Price:
-              <input
-                type="number"
-                name="price"
-                value={formData.price}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Price per:
-              <select
-                name="pricePer"
-                value={formData.pricePer}
-                onChange={handleInputChange}
-              >
-                <option value="">Select Price Per</option>
-                <option value="Day">Day</option>
-                <option value="Week">Week</option>
-                <option value="Month">Month</option>
-                <option value="Year">Year</option>
-              </select>
-            </label>
-            <label>
-              Pincode:
-              <input
-                type="number"
-                name="pincode"
-                value={formData.pincode}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              City:
-              <input
-                type="text"
-                name="city"
-                value={formData.city}
-                onChange={handleInputChange}
-              />
-            </label>
-
-            <label>
-              State:
-              <input
-                type="text"
-                name="state"
-                value={formData.state}
-                onChange={handleInputChange}
-              />
-            </label>
-            <label>
-              Description:
-              <textarea
-                name="description"
-                value={formData.description}
-                onChange={handleInputChange}
-              />
-            </label>
-
-            <label>
-              Address:
-              <input
-                type="text"
-                name="address"
-                ref={fileInputRef}
-                value={formData.address}
-                onChange={handleInputChange}
-              />
-            </label>
-            
-            <div className="flex flex-col" style={{justifyContent:'center'}}>
-              <label className="custom-file-upload">
-                Thumbnail:
-                <button type="button" onClick={handleFileClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Thumbnail Image</button>
-                <input type="file" ref={fileInputRef} id="inp" name="thumbnail" onChange={handleFileChange} />
-                
+          <div className="row">
+            <div className="col">
+              <label>
+                Pincode:
+                <input
+                max={6}
+                min={6}
+                  type="number"
+                  name="pincode"
+                  value={formData.pincode}
+                  onChange={handleInputChange}
+                />
               </label>
+              </div>
+              
+              <div className="col">
+                <label>
+                  City:
+                  <input
+                    type="text"
+                    name="city"
+                    value={formData.city}
+                    onChange={handleInputChange}
+                  />
+                </label>
+              </div>
+            </div>
+          )}
 
+          {propertyTypeSelected && (
+          <div className="row">
+            <div className="col">
+              <label>
+                State:
+                <input
+                  type="text"
+                  name="state"
+                  value={formData.state}
+                  onChange={handleInputChange}
+                />
+              </label>
+              </div>
+
+              <div className="col">
+                <label>
+                  Description:
+                  <textarea
+                    name="description"
+                    value={formData.description}
+                    onChange={handleInputChange}
+                  />
+                </label>
+              </div>
+            </div>
+          )}
+
+        {propertyTypeSelected && (
+          <div className="row">
+            <div className="col">
+              <label>
+                Address:
+                <input
+                  type="text"
+                  name="address"
+                  ref={fileInputRef}
+                  value={formData.address}
+                  onChange={handleInputChange}
+                />
+              </label>
+            </div>
+          </div>
+          )}
+            
+          {propertyTypeSelected && (
+            <div className="row">
+              <div className="col" style={{justifyContent:'center'}}>
+                <label className="custom-file-upload">
+                  Thumbnail:
+                  <button type="button" onClick={handleFileClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Thumbnail Image</button>
+                  <input type="file" ref={fileInputRef} id="inp" name="thumbnail" onChange={handleFileChange} />
+                  
+                </label>
+              </div>
+
+            <div className="col">
               <label className="custom-file-upload">
                 <div className="flex" style={{display:'flex', gap:'60px',justifyContent:'center', alignItems:'center'}}>
                   Photos: 
@@ -259,6 +313,11 @@ const ListProperty = () => {
                 </div>
               </label>
             </div>
+          </div>
+        )}
+
+            {propertyTypeSelected && (
+            <>
 
             {/* <p style={{margin:'20px 0px'}}>Listed On - <text style={{fontWeight:'600'}}>{formData.listedOn}</text></p> */}
             <div className="flex" style={{width: '100%', alignItems:'center', justifyContent:'center'}}>
