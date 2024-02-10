@@ -10,6 +10,7 @@ import { logout } from "../../services/operations/authAPI"
 import ConfirmationModal from '../common/ConfirmationModal'
 
 
+
 const Navbar = ({ whiteBackground }) => {
 
   const { token } = useSelector((state) => state.auth)

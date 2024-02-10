@@ -31,11 +31,12 @@ const UpdatePasword = () => {
   };
   return (
     <>
-      <form className="my-form" onSubmit={handleSubmit(submitPasswordForm)}>
-        <div className="my-form-inner">
-          <h2 className="text-lg font-semibold text-richblack-5">Password</h2>
-          <div className="flex  gap-5 lg:flex-row">
-            <div className="form-input-group relative flex flex-col gap-2 lg:w-[48%]">
+      <form className="update-pass-form" onSubmit={handleSubmit(submitPasswordForm)}>
+        <div className="update-pass-form-inner">
+          <h2 className="">Password</h2>
+          <div className="update-pass-input-container">
+
+            <div className="form-input-group">
               <label htmlFor="oldPassword" className="label-style">
                 Current Password
               </label>
@@ -63,7 +64,8 @@ const UpdatePasword = () => {
                 </span>
               )}
             </div>
-            <div className="form-input-group relative flex flex-col gap-2 lg:w-[48%]">
+
+            <div className="form-input-group">
               <label htmlFor="newPassword" className="label-style">
                 New Password
               </label>
@@ -91,18 +93,20 @@ const UpdatePasword = () => {
                 </span>
               )}
             </div>
+
           </div>
         </div>
+
         <div className="btn-group">
           <button
             onClick={() => {
               navigate("/dashboard/my-profile");
             }}
-            className="cancel-btn"
+            className="back-button "
           >
             Cancel
           </button>
-          <IconBtn type="submit" text="Update" className="update-btn" />
+          <button type="submit" className="update-btn">Update</button>
         </div>
       </form>
     </>

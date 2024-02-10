@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../index.css'
 import house from '../assests/images/house.png'
 import flat from '../assests/images/flat.png'
@@ -16,10 +16,42 @@ import { useNavigate } from 'react-router-dom'
 // import fire from 'https://iconscout.com/lottie-animation/rupee-8472086'
 // import './section3.css'
 import { Fade, JackInTheBox, Slide } from "react-awesome-reveal";
+import location from '../assests/logo/wired-gradient-18-location-pin.webp'
+import coins from '../assests/logo/wired-gradient-290-coin.webp'
+
+import Card from '../components/common/Card'
+
+import { getAllProperty } from "../services/operations/propertyAPI";
+
 
 const Home = () => {
 
   const navigate = useNavigate();
+
+  const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const getProperty = async () => {
+      setLoading(true);
+      const result = await getAllProperty();
+      if (result) {
+        setProperties(result);
+        console.log('result: ',result)
+      }
+    };
+    
+    getProperty();
+    setLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // for random cards
+  // const getRandomProperties = () => {
+  //   const shuffledProperties = properties.sort(() => 0.5 - Math.random());
+  //   return shuffledProperties.slice(0, 6);
+  // };
+
+  // const randomProperties = getRandomProperties();
 
   return (
     <div className='container selector'>
@@ -132,10 +164,10 @@ const Home = () => {
 
         <div className="padding flex">
         <div className="home-hero3-under-1">
-              <img style={{height: '30px', width: '30px',boxShadow: 'rgba(0, 0, 0, 0.1) 0px 5px 16px',borderRadius:'10px', backgroundColor:'white'}} src={search} alt='search'></img>
+              <img style={{height: '35px', width: '35px',boxShadow: 'rgba(0, 0, 0, 0.1) 0px 5px 16px',borderRadius:'10px', backgroundColor:'white'}} src={coins} alt='search'></img>
               <div>
                 <p style={{fontSize: '35px',fontWeight: '600',paddingTop: '15px'}}>
-                  ₹5.1L
+                  ₹2.1L
                 </p>
                 <p style={{fontSize: '25px',fontWeight: '500',paddingTop: '15px'}}>
                   Total
@@ -145,10 +177,10 @@ const Home = () => {
             </div>
 
           <div className="home-hero3-under-2">
-            <img style={{height: '30px', width: '30px',boxShadow: 'rgba(0, 0, 0, 0.1) 0px 5px 16px',borderRadius:'10px', backgroundColor:'white'}} src={search} alt='search'></img>
+            <img style={{height: '35px', width: '35px',boxShadow: 'rgba(0, 0, 0, 0.1) 0px 5px 16px',borderRadius:'10px', backgroundColor:'white'}} src={location} alt='search'></img>
             <div>
               <p style={{fontSize: '35px',fontWeight: '600',paddingTop: '15px'}}>
-              12K+
+              520+
               </p>
               <p style={{fontSize: '25px',fontWeight: '500',paddingTop: '15px'}}>
               Properties for Rent
@@ -174,7 +206,7 @@ const Home = () => {
             <img style={{height: '30px', width: '30px' ,boxShadow: 'rgba(0, 0, 0, 0.1) 0px 5px 16px',borderRadius:'10px', backgroundColor:'white'}} src={search} alt='search'></img>
             <div>
               <p style={{fontSize: '35px',fontWeight: '600',paddingTop: '15px'}}>
-                600+
+                300+
               </p>
               <p style={{fontSize: '25px',fontWeight: '500',paddingTop: '15px'}}>
                 Regular Clients
@@ -194,8 +226,6 @@ const Home = () => {
           </svg>
         </div> */}
 
-        
-      
 
       <div class="custom-shape-divider-top-1707326481">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -203,12 +233,41 @@ const Home = () => {
           </svg>
       </div>
 
+
       {/* section-4 hero4*/}
-      <div className="hero4">
+      <div className="home-hero4 section-wrapper flex wrap">
+
+        <div className="home-hero4-top">
+          <h2>Featured Properties </h2>
+          <p><Link to={'/properties'} >Explore All<span>→</span></Link></p>
+        </div>
+
+        <div className='home-hero4-cards'>
+        {properties.slice(0, 6).map((property, index) => {
+                    return (
+                      <Card
+                        key={index}
+                        isSeller={false}
+                        propertyId={property._id}
+                        img={property.thumbnail}
+                        bhk={property.bhk}
+                        bath={property.bathrooms}
+                        size={property.size}
+                        price={property.price}
+                        pricePer={property.pricePer}
+                        city={property.city}
+                        state={property.state}
+                        type={property.propertyType}
+                      />
+                    );
+                  })}
+        </div>
+
 
       </div>
 
       {/* section-5 hero5*/}
+      
 
     </div>
   )

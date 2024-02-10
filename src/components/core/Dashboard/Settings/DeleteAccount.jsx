@@ -25,9 +25,9 @@ export default function DeleteAccount() {
         <div className="delete-account-content">
           <h2 className="delete-account-title">Delete Account</h2>
           <div className="delete-account-description">
-            <p>Would you like to delete account?</p>
+            <p style={{fontWeight:'500', color:'red'}}>Would you like to delete account?</p>
             <p>
-              This account may contain Paid Courses. Deleting your account is
+              This account may contain active Rents. Deleting your account is
               permanent and will remove all the contain associated with it.
             </p>
           </div>

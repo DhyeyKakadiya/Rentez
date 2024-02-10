@@ -116,6 +116,7 @@ const MyProfile = () => {
           >
             {user?.additionalDetails?.about ?? "Write Something About Yourself"}
           </p>
+          
         </div>
       </div>
     </div>
