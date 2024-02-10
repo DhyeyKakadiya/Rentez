@@ -13,8 +13,10 @@ export default function Settings() {
       <ChangeProfilePicture />
       {/* Profile */}
       <EditProfile />
+      <div className="partition1" />
       {/* Password */}
       <UpdatePassword />
+      <div className="partition1" />
       {/* Delete Account */}
       <DeleteAccount />
     </div>

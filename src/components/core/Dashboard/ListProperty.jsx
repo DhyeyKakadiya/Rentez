@@ -216,8 +216,6 @@ const ListProperty = () => {
               <label>
                 Pincode:
                 <input
-                max={6}
-                min={6}
                   type="number"
                   name="pincode"
                   value={formData.pincode}

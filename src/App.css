@@ -495,7 +495,7 @@ body{
 }
 
 
-/* section-3 */
+/* section 3 */
 
 /* Common Styles */
 .home-hero3 {
@@ -520,11 +520,11 @@ body{
   padding: 10px;
   border-radius: 20px;
   flex: 1 0 calc(25% - 20px);
+  pointer-events: none;
   /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
 } 
 
 
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   .home-hero3-under {
     flex-basis: calc(50% - 20px); /* Two items per row on smaller screens */
@@ -579,7 +579,44 @@ body{
 
 
 /* section 4 */
+.home-hero4{
+  align-items: center;
+  justify-content: center;
+  padding: 50px 120px;
+  height: 100%;
+  background-color: #FFF;
+  gap: 40px;
+}
 
+.home-hero4-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.home-hero4-top h2{
+  font-size: 32px;
+  font-weight: 500;
+}
+.home-hero4-top p{
+  font-size: 25px;
+  display: flex;
+  gap: 5px;
+  cursor: pointer; 
+}
+.home-hero4-top p a{
+  text-decoration: none;
+  color: #3770FF;
+}
+.home-hero4-top p span{
+  font-weight: 700;
+}
+
+.home-hero4-cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 /* footer */
 
@@ -761,10 +798,6 @@ form .input input:valid~i {
 .link a{
     color: #3770FF;
     text-decoration: none;
-}
-
-.hero4{
-    background-color: #3770FF;
 }
 
 .tab{
@@ -1156,14 +1189,14 @@ ul li button:after {
 }
 
 .nav-right1 button {
-  color: #3f5269;
+  color: #3770FF;
   letter-spacing: 0.4px;
   padding: 11px 27px;
   font-size: 15px;
   border-radius: 0.5em;
   background: transparent;
   cursor: pointer;
-  border: 1px solid lightgray;
+  border: 1px solid #3770FF;
   transition: all 0.3s;
   display: flex;
   align-items: center;
@@ -1174,12 +1207,10 @@ ul li button:after {
   transform: scale(0.96);
   color: #3770FF;
   border: 1px solid #3770FF;
-}
+  box-shadow: 4px 4px 6px 0 rgba(255,255,255,.5), -1px -1px 6px 0 rgba(116, 125, 136, .5), inset 4px 4px 6px 0 rgba(255,255,255,.2), inset 2px 2px 1px 0 rgba(0, 0, 0, .4);
 
-.nav-right1 button:active {
-  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #FFF;
+  /* box-shadow: inset 10px 10px 5px -10px rgba(0,0,0,0.4); */
 }
-
 
 .nav-right2 button {
   display: flex;
@@ -1201,7 +1232,7 @@ ul li button:after {
   transform: translate(0px, 0px) rotate(0deg);
   transition: 0.2s;
   cursor: pointer;
-  box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
+  box-shadow: -1px -1px 15px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 38%);
  }
  
  .nav-right2 button:hover {
@@ -1264,7 +1295,7 @@ ul li button:after {
   padding: 5px 5px;
   font-size: 15px;
   font-weight: 500;
-  border-radius: 0.5em;
+  border-radius: 5px;
   background: transparent;
   cursor: pointer;
   border: 1px solid #FFF;
@@ -1272,7 +1303,11 @@ ul li button:after {
   display: flex;
   align-items: center;
   gap: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px; */
   /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
   /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
 }
@@ -1672,7 +1707,7 @@ ul li button:after {
   margin-right: auto;
   margin-top: 1.5rem; 
   margin-bottom: 1.5rem;
-  height: 2px;
+  height: 1px !important;
   width: 90%; 
   background-color: lightgray; 
 }
@@ -1711,7 +1746,6 @@ ul li button:after {
 }
 
 .about-txt{
-  color: red;
   font-size: 16px;
   font-weight: 500;
 }
@@ -2054,7 +2088,7 @@ ul li button:after {
 }
 
 .edit-profile-details-column-data label {
-  font-size: 0.875rem;
+  font-size: 14px;
   color: #1a1a1a;
 }
 
@@ -2073,7 +2107,7 @@ ul li button:after {
 
 .edit-profile-details-column-data span {
   margin-top: -1px;
-  font-size: 12px;
+  font-size: 120px;
   color: #3770FF;
 }
 
@@ -2097,9 +2131,9 @@ ul li button:after {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  border: 1px solid #ed1b96;
+  border: 1px solid red;
   border-radius: 0.375rem;
-  background-color: #e91e63;
+  /* background-color: #e91e63; */
   padding: 32px 48px;
 }
 
@@ -2108,14 +2142,15 @@ ul li button:after {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: #fff;
-  height: 2.5rem;
-  width: 2.5rem;
+  background-color: #e8e8e8;
+  height: 40px;
+  min-width: 40px;
+  max-width: 40px;
 }
 
 .delete-account-icon svg {
-  font-size: 1.5rem;
-  color: #ff80ab;
+  font-size: 24px;
+  color: red;
 }
 
 .delete-account-content {
@@ -2125,14 +2160,15 @@ ul li button:after {
 }
 
 .delete-account-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #0d0d0d;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .delete-account-description {
   width: 60%;
-  color: #40002e;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .delete-account-button {
@@ -2140,34 +2176,38 @@ ul li button:after {
   cursor: pointer;
   font-weight: 700;
   font-style: italic;
-  color: #ff4d80;
+  color: red;
   padding: 10px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 5px;
+  background-color: #FFF;
+  border: 1px solid black;
+  transition: all 0.3s ease;
+}
+.delete-account-button:hover{
+  transform: scale(0.98);
+  background-color: red;
+  color: #FFF;
 }
 
 
 /* update password */
 
-.my-form {
+.update-pass-form {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  border: 1px solid #1e212b;
-  background-color: #1e212b;
+  gap: 20px;
   border-radius: 8px;
-  padding: 8px;
-  padding-right: 12px;
+  padding: 12px 45px;
 }
 
-.my-form h2 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #d7d7d7;
+.update-pass-form h2 {
+  font-size: 20px;
+  font-weight: 500;
 }
 
-.my-form-inner {
+.update-pass-form-inner {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -2177,23 +2217,27 @@ ul li button:after {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  width: 48%;
+  gap: 8px;
+  width: 100%;
+}
+
+.update-pass-input-container{
+  display: flex;
+  width: 100%;
+  gap: 50px;
 }
 
 .label-style {
   font-size: 14px;
-  color: #d7d7d7;
 }
 
 .form-style {
   width: 100%;
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #2d3345;
-  border-radius: 5px;
-  color: #d7d7d7;
-  background-color: #2d3345;
+  padding: 12px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #3770FF;
 }
 
 .show-password-icon {
@@ -2207,36 +2251,45 @@ ul li button:after {
 .text-warning {
   margin-top: -1px;
   font-size: 12px;
-  color: #f3c700;
+  color: red;
 }
 
 .btn-group {
   display: flex;
-  justify-content: flex-end;
-  gap: 2px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
 }
 
-.cancel-btn {
+/* .cancel-btn {
   cursor: pointer;
   border-radius: 8px;
   padding: 8px;
   background-color: #1e212b;
   color: #d7d7d7;
   font-weight: 600;
-}
+}*/
 
 .update-btn {
-  cursor: pointer;
+  background-color: #e6efff;
+  color: #3b82f6;
+  border: none;
   border-radius: 8px;
-  padding: 8px 12px;
-  background-color: #1e212b;
-  color: #d7d7d7;
+  width: 100px;
+  height: 45px;
+  font-size: 15px;
   font-weight: 600;
-}
+  transition: .3s;
+} 
 
 .update-btn:hover {
-  background-color: #2d3345;
+  transform: scale(0.95);
+  background-color: #3b82f6;
+  box-shadow: 0 0 0 5px #3b83f65f;
+  color: #fff;
 }
+
 
 /* Responsive adjustments - Add your own media queries as needed */
 @media (max-width: 600px) {
@@ -2256,23 +2309,29 @@ ul li button:after {
 }
 
 .card {
-  border: 1px solid lightgray;
+  cursor: pointer;
+  border: 1px solid #3770FF;
   width: 300px;
   margin: 20px;
   border-radius: 8px;
   overflow: hidden;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px #DAF2FF;
   /* background-color: #DAF2FF; */
 }
 
 .card-img{
   display: flex;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img{
+  transform: scale(1.03);
 }
 
 .card-img img {
@@ -2294,7 +2353,7 @@ ul li button:after {
 
 .card-price {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 600;
   color: #333333;
 }
 
@@ -2314,6 +2373,13 @@ ul li button:after {
   gap: 5px;
   display: flex;
   align-items: center;
+}
+
+.card-seller-name{
+  display: flex;
+  margin-top: 10px;
+  width: 100%;
+  justify-content: end;
 }
 
 .card-button,
@@ -2354,7 +2420,6 @@ ul li button:after {
   display: flex;
   flex-wrap: wrap;
   padding: 20px 100px;
-  background-color: #DAF2FF;
 }
 
 .my-properties {
