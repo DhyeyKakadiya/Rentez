@@ -225,7 +225,7 @@ const PropertyDetails = () => {
             <p>{`${properties.seller?.email}`}</p>
           </div>
 
-          <p>{properties.seller?.additionalDetails?.about ?? "About Seller"}</p>
+          <p style={{fontSize: '18px',fontWeight: '300'}}>{properties.seller?.additionalDetails?.about ?? "About Seller"}</p>
 
         </div>
 
@@ -285,7 +285,7 @@ const PropertyDetails = () => {
 
     </div>
 
-    <Footer/>
+    {/* <Footer/> */}
             
   </div>
   );

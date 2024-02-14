@@ -58,12 +58,12 @@ const Card = ({className,img, city, state, bhk, size, bath, price, pricePer, typ
 
         <div className='card-property-details'>
           <div>
-            <span style={{color:"#393939",fontWeight:'500'}}><IoBedSharp style={{color:"#393939"}}/>{bhk}</span>
-            <span style={{color:"#393939",fontWeight:'500'}}><FaBath style={{color:"#393939"}}/>{bath}</span>
+            <span style={{color:"#393939",fontWeight:'500',display:'flex'}}><IoBedSharp style={{color:"#393939"}}/>{bhk}</span>
+            <span style={{color:"#393939",fontWeight:'500',display:'flex'}}><FaBath style={{color:"#393939"}}/>{bath}</span>
           </div>
           <div>
             <span style={{color:"#393939",fontWeight:'500'}}><RxSize style={{fontSize:'20px',color:"#393939"}}/>{size} Sq.ft</span>
-            <span style={{color:"#393939",fontWeight:'500',justifyContent:'end'}}><BsHouseAdd style={{fontSize:'20px',color:"#393939"}}/>{type}</span>
+            <span style={{color:"#393939",fontWeight:'500',justifyContent:'end',display:'flex'}}><BsHouseAdd style={{fontSize:'20px',color:"#393939"}}/>{type}</span>
           </div>   
         </div>
 
@@ -91,7 +91,7 @@ const Card = ({className,img, city, state, bhk, size, bath, price, pricePer, typ
                 btn2Handler: () => setConfirmationModal(null),
             }    
         )}>
-          <RiDeleteBinLine/>
+          <RiDeleteBinLine style={{ height: '15px', width: '15px'}}/>
         </button>
           </div>
           )

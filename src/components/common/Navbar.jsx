@@ -29,6 +29,30 @@ const Navbar = ({ whiteBackground }) => {
     return matchPath({ path: route }, location.pathname)
   }
 
+  const NavbarLinks = [
+    {
+      title: "Home",
+      path: "/",
+    },
+    {
+      title: "Properties",
+      path: '/properties',
+    },
+    {
+      title: "Plans",
+      path: '/plans',
+    },
+    {
+      title: "About Us",
+      path: "/about",
+    },
+    // {
+    //   title: "Contact Us",
+    //   path: "/contact",
+    // },
+  ];
+  console.log(NavbarLinks);
+
   // white navbar on sscroll
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -61,13 +85,34 @@ const Navbar = ({ whiteBackground }) => {
       {/*nav-middle */}
        <div className="nav-middle flex">
         <ul>
-          <li><button onClick={() => navigate('/')}>Home</button></li>
+          {
+            NavbarLinks.map((link, index) => (
+              <li key={index}>
+                <button onClick={() => navigate(link?.path)}>
+                {
+                  <span
+                    className={`${
+                      matchRoute(link?.path)
+                        ? 'active-link'
+                        : ''
+                    }`}
+                  >
+                    {link.title}
+                  </span>
+
+                }
+                </button>
+              </li>
+            ))
+          }
+        </ul>
+       </div>
+
+       {/* <li><button onClick={() => navigate('/')}>Home</button></li>
           <li><button onClick={() => navigate('/properties')}>Properties</button></li>
           <li><button onClick={() => navigate('/plans')}>Plans</button></li>
           <li><button onClick={() => navigate('/about')}>About Us</button></li>
-          <li><button onClick={() => navigate('/contact')}>Contact Us</button></li>
-        </ul>
-       </div>
+          <li><button onClick={() => navigate('/contact')}>Contact Us</button></li> */}
 
     {/* nav-right */}
     <div className="nav-right">

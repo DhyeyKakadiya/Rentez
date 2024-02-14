@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import '../index.css'
 import house from '../assests/images/house.png'
-import flat from '../assests/images/flat.png'
 import { TypeAnimation } from 'react-type-animation'
 import { Link } from 'react-router-dom'
 // import home from '../assests/logo/home1.svg'
@@ -13,12 +12,21 @@ import happyface from '../assests/logo/wired-gradient-261-emoji-smile.gif'
 import search from '../assests/logo/wired-gradient-19-magnifier-zoom-search.gif'
 // import search from '../assests/logo/search1.svg'
 import { useNavigate } from 'react-router-dom'
-// import fire from 'https://iconscout.com/lottie-animation/rupee-8472086'
 // import './section3.css'
 import { Fade, JackInTheBox, Slide } from "react-awesome-reveal";
-import location from '../assests/logo/wired-gradient-18-location-pin.webp'
-import coins from '../assests/logo/wired-gradient-290-coin.webp'
 
+// import location from '../assests/logo/wired-gradient-18-location-pin.webp'
+import chart from '../assests/images/wired-gradient-153-bar-chart (2).webp'
+import coins from '../assests/logo/wired-gradient-290-coin.webp'
+import globe from '../assests/images/wired-gradient-27-globe.webp'
+import allcoins from '../assests/images/wired-gradient-298-coins (2).webp'
+
+import deal from '../assests/images/deal.png'
+import equality from '../assests/images/equality.png'
+import flat from '../assests/images/flat.png' 
+import fairprice from '../assests/images/fair-price.png' 
+
+import Footer from './Footer'
 import Card from '../components/common/Card'
 
 import { getAllProperty } from "../services/operations/propertyAPI";
@@ -164,7 +172,7 @@ const Home = () => {
 
         <div className="padding flex">
         <div className="home-hero3-under-1">
-              <img style={{height: '35px', width: '35px',boxShadow: 'rgba(0, 0, 0, 0.1) 0px 5px 16px',borderRadius:'10px', backgroundColor:'white'}} src={coins} alt='search'></img>
+              <img src={allcoins} alt='search'></img>
               <div>
                 <p style={{fontSize: '35px',fontWeight: '600',paddingTop: '15px'}}>
                   ₹2.1L
@@ -177,7 +185,7 @@ const Home = () => {
             </div>
 
           <div className="home-hero3-under-2">
-            <img style={{height: '35px', width: '35px',boxShadow: 'rgba(0, 0, 0, 0.1) 0px 5px 16px',borderRadius:'10px', backgroundColor:'white'}} src={location} alt='search'></img>
+            <img src={chart} alt='search'></img>
             <div>
               <p style={{fontSize: '35px',fontWeight: '600',paddingTop: '15px'}}>
               520+
@@ -190,7 +198,7 @@ const Home = () => {
           </div>
           
           <div className="home-hero3-under-3">
-            <img style={{height: '30px', width: '30px' ,boxShadow: 'rgba(0, 0, 0, 0.1) 0px 5px 16px',borderRadius:'10px', backgroundColor:'white'}} src={search} alt='search'></img>
+            <img src={coins} alt='search'></img>
             <div>
               <p style={{fontSize: '35px',fontWeight: '600',paddingTop: '15px'}}>
                 150
@@ -203,7 +211,7 @@ const Home = () => {
           </div>
 
           <div className="home-hero3-under-4">
-            <img style={{height: '30px', width: '30px' ,boxShadow: 'rgba(0, 0, 0, 0.1) 0px 5px 16px',borderRadius:'10px', backgroundColor:'white'}} src={search} alt='search'></img>
+            <img src={globe} alt='search'></img>
             <div>
               <p style={{fontSize: '35px',fontWeight: '600',paddingTop: '15px'}}>
                 300+
@@ -235,7 +243,7 @@ const Home = () => {
 
 
       {/* section-4 hero4*/}
-      <div className="home-hero4 section-wrapper flex wrap">
+      <section className="home-hero4 section-wrapper flex wrap">
 
         <div className="home-hero4-top">
           <h2>Featured Properties </h2>
@@ -263,11 +271,68 @@ const Home = () => {
                   })}
         </div>
 
+        
+      </section>
 
-      </div>
+      {/* tilt */}
+      <div className="custom-shape-divider-bottom-1705730206">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+          </svg>
+        </div>
+
+        
 
       {/* section-5 hero5*/}
-      
+      <section className='home-hero5 section-wrapper wrap'>
+        <h1>Why Rentify?</h1>
+
+        <div className='home-hero5-content-wrapper'>
+        <div className='home-hero5-content'>
+          <div className='home-hero5-content-left'>
+            <img src= {deal} />
+          </div>
+          <div className='home-hero5-content-right'>
+            <p className='home-hero5-content-right-p1'>We are totally broker free</p>
+            <p className='home-hero5-content-right-p2'>We work directly with owners simplifying the process for you. This means that when you deal with us, you just deal with us.</p>
+          </div>
+        </div>
+
+        <div className='home-hero5-content'>
+          <div className='home-hero5-content-left'>
+            <img src= {fairprice} />
+          </div>
+          <div className='home-hero5-content-right'>
+            <p className='home-hero5-content-right-p1'>Fair pricing and standardized policies</p>
+            <p className='home-hero5-content-right-p2'>Rentez rental prices are actual market prices. Our agreement terms are carefully drafted for customers and owners.</p>
+          </div>
+        </div>
+
+        <div className='home-hero5-content'>
+          <div className='home-hero5-content-left'>
+            <img src= {flat} />
+          </div>
+          <div className='home-hero5-content-right'>
+            <p className='home-hero5-content-right-p1'>What you see is what you get</p>
+            <p className='home-hero5-content-right-p2'>All property data on Rentez are collected by our trained executives, ensuring high levels of accuracy and quality.</p>
+          </div>
+        </div>
+        </div>
+
+      </section>
+
+                  {/* book */}
+      {/* <div class="custom-shape-divider-top-1707836000">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill"></path>
+            </svg>
+        </div> */}
+
+      {/* testimonials */}
+
+      {/* footer */}
+
+      <Footer/>
 
     </div>
   )

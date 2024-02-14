@@ -299,7 +299,7 @@ const ListProperty = () => {
                   Photos: 
                   {/* <div style={{fontSize:'15px', fontWeight:'300'}}>(press 'ctrl' for multiple select)</div> */}
                   
-                  <button type="button" onClick={handlePhotosClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Other Photos</button>
+                  <button type="button" onClick={handlePhotosClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Multiple Photos</button>
                   <input
                     type="file"
                     id="inp"
