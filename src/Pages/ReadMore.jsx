@@ -15,7 +15,7 @@ function ReadMore({ text, maxLength }) {
     <div>
       {isTruncated ? (
         <>
-          <p>{`${text.slice(0, maxLength)}...`}</p>
+          <p style={{textAlign:'justify'}}>{`${text.slice(0, maxLength)}...`}</p>
           <button onClick={toggleTruncate}
            style={{border:'none',
            background:'transparent',
@@ -29,14 +29,14 @@ function ReadMore({ text, maxLength }) {
         </>
       ) : (
         <>
-          <p>{text}</p>
+          <p style={{textAlign:'justify'}}>{text}</p>
           <button onClick={toggleTruncate}
           style={{border:'none',
           background:'transparent',
           fontSize:'18px',
           color:'#3770FF',
           cursor:'pointer',
-          textDecoration:'underline'
+          textDecoration:'underline',
         }}
           >
             Read Less</button>

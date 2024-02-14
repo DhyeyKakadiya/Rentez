@@ -19,6 +19,7 @@ import ListProperty from './components/core/Dashboard/ListProperty';
 import MyListing from './components/core/Dashboard/MyListing';
 import Properties from './Pages/Properties';
 import PropertyDetails from './Pages/PropertyDetails';
+// import ToTop from './components/common/ToTop';
 
 
 function App() {
