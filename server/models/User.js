@@ -37,14 +37,19 @@ const userSchema = new mongoose.Schema({
             ref : "Property"
         }
     ],
-    subscribed : {
-        type : Boolean,
-        default : false,
+    wishlist : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : "Property"
+        }
+    ],
+    subscriptionExpires : {
+        type: Date,
+        default : new Date(Date.now()),
     },
-    // subscriptionExpires : {
-    //     type : Date,
-    //     default : Date.now-6000,
-    // },
+    planType : {
+        type :String,
+    },
     image : {
         type : String,
         required : true,
