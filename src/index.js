@@ -8,6 +8,7 @@ import rootReducer from "./reducer";
 import {configureStore} from '@reduxjs/toolkit'
 import { Toaster } from 'react-hot-toast';
 import ToTop from './components/common/ToTop';
+import Footer from './Pages/Footer';
 
 const store = configureStore({
   reducer:rootReducer,
@@ -22,6 +23,7 @@ root.render(
       <BrowserRouter>
         <App />
         <Toaster/>
+        <Footer/>
       </BrowserRouter>
     </Provider> 
   </React.StrictMode>

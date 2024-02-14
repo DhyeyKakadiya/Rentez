@@ -94,14 +94,18 @@ const PropertyDetails = () => {
     });
   };
 
+
+  document.body.scrollTop=document.documentElement.scrollTop=0;
+  console.log('hii')
+
   return(
 
     
     <div className="property-details-container">
     {/* <h1>Property Detail Page</h1> */}
 
-{/* main slider */}
-    <div className="property-img-slider">
+      {/* main slider */}
+    {/* <div className="property-img-slider">
         {properties.photos && properties.photos.length > 0 && (
           <Slider {...sliderSettings} ref={sliderRef} initialSlide={selectedImageIndex}>
             {properties.photos.map((photo, index) => (
@@ -111,7 +115,7 @@ const PropertyDetails = () => {
             ))}
           </Slider>
         )}
-      </div>
+      </div> */}
 
       {/* main 2 */}
       <div className="property-highlight">

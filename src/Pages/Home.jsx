@@ -62,7 +62,9 @@ const Home = () => {
   // const randomProperties = getRandomProperties();
 
   return (
-    <div className='container selector'>
+    <div className='container selector'  style={{display:'flex',
+    flexWrap:'wrap',
+    flexDirection:'column'}}>
       {/* section-1 hero */}
         <section className='section-wrapper wrap'>
         <div className='home-hero1 flex wrapper'>
@@ -251,24 +253,49 @@ const Home = () => {
         </div>
 
         <div className='home-hero4-cards'>
-        {properties.slice(0, 6).map((property, index) => {
-                    return (
-                      <Card
-                        key={index}
-                        isSeller={false}
-                        propertyId={property._id}
-                        img={property.thumbnail}
-                        bhk={property.bhk}
-                        bath={property.bathrooms}
-                        size={property.size}
-                        price={property.price}
-                        pricePer={property.pricePer}
-                        city={property.city}
-                        state={property.state}
-                        type={property.propertyType}
-                      />
-                    );
-                  })}
+          <div className="my-properties">
+                  {
+                    loading ? (
+                      <>
+                      {properties?.slice(0, 6).map((property, index) => (
+                        <div className="skeleton-loader" key={index}>
+                          <div className="skeleton-loader-wrapper">
+                            <div className="skeleton-loader-circle"></div> 
+                            <div className="line-1"></div>
+                            <div className="line-2"></div>
+                            <div className="line-3"></div>
+                            <div className="line-3a"></div>
+                            <div className="line-4"></div>
+                          </div>
+                        </div>
+                      ))}
+                      </>
+                    ) : (
+                      <>
+                      {properties?.slice(0, 6).map((property, index) => {
+                        return (
+                          <Card
+                          className="property-card"
+                            key={index}
+                            isSeller={false}
+                            propertyId={property._id}
+                            img={property.thumbnail}
+                            bhk={property.bhk}
+                            bath={property.bathrooms}
+                            size={property.size}
+                            price={property.price}
+                            pricePer={property.pricePer}
+                            city={property.city}
+                            state={property.state}
+                            type={property.propertyType}
+                          />
+                        );
+                      })}
+                      </>
+                    )
+                  }
+                  
+                </div>
         </div>
 
         
@@ -290,7 +317,7 @@ const Home = () => {
         <div className='home-hero5-content-wrapper'>
         <div className='home-hero5-content'>
           <div className='home-hero5-content-left'>
-            <img src= {deal} />
+            <img src= {deal} alt='photo' id='deal'/>
           </div>
           <div className='home-hero5-content-right'>
             <p className='home-hero5-content-right-p1'>We are totally broker free</p>
@@ -300,7 +327,7 @@ const Home = () => {
 
         <div className='home-hero5-content'>
           <div className='home-hero5-content-left'>
-            <img src= {fairprice} />
+            <img src= {fairprice} alt='photo' id='fairprice' />
           </div>
           <div className='home-hero5-content-right'>
             <p className='home-hero5-content-right-p1'>Fair pricing and standardized policies</p>
@@ -310,7 +337,7 @@ const Home = () => {
 
         <div className='home-hero5-content'>
           <div className='home-hero5-content-left'>
-            <img src= {flat} />
+            <img src= {flat} alt='photo' id='flat' />
           </div>
           <div className='home-hero5-content-right'>
             <p className='home-hero5-content-right-p1'>What you see is what you get</p>
@@ -330,9 +357,17 @@ const Home = () => {
 
       {/* testimonials */}
 
+      {/* tilt 2 */}
+
+        <div className="custom-shape-divider-bottom-272727">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+          </svg>
+        </div>
+
       {/* footer */}
 
-      <Footer/>
+      {/* <Footer/> */}
 
     </div>
   )

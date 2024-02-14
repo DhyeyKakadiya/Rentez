@@ -19,6 +19,8 @@ import ListProperty from './components/core/Dashboard/ListProperty';
 import MyListing from './components/core/Dashboard/MyListing';
 import Properties from './Pages/Properties';
 import PropertyDetails from './Pages/PropertyDetails';
+import Plans from './Pages/Plans'
+import AboutUs from './Pages/AboutUs'
 // import ToTop from './components/common/ToTop';
 
 
@@ -112,6 +114,18 @@ function App() {
             </OpenRoute>
           }
         /> 
+         <Route
+          path="plans"
+          element={
+              <Plans/>
+          }
+        />
+        <Route
+          path="about"
+          element={
+              <AboutUs/>
+          }
+        />
 
           <Route path="*" element={<Error />} />
         </Routes>
