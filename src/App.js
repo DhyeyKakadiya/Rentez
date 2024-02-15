@@ -20,7 +20,8 @@ import MyListing from './components/core/Dashboard/MyListing';
 import Properties from './Pages/Properties';
 import PropertyDetails from './Pages/PropertyDetails';
 import Plans from './Pages/Plans'
-import AboutUs from './Pages/AboutUs'
+import AboutUs from './Pages/About'
+import Footer from './Pages/Footer';
 // import ToTop from './components/common/ToTop';
 
 
@@ -42,6 +43,15 @@ function App() {
   ];
 
   const isWhiteNavbar = whiteNavbarPaths.some((path) => location.pathname.startsWith(path));
+
+  const hideFooterPaths = [
+    '/dashboard/my-profile',
+    '/dashboard/settings',
+    '/dashboard/create-listing',
+    '/dashboard/my-listing',
+  ];
+  
+  const shouldHideFooter = hideFooterPaths.some(path => location.pathname.startsWith(path));
 
 
   return (
@@ -129,6 +139,9 @@ function App() {
 
           <Route path="*" element={<Error />} />
         </Routes>
+
+        {/* footer */}
+        {!shouldHideFooter && <Footer />}
     </div>
     
   );

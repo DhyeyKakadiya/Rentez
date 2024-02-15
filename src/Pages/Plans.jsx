@@ -20,16 +20,32 @@ const Plans = () => {
   }
 
   const packages = [
-      { name: 'Standard', monthlyPrice: 199, yearlyPrice: 1999, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", green: "/src/assets/green-dot.png" },
-      { name: 'Gold', monthlyPrice: 399, yearlyPrice: 2499, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", green: "/src/assets/green-dot.png" },
-      { name: 'Premium', monthlyPrice: 599, yearlyPrice: 2999, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", green: "/src/assets/green-dot.png" },
+      { name: 'Standard', 
+        monthlyPrice: 199, 
+        yearlyPrice: 1999, 
+        description: "Get Startes with our Standard Plan journey.",
+        btn_name:"Go Standard",
+      },
+      { name: 'Gold',
+        monthlyPrice: 399, 
+        yearlyPrice: 2499, 
+        description: "Get Startes with our Gold Plan journey.",
+        btn_name:"Go Gold",
+      },
+      { name: 'Premium',
+        monthlyPrice: 599, 
+        yearlyPrice: 2999, 
+        description: "Get Startes with our Premium Plan journey.",
+        btn_name:"Go Premium",
+      },
   ];
 
   return (
       <div className="pricing-container" id="pricing">
           <div className="pricing-header">
-              <h2 className="pricing-title">Here are all our plans</h2>
-              <p className="pricing-description">A simple paragraph is comprised of three major components. The which is often a declarative sentence.</p>
+              <h2 className="pricing-title">Unlock wide range of Listings</h2>
+              <p className="pricing-description">Explore our trio of plans, each offering a distinct set of advantages to suit your individual preferences.</p>
+              <p className="pricing-description" style={{marginTop:"1rem"}}>(All Plans FREE for first 30days)</p>
               <div className="pricing-toggle">
                   <label htmlFor="toggle" className="pricing-toggle-label">
                       <span className="pricing-toggle-monthly">Monthly</span>
@@ -52,38 +68,44 @@ const Plans = () => {
               {packages.map((pkg, index) => (
                   <div key={index} className="pricing-package">
                       <h3 className="pricing-package-name">{pkg.name}</h3>
-                      <p className="pricing-package-description">{pkg.description}</p>
                       <p className="pricing-package-price">
                           {isYearly ? `₹${pkg.yearlyPrice}` : `₹${pkg.monthlyPrice}`}<span className="pricing-package-price-unit">/{isYearly ? 'year' : 'month'}</span>
                       </p>
+                      <p className="pricing-package-description">{pkg.description}</p>
+                      
 
                       <ul className="pricing-package-features">
-                      <li className="feature">
-                        <FcInfo className="feature-icon" />
-                        <span className="feature-text">Videos of Lessons</span>
-                      </li>
+                        <li className="feature">
+                          <FcInfo className="feature-icon" />
+                          <span className="feature-text">Visual Property Showcase</span>
+                        </li>
                         <li className="feature">
                           <FcInfo className="feature-icon"/>
-                          <span className="feature-text">Homework check</span>
+                          <span className="feature-text">Quality Inspection</span>
                         </li>
                         <li className="feature">
-                        <FcInfo className="feature-icon"/>
-                        <span className="feature-text">Videos of Lessons</span>
+                          <FcInfo className="feature-icon"/>
+                          <span className="feature-text">Flexible Leasing</span>
                         </li>
                         <li className="feature">
-                        <FcInfo className="feature-icon"/>
-                        <span className="feature-text">Monthly conferences </span>
+                          <FcInfo className="feature-icon"/>
+                          <span className="feature-text">Regular Maintenance</span>
                         </li>
                         <li className="feature">
-                        <FcInfo className="feature-icon"/>
-                          <span className="feature-text">Personal advice</span>
+                          <FcInfo className="feature-icon"/>
+                          <span className="feature-text">Personalized Support</span>
                         </li>
                       </ul>
 
-
                       <div className="pricing-package-button">
-                          <button onClick={() => handleBuyCourse(199, 'Standard')} className="pricing-package-button-primary">Get Started</button>
+                        <button
+                         onClick={() => handleBuyCourse(isYearly ? pkg.yearlyPrice : pkg.monthlyPrice, pkg.name)}
+                          className="pricing-package-button-primary"
+                          >
+                            {pkg.btn_name}
+                        </button>
                       </div>
+
                   </div>
               ))}
           </div>
