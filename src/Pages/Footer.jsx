@@ -20,11 +20,11 @@ const Footer = () => {
           </div>
 
           <div className="footer-icons-wrapper">
-            <div className="footer-icons" ><FaXTwitter style={{height:'20px', width:'20px'}}/></div>
-            <div className="footer-icons"><FaLinkedinIn style={{height:'20px', width:'20px'}}/></div>
-            <div className="footer-icons"><FaGithub style={{height:'20px', width:'20px'}}/></div>
-            <div className="footer-icons"><FaFacebook style={{height:'20px', width:'20px'}}/></div>
-            <div className="footer-icons"><FaInstagram style={{height:'20px', width:'20px'}}/></div>
+            <div className="footer-icons" ><FaXTwitter style={{height:'21px', width:'21px'}}/></div>
+            <div className="footer-icons"><FaLinkedinIn style={{height:'21px', width:'21px'}}/></div>
+            <div className="footer-icons"><FaGithub style={{height:'21px', width:'21px'}}/></div>
+            <div className="footer-icons"><FaFacebook style={{height:'21px', width:'21px'}}/></div>
+            <div className="footer-icons"><FaInstagram style={{height:'21px', width:'21px'}}/></div>
           </div>
         </div>
 
@@ -39,11 +39,6 @@ const Footer = () => {
           </div>
         
           <div className="footer-sub-content-right">
-            <div className="footer-section">
-            <h2>Contact Us</h2>
-            <p>Email: example@eg.com</p>
-            <p>Phone: +91 123-456-7890</p>
-            </div>
 
             <div className="footer-section">
               <h2>Quick Links</h2>
@@ -53,6 +48,13 @@ const Footer = () => {
               <p><a href="/plans">Plans</a></p>
               <p><a href="/contactus">Contact Us</a></p>
             </div>
+
+            <div className="footer-section">
+              <h2>Contact Us</h2>
+              <p>Email: example@eg.com</p>
+              <p>Phone: +91 123-456-7890</p>
+            </div>
+            
           </div>
         </div>
 
