@@ -649,6 +649,8 @@ body{
   pointer-events: none;
   /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
 } 
+
+
 .home-hero3-under-1 img,.home-hero3-under-2 img,.home-hero3-under-3 img,.home-hero3-under-4 img{
   height: 35px;
   width: 35px;
@@ -657,6 +659,7 @@ body{
   border-radius:10px;
   background-color:white;
 }
+
 
 @media (max-width: 768px) {
   .home-hero3-under {
@@ -2796,6 +2799,9 @@ ul li button:after {
   flex-wrap: wrap;
   padding: 20px 100px;
   justify-content: space-around;
+  /* background-image: url('./assests/images/Untitled\ design\ \(4\).png');
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 
 
@@ -3212,12 +3218,14 @@ ul li button:after {
   font-size: 2.5rem;
   font-weight: bold;
   color: #010851;
+  transition: all .3s ease;
 }
 
 .pricing-package-price-unit {
   font-size: 1rem;
   font-weight: normal;
   color: #666;
+  transition: all .3s ease;
 }
 
 .pricing-package-features {
@@ -3342,18 +3350,37 @@ ul li button:after {
 .vision,
 .mission {
   width: 50%;
+  padding: 20px;
+  background-color: #f8fcfe;
+  border-radius: 20px;
+}
+
+.founder-image{
+  text-align: center;
+}
+.founder-image img{
+  width: 70%;
+  height: 70%;
+}
+
+.founder-image1{
+  text-align: center;
+}
+.founder-image1 img{
+  width: 64%;
+  height: 70%;
 }
 
 .founder-title,
 .vision-title,
 .mission-title {
-  background-image: linear-gradient(to bottom right, #ff512f, #f09819);
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.25;
   width: 70%;
+  color: #3770FF;
 }
 
 .text {
@@ -3362,12 +3389,12 @@ ul li button:after {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  width: 95%;
+  width: 98%;
 }
 
-.footer-section {
+/* .footer-section {
   margin-top: 5rem;
-}
+} */
 
 
 
