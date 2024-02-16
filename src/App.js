@@ -39,7 +39,9 @@ function App() {
     '/dashboard/create-listing',
     '/dashboard/my-listing',
     '/property',
-    // '/properties'
+    '/about',
+    '/plans',
+    '/properties',
   ];
 
   const isWhiteNavbar = whiteNavbarPaths.some((path) => location.pathname.startsWith(path));
@@ -57,7 +59,7 @@ function App() {
   return (
     <div>
       {/* { !HideNavbar && <Navbar /> } */}
-      {!HideNavbar && (isWhiteNavbar ? <Navbar whiteBackground /> : <Navbar />)} {/* Add a prop to Navbar for white background */}
+      {!HideNavbar && (isWhiteNavbar ? <Navbar whiteBackground /> : <Navbar />)}
       <Routes>
         <Route path='/' element={ <Home/> }/>
         <Route path="property/:propertyId" element={ <PropertyDetails/> } />
