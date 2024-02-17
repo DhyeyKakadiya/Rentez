@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
 
 *{
   font-family: 'Poppins', sans-serif;
@@ -2476,8 +2477,6 @@ ul li button:after {
 
 /* -----------delete account------ */
 
-/* styles.css */
-
 .delete-account-container {
   margin-top: 10px;
   display: flex;
@@ -3279,31 +3278,56 @@ ul li button:after {
 
 /* About us page */
 
-.section1 {
+.aboutus-wrapper {
   margin: 0 auto;
   width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutus-section1 {
+  width: 100%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0px;
+}
+
+.aboutus-section1-left{
+  width: 50%;
+  padding: 0px 100px;
+}
+
+.aboutus-section1-right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
 }
 
 .content-wrapper {
   margin: 0 auto;
-  width: 91.666667%;
+  width: 100%;
+  padding: 50px 50px;
 }
 
 .header {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding-top: 2.5rem;
-  font-size: 2.5rem;
+  font-size: 3.3rem;
   font-weight: 600;
   line-height: 1.25;
-  width: 70%;
+  width: 80%;
+  color: #3770FF;
 }
 
 .subheader {
-  margin-top: 0.75rem;
-  font-size: 1rem;
-  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   width: 95%;
+  text-align: justify;
 }
 
 .spacer {
@@ -3329,17 +3353,12 @@ ul li button:after {
   margin-top: 1.25rem;
 }
 
-.border-b {
-  border-bottom: 1px solid #1a202c;
-}
-
 .quote {
   margin: 0 auto;
   width: 91.666667%;
 }
 
 .flex-container {
-  margin-top: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3351,8 +3370,18 @@ ul li button:after {
 .mission {
   width: 50%;
   padding: 20px;
-  background-color: #f8fcfe;
+  /* background-color: #f8fcfe; */
+  background: linear-gradient(180deg,  rgba(222,240,255,1) 0%, rgba(255,255,255,1) 100%);
   border-radius: 20px;
+}
+
+.vision{
+  background: linear-gradient(270deg, rgba(222,240,255,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+.mission{
+  background: linear-gradient(360deg, rgba(222,240,255,1) 0%, rgba(255,255,255,1) 100%);
+
 }
 
 .founder-image{
@@ -3376,8 +3405,10 @@ ul li button:after {
 .mission-title {
   -webkit-background-clip: text;
   background-clip: text;
+  font-family: cursive;
+  font-style: italic;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: bolder;
   line-height: 1.25;
   width: 70%;
   color: #3770FF;
@@ -3387,7 +3418,6 @@ ul li button:after {
   margin-top: 10px;
   text-align: justify;
   font-size: 1rem;
-  font-weight: 500;
   line-height: 1.5;
   width: 98%;
 }
@@ -3396,50 +3426,31 @@ ul li button:after {
   margin-top: 5rem;
 } */
 
-
-
 /* quote */
 
 .passion-statement {
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.25rem;
   /* margin: 0 auto; */
-  padding: 1.25rem 0; /* py-5 */
-  padding-bottom: 2.5rem; /* pb-20 */
+  padding: 1.25rem 0;
+  padding-bottom: 2.5rem;
   text-align: center;
   color: black;
-  
+  font-size: 25px;
+  font-family: cursive;
+  font-style: italic;
   /* margin-top: 100px; */
 }
-
-.passion-statement .highlight {
-  background-image: linear-gradient(to bottom, #FF512F, #F09819);
-  -webkit-background-clip: text;
-  background-clip: text;
-  font-weight: 600; /* font-semibold */
-  color: black;
+.passion-statement span{
+  border-radius: 5px;
+  background: linear-gradient(90deg, rgba(162,193,254,1) 0%, rgba(194,232,254,1) 35%, rgba(218,254,244,0.9669117647058824) 100%);
 }
-
-.passion-statement .gradient-text1 {
-  background-image: linear-gradient(to bottom, #FF512F, #F09819);
-  -webkit-background-clip: text;
-  background-clip: text;
-  font-weight: 600; /* font-bold */
-}
-
-.passion-statement .gradient-text2 {
-  background-image: linear-gradient(to bottom, #E65C00, #F9D423);
-  -webkit-background-clip: text;
-  background-clip: text;
-  font-weight: 600; /* font-bold */
-}
-
 
 /* stats */
 
 .stats-section {
-  background-color: #1a202c; /* bg-richblack-700 */
+  background-color: #1a202c;
   width: 100%;
-  margin: 30px 0px;
+  margin: 50px 0px;
 }
 
 .stats-container {
@@ -3488,7 +3499,6 @@ ul li button:after {
 .get-in-touch {
   margin: 0 auto;
   text-align: center;
-  padding: 50px 0px;
 }
 
 .title {
@@ -3511,8 +3521,6 @@ ul li button:after {
 
 
 /* contact form */
-
-/* styles.css */
 
 .contact-form {
   display: flex;
