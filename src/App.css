@@ -3135,39 +3135,49 @@ ul li button:after {
 }
 
 .pricing-toggle-label {
+  gap: 15px;
   display: inline-flex;
   align-items: center;
   cursor: pointer;
 }
+.pricing-toggle-label span{
+  font-size: 18px;
+  font-weight: 500;
+}
 
 .pricing-toggle-switch {
-  width: 3.5rem;
-  height: 1.5rem;
-  background-color: #ccc;
-  border-radius: 1rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  display: flex;
-  align-items: center;
-  transition: background-color 0.3s;
+  isolation: isolate;
+  position: relative;
+  height: 30px;
+  width: 60px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: -8px -4px 8px 0px #ffffff,
+    8px 4px 12px 0px #d1d9e6,
+    4px 4px 4px 0px #d1d9e6 inset,
+    -4px -4px 4px 0px #ffffff inset;
 }
 
 .pricing-toggle-switch-handle-monthly {
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #333;
-  border-radius: 50%;
-  transform: translateX(0);
-  transition: transform 0.3s;
+  height: 100%;
+  width: 200%;
+  background: #ecf0f3;
+  border-radius: 15px;
+  transform: translate3d(-75%, 0, 0);
+  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+  box-shadow: -8px -4px 8px 0px #ffffff,
+    8px 4px 12px 0px #d1d9e6;
 }
 
 .pricing-toggle-switch-handle-yearly {
-  width: 1.5rem;
-  height: 1.5rem;
-  background-color: #333;
-  border-radius: 50%;
-  transform: translateX(2rem);
-  transition: transform 0.3s;
+  height: 100%;
+  width: 200%;
+  background: #ecf0f3;
+  border-radius: 15px;
+  transform: translate3d(25%, 0, 0);
+  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+  box-shadow: -8px -4px 8px 0px #ffffff,
+    8px 4px 12px 0px #d1d9e6;
 }
 
 .pricing-grid {
@@ -3182,6 +3192,17 @@ ul li button:after {
 
 .hidden{
   display: none;
+}
+
+.popular-badge {
+  top: 10px;
+  right: 10px;
+  background-color: #3770FF;
+  color: #FFF;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .pricing-package {
