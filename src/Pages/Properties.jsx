@@ -24,7 +24,6 @@ const Properties = () => {
       
       getProperty();
       setLoading(false);
-      // setLoading(true);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 

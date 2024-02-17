@@ -9,14 +9,14 @@ const Stats = [
 
 const StatsComponenet = () => {
   return (
-    <div class="stats-section">
-      <div class="stats-container">
-        <div class="grid-container">
+    <div className="stats-section">
+      <div className="stats-container">
+        <div className="grid-container">
           {Stats.map((data, index) => {
             return (
-              <div class="stat" key={index}>
-                <h1 class="count">{data.count}</h1>
-                <h2 class="label-h2">{data.label}</h2>
+              <div className="stat" key={index}>
+                <h1 className="count">{data.count}</h1>
+                <h2 className="label-h2">{data.label}</h2>
               </div>
             );
           })}
