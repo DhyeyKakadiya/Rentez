@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 
+
+
 const Plans = () => {
   const [isYearly, setIsYearly] = useState(false);
   const navigate = useNavigate();
@@ -23,20 +25,23 @@ const Plans = () => {
       { name: 'Standard', 
         monthlyPrice: 199, 
         yearlyPrice: 1999, 
-        description: "Get Startes with our Standard Plan journey.",
+        description: "Get Started with our Standard Plan journey.",
         btn_name:"Go Standard",
+        popular: false,
       },
       { name: 'Gold',
         monthlyPrice: 399, 
         yearlyPrice: 2499, 
-        description: "Get Startes with our Gold Plan journey.",
+        description: "Get Started with our Gold Plan journey.",
         btn_name:"Go Gold",
+        popular: true,
       },
       { name: 'Premium',
         monthlyPrice: 599, 
         yearlyPrice: 2999, 
-        description: "Get Startes with our Premium Plan journey.",
+        description: "Get Started with our Premium Plan journey.",
         btn_name:"Go Premium",
+        popular: false,
       },
   ];
 
@@ -67,7 +72,13 @@ const Plans = () => {
           <div className="pricing-grid">
               {packages.map((pkg, index) => (
                   <div key={index} className="pricing-package">
-                      <h3 className="pricing-package-name">{pkg.name}</h3>
+                      <div className="flex"
+                        style={{justifyContent:'space-between',
+                        alignItems:'center'}}
+                      >
+                        <h3 className="pricing-package-name">{pkg.name}</h3>
+                        {pkg.popular && <span className="popular-badge">Popular</span>}
+                      </div>
                       <p className="pricing-package-price">
                           {isYearly ? `₹${pkg.yearlyPrice}` : `₹${pkg.monthlyPrice}`}<span className="pricing-package-price-unit">/{isYearly ? 'year' : 'month'}</span>
                       </p>
