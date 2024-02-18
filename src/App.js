@@ -39,8 +39,6 @@ function App() {
     '/dashboard/create-listing',
     '/dashboard/my-listing',
     '/property',
-    '/about',
-    '/plans',
     '/properties',
   ];
 

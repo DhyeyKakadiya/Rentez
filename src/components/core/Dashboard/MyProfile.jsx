@@ -95,7 +95,7 @@ const MyProfile = () => {
 
         <div className="partition1"/>
 
-        <div className="details-container">
+        <div className="details-container" style={{marginBottom:'40px'}}>
           <div className="details-header">
             <p className="text-richblack-5">About</p>
             <button

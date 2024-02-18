@@ -46,13 +46,14 @@ const Plans = () => {
   ];
 
   return (
+    <div className="bg-circle">
       <div className="pricing-container" id="pricing">
           <div className="pricing-header">
               <h2 className="pricing-title">Unlock wide range of Listings</h2>
               <p className="pricing-description">Explore our trio of plans, each offering a distinct set of advantages to suit your individual preferences.</p>
               <p className="pricing-description" style={{marginTop:"1rem"}}>(All Plans FREE for first 30days)</p>
               <div className="pricing-toggle">
-                  <label htmlFor="toggle" className="pricing-toggle-label">
+                  <label htmlFor="toggle" className={`pricing-toggle-label ${isYearly ? 'yearly-highlight' : 'monthly-highlight'}`}>
                       <span className="pricing-toggle-monthly">Monthly</span>
                       {/* toggle button */}
                       <div className="pricing-toggle-switch">
@@ -121,6 +122,7 @@ const Plans = () => {
               ))}
           </div>
       </div>
+    </div>
   );
 };
 

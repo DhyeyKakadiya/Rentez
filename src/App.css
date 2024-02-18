@@ -2014,8 +2014,8 @@ ul li button:after {
   align-items: center;
   justify-content: space-between;
   /* border: 1px solid #1a1a1a; */
-  border-radius: 4px;
-  background-color: #fff;
+  border-radius: 10px;
+  background-color: #f8fcfe;
   padding: 14px 3%;
 }
 
@@ -2073,8 +2073,8 @@ ul li button:after {
   flex-direction: column;
   gap: 20px;
   /* border: 1px solid #1a1a1a; */
-  border-radius: 4px;
-  background-color: #fff;
+  border-radius: 10px;
+  background-color: #f8fcfe;
   padding: 16px 3%;
 }
 
@@ -2271,7 +2271,6 @@ ul li button:after {
 .custom-container {
   width: 100%;
   margin: auto;
-  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
 }
@@ -2416,6 +2415,7 @@ ul li button:after {
   padding: 12px 45px;
   color: #fff;
   border: none;
+  border-top: none;
   border-radius: 5px;
   font-size: 18px;
 }
@@ -2666,7 +2666,7 @@ ul li button:after {
 
 .card {
   cursor: pointer;
-  border: 1px solid lightblue;
+  border: 1px solid #3770FF;
   width: 300px;
   margin: 20px;
   border-radius: 8px;
@@ -2775,20 +2775,15 @@ ul li button:after {
   align-items: center;
   justify-content: center;
   font-size: 13px;
-  /* background-color: #e74c3c;
-  color: #ffffff; */
-  border: 1px solid red;
-  color: red;
-  background-color: #FFF;
+  color: #FFF;
+  background-color: #e74c3c;
 }
 .card-delete-btn:hover{
   background-color: #FFF;
-  /* border: 1px solid red;
-  color: red; */
-  background-color: #e74c3c;
-  color: #ffffff;
+  border: 1px solid red;
+  background-color: #FFF;
+  color: red;
   transform: scale(0.97);
-  /* box-shadow: inset 13px 13px 8px -10px rgba(0,0,0,0.4); */
 }
 
 /* properties page */
@@ -2798,9 +2793,6 @@ ul li button:after {
   flex-wrap: wrap;
   padding: 20px 100px;
   justify-content: space-around;
-  /* background-image: url('./assests/images/Untitled\ design\ \(4\).png');
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 
@@ -3100,6 +3092,23 @@ ul li button:after {
 
 /*------------------plans page--------- */
 
+.bg-circle {
+  position: relative;
+  overflow: hidden; /* Ensure that the half-circle doesn't overflow */
+}
+
+.bg-circle::before {
+  content: '';
+  position: absolute;
+  bottom: 350px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  height: 200%;
+  background-color: #DAF2FF;
+  border-radius: 0 0 50% 50%;
+  z-index: -1;
+}
 
 .pricing-container {
   /* padding-top: 2.5rem; */
@@ -3121,6 +3130,7 @@ ul li button:after {
   font-size: 2.5rem;
   font-weight: 600;
   color: #010851;
+  font-family: cursive;
 }
 
 .pricing-description {
@@ -3128,6 +3138,7 @@ ul li button:after {
   max-width: 66.33%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
 }
 
 .pricing-toggle {
@@ -3142,43 +3153,50 @@ ul li button:after {
 }
 .pricing-toggle-label span{
   font-size: 18px;
+  display: flex;
   font-weight: 500;
 }
 
-.pricing-toggle-switch {
-  isolation: isolate;
-  position: relative;
-  height: 30px;
-  width: 60px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: -8px -4px 8px 0px #ffffff,
-    8px 4px 12px 0px #d1d9e6,
-    4px 4px 4px 0px #d1d9e6 inset,
-    -4px -4px 4px 0px #ffffff inset;
+.yearly-highlight .pricing-toggle-yearly,
+.monthly-highlight .pricing-toggle-monthly {
+    color: #007bff;
+    font-weight: 600;
+    font-family: cursive;
 }
 
-.pricing-toggle-switch-handle-monthly {
-  height: 100%;
-  width: 200%;
-  background: #ecf0f3;
-  border-radius: 15px;
-  transform: translate3d(-75%, 0, 0);
-  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-  box-shadow: -8px -4px 8px 0px #ffffff,
-    8px 4px 12px 0px #d1d9e6;
+.pricing-toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  border-radius: 17px;
+  background: linear-gradient(90deg, rgba(222,246,255,1) 0%, rgba(227,230,255,1) 100%);
+  box-shadow: 
+    inset 16px 6px 15px rgba(163, 177, 198, 0.2),
+    inset -6px -6px 12px rgba(255, 255, 255, 0.5),
+    8px 4px 8px rgba(163, 177, 198, 0.2),
+    -6px -4px 8px rgba(255, 255, 255, 0.5);
+}
+
+.pricing-toggle-switch-handle {
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  width: 23px;
+  height: 23px;
+  background-color: #007bff; /* Blue color for handle */
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 
 .pricing-toggle-switch-handle-yearly {
-  height: 100%;
-  width: 200%;
-  background: #ecf0f3;
-  border-radius: 15px;
-  transform: translate3d(25%, 0, 0);
-  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-  box-shadow: -8px -4px 8px 0px #ffffff,
-    8px 4px 12px 0px #d1d9e6;
+  transform: translateX(40px); /* Move handle to the right for yearly */
 }
+
+.pricing-toggle-switch-handle-monthly {
+  transform: translateX(2px); /* Move handle to the left for monthly */
+}
+
 
 .pricing-grid {
   display: grid;
@@ -3213,7 +3231,10 @@ ul li button:after {
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
-  /* box-shadow: 0 4px 8px rgba(0.2, 0.2, 0.2, 0.2); */
+  backdrop-filter: blur(16px) saturate(200%);
+  -webkit-backdrop-filter: blur(16px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.52);
+  border: 1px solid rgba(209, 213, 219, 0.3);
 }
 .pricing-package:hover{
   box-shadow: 0 4px 8px rgba(0.2, 0.2, 0.2, 0.2);
@@ -3341,6 +3362,7 @@ ul li button:after {
   line-height: 1.25;
   width: 80%;
   color: #3770FF;
+  font-family: cursive;
 }
 
 .subheader {
@@ -3451,7 +3473,6 @@ ul li button:after {
 
 .passion-statement {
   font-size: 1.25rem;
-  /* margin: 0 auto; */
   padding: 1.25rem 0;
   padding-bottom: 2.5rem;
   text-align: center;
@@ -3459,7 +3480,7 @@ ul li button:after {
   font-size: 25px;
   font-family: cursive;
   font-style: italic;
-  /* margin-top: 100px; */
+  line-height: 2.5rem;
 }
 .passion-statement span{
   border-radius: 5px;
