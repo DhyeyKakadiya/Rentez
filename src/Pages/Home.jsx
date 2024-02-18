@@ -72,7 +72,7 @@ const Home = () => {
           <div className='home-hero1-left'>
             <Fade triggerOnce direction='left' duration='2000'>
               <h1>
-                <span className='text-description'>Unlock your ideal space with seamless renting - </span>
+                <span className='text-description'>Unlock your ideal space with seamless renting, Rent your next -</span>
                 <span className='typeanimation'>
                   <TypeAnimation
                   style={{whiteSpace: 'pre-line'}}
