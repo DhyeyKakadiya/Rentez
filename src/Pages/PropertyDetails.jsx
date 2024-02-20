@@ -26,9 +26,6 @@ const PropertyDetails = () => {
   const { propertyId } = useParams();
   const { user } = useSelector((state) => state.profile)
 
-  // const [response, setResponse] = useState(null)
-  // const [confirmationModal, setConfirmationModal] = useState(null)
-
   useEffect(() => {
     const getProperty = async () => {
       setLoading(true);
@@ -42,29 +39,6 @@ const PropertyDetails = () => {
     setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [propertyId]);
-
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const sliderRef = useRef(); 
-  const handleImageClick = (index) => {
-    setSelectedImageIndex(index);
-    if (sliderRef.current) {
-      sliderRef.current.slickGoTo(index); // Manually move the slider to the selected index
-    }
-  };
-
-  const sliderSettings = {
-    dots: false,
-    fade: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    arrows: false,
-    autoplaySpeed: 3000,
-    beforeChange: (current, next) => setSelectedImageIndex(next),
-    
-  };
   
   const [formData, setFormData] = useState({
     email: "",
@@ -94,42 +68,80 @@ const PropertyDetails = () => {
     });
   };
 
+  const mainCarouselRef = useRef(null);
+  const subCarouselRef = useRef(null);
+
+  const [mainSelectedIndex, setMainSelectedIndex] = useState(0);
+  const [subSelectedIndex, setSubSelectedIndex] = useState(0);
+
+  const handleMainImageClick = (index) => {
+    setMainSelectedIndex(index);
+    setSubSelectedIndex(index);
+    subCarouselRef.current.slickGoTo(index);
+  };
+
+  const handleSubImageClick = (index) => {
+    setMainSelectedIndex(index);
+    setSubSelectedIndex(index);
+    mainCarouselRef.current.slickGoTo(index);
+  };
+
+  const mainSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 3000,
+    afterChange: (current) => setMainSelectedIndex(current),
+  };
+
+  const subSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 3000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    focusOnSelect: true,
+    centerMode: true,
+    centerPadding: '40px',
+    afterChange: (current) => setSubSelectedIndex(current),
+  };
 
   document.body.scrollTop=document.documentElement.scrollTop=0;
-  console.log('hii')
 
   return(
 
     
     <div className="property-details-container">
-    {/* <h1>Property Detail Page</h1> */}
 
       {/* main slider */}
-    {/* <div className="property-img-slider">
-        {properties.photos && properties.photos.length > 0 && (
-          <Slider {...sliderSettings} ref={sliderRef} initialSlide={selectedImageIndex}>
-            {properties.photos.map((photo, index) => (
-              <div key={index} className="slider-item">
-                <img src={photo} alt="photos" />
-              </div>
-            ))}
-          </Slider>
-        )}
-      </div> */}
+      <div className="flex flex-col" style={{gap:'30px'}}>
+      <div className="main-carousel">
+        <Slider ref={mainCarouselRef} {...mainSettings}>
+          {properties.photos?.map((photo, index) => (
+            <div key={index}>
+              <img src={photo} alt={`main-photo-${index}`} onClick={() => handleMainImageClick(index)} />
+            </div>
+          ))}
+        </Slider>
+      </div>
 
-      {/* main 2 */}
-      <div className="property-highlight">
-        {properties.photos && properties.photos.length > 0 && (
-          properties.photos.map((photo, index) => (
-            <img
-              key={index}
-              src={photo}
-              alt="photos"
-              onClick={() => handleImageClick(index)}
-              className={index === selectedImageIndex ? 'selected' : ''}
-            />
-          ))
-        )}
+      {/* sub slider */}
+      <div className="sub-carousel">
+        <Slider ref={subCarouselRef} {...subSettings}>
+          {properties.photos?.map((photo, index) => (
+            <div key={index}>
+              <img src={photo} alt={`sub-photo-${index}`} onClick={() => handleSubImageClick(index)} />
+            </div>
+          ))}
+        </Slider>
+      </div>
       </div>
 
 
