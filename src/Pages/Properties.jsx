@@ -9,7 +9,6 @@ const Properties = () => {
 
     const [properties, setProperties] = useState([]);
     const [loading, setLoading] = useState(true);
-    const { user } = useSelector((state) => state.profile)
     
     useEffect(() => {
       const getProperty = async () => {
@@ -31,17 +30,6 @@ const Properties = () => {
       <div className="myproperties-container">
         <div className="my-properties-wrapper">
         <>
-        {/* Background balls */}
-                      <div className="background-balls">
-                        <div className="ball ball1"></div>
-                        <div className="ball ball2"></div>
-                        <div className="ball ball3"></div>
-                        <div className="ball ball4"></div>
-                        <div className="ball ball5"></div>
-                        <div className="ball ball6"></div>
-                        <div className="ball ball7"></div>
-                        <div className="ball ball8"></div>
-                    </div>
                 {/* <h1>All Properties</h1> */}
                   <div className="my-properties">
                     {
