@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import '../index.css'
 import house from '../assests/images/house.png'
 import { TypeAnimation } from 'react-type-animation'
 import { Link } from 'react-router-dom'
@@ -69,6 +68,10 @@ const Home = () => {
         <section className='section-wrapper wrap'>
         <div className='home-hero1 flex wrapper'>
           
+        <div className='home-hero1-right floating'>
+              <img src={house} alt='house'></img>
+          </div>
+
           <div className='home-hero1-left'>
             <Fade triggerOnce direction='left' duration='2000'>
               <h1>
@@ -89,10 +92,6 @@ const Home = () => {
               </div>
             </Fade>
               
-          </div>
-
-          <div className='home-hero1-right floating'>
-              <img src={house} alt='house'></img>
           </div>
 
         </div>
