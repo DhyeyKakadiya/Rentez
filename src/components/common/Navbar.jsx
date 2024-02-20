@@ -89,18 +89,18 @@ const Navbar = ({ whiteBackground }) => {
             NavbarLinks.map((link, index) => (
               <li key={index}>
                 <button onClick={() => navigate(link?.path)}>
-                {
+                {/* { */}
                   <span
                     className={`${
                       matchRoute(link?.path)
-                        ? 'active-link'
+                        ? 'active'
                         : ''
                     }`}
                   >
                     {link.title}
                   </span>
 
-                }
+                 {/* } */}
                 </button>
               </li>
             ))

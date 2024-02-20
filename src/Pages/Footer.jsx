@@ -34,7 +34,7 @@ const Footer = () => {
         <div className="footer-sub-content">
           <div className="footer-sub-content-left">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Explore seamless renting with Rentez. Your premier destination for hassle-free rental experiences.
             </p>
           </div>
         

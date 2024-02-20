@@ -37,10 +37,10 @@ function LoginModal({ closeModal }) {
           &times; {/* This is the "x" character for the close button */}
         </button>
 
-      {/* Your modal content here */}
+      {/* modal content here */}
       <h1>Login</h1>
       <form onSubmit={handleOnSubmit} className="login-form">
-        {/* ... (same as your existing login form) */}
+        {/* ... (same as existing login form) */}
         <div className="input flex" style={{marginTop:'30px'}}>
             <IoMail fontSize={18} className='user-icon' />
               <input
