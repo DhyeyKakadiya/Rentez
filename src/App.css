@@ -858,6 +858,7 @@ body{
   overflow: hidden;
   line-height: 0;
   /* transform: rotate(180deg); */
+  background-color: #f8fcfe;
 }
 
 .custom-shape-divider-bottom-272727 svg {
@@ -865,7 +866,7 @@ body{
   display: block;
   width: calc(100% + 1.3px);
   height: 80px;
-  
+  background-color: #f8fcfe;
 }
 
 .custom-shape-divider-bottom-272727 .shape-fill {
@@ -878,8 +879,8 @@ body{
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  padding: 30px 100px;
-  gap: 10px;
+  padding: 30px 100px 15px 100px;
+  gap: 20px;
   background-color: #f8fcfe;
 }
 
@@ -950,6 +951,7 @@ body{
   height: 150px;
   align-items: start;
   justify-content: center;
+  margin-left: 15px;
 }
 
 .footer-sub-content-right{
@@ -1490,32 +1492,26 @@ ul li{
 }
 
 /*  */
-ul li button{
+
+ul li button {
   font-size: 18px;
   color: #3f5269;
   font-family: inherit;
-  /* font-weight: 300; */
   cursor: pointer;
   position: relative;
   border: none;
   background: none;
-  /* text-transform: uppercase; */
-  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 400ms;
-  transition-property: color;
+  transition: color 0.4s ease;
 }
+
 ul li button:focus,
-ul li button:hover {
+ul li button:hover,
+ul li button span.active {
   color: #3770FF;
 }
 
-ul li button:focus:after,
-ul li button:hover:after {
-  width: 100%;
-  left: 0%;
-}
-
-ul li button:after {
+ul li button:after,
+ul li button span.active:after {
   content: "";
   pointer-events: none;
   bottom: -2px;
@@ -1524,9 +1520,14 @@ ul li button:after {
   width: 0%;
   height: 2px;
   background-color: #3770FF;
-  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 400ms;
-  transition-property: width, left;
+  transition: width 0.4s ease, left 0.4s ease;
+}
+
+ul li button:hover:after,
+ul li button:focus:after,
+ul li button span.active::after {
+  width: 100%;
+  left: 0%;
 }
 
 
@@ -2788,6 +2789,82 @@ ul li button:after {
 
 /* properties page */
 
+/* Properties.css */
+.background-balls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.ball {
+  position: absolute;
+  width: 50px; /* smaller size */
+  height:50px; /* smaller size */
+  border-radius: 50%;
+  background-color: #ccc;
+  animation: moveBall linear infinite alternate;
+  filter: blur(2px); /* Blur effect */
+  backdrop-filter: blur(2px); /* For backdrop blur (for supporting browsers) */
+}
+
+.ball1 {
+  top: 10%;
+  left: 10%;
+  animation-duration: 5s;
+}
+
+.ball2 {
+  top: 20%;
+  left: 80%;
+  animation-duration: 3s;
+}
+
+.ball3 {
+  top: 50%;
+  left: 50%;
+  animation-duration: 4s;
+}
+
+.ball4 {
+  top: 80%;
+  left: 30%;
+  animation-duration: 6s;
+}
+
+.ball5 {
+  top: 30%;
+  left: 70%;
+  animation-duration: 5s;
+}
+
+.ball6 {
+  top: 70%;
+  left: 20%;
+  animation-duration: 4s;
+}
+
+.ball7 {
+  top: 40%;
+  left: 40%;
+  animation-duration: 3s;
+}
+
+.ball8 {
+  top: 90%;
+  left: 60%;
+  animation-duration: 6s;
+}
+
+@keyframes moveBall {
+  to {
+      transform: translate(-20px, 20px);
+  }
+}
+
+
 .myproperties-container{
   display: flex;
   flex-wrap: wrap;
@@ -3155,12 +3232,14 @@ ul li button:after {
   font-size: 18px;
   display: flex;
   font-weight: 500;
+  width: 80px;
+  height: 28px;
 }
 
 .yearly-highlight .pricing-toggle-yearly,
 .monthly-highlight .pricing-toggle-monthly {
     color: #007bff;
-    font-weight: 600;
+    font-weight: 500;
     font-family: cursive;
 }
 

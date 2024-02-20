@@ -72,7 +72,7 @@ const Home = () => {
           <div className='home-hero1-left'>
             <Fade triggerOnce direction='left' duration='2000'>
               <h1>
-                <span className='text-description'>Unlock your ideal space with seamless renting, Rent your next -</span>
+                <span className='text-description'>Unlock the Door to Your Dream Space: Seamlessly Rent Your Next </span>
                 <span className='typeanimation'>
                   <TypeAnimation
                   style={{whiteSpace: 'pre-line'}}
@@ -117,13 +117,11 @@ const Home = () => {
                 Simple & easy way to find your dream Appointment.
               </p>
               <h3>
-                Simple & easy way to find your dream Appointment.
+                Discover Your Perfect Appointment Effortlessly.
               </h3>
 
               <button style={{alignItems:'flex-end',display:'flex'}} className="custom-btn btn-1" onClick={() => navigate('/signup')} >Learn More</button>
             </div>
-              
-            
           </div>
 
           {/* right */}
@@ -317,7 +315,7 @@ const Home = () => {
         <div className='home-hero5-content-wrapper'>
         <div className='home-hero5-content'>
           <div className='home-hero5-content-left'>
-            <img src= {deal} alt='photo' id='deal'/>
+            <img src= {deal} alt='deal-icon' id='deal'/>
           </div>
           <div className='home-hero5-content-right'>
             <p className='home-hero5-content-right-p1'>We are totally broker free</p>
@@ -327,7 +325,7 @@ const Home = () => {
 
         <div className='home-hero5-content'>
           <div className='home-hero5-content-left'>
-            <img src= {fairprice} alt='photo' id='fairprice' />
+            <img src= {fairprice} alt='fairprice-icon' id='fairprice' />
           </div>
           <div className='home-hero5-content-right'>
             <p className='home-hero5-content-right-p1'>Fair pricing and standardized policies</p>
@@ -337,7 +335,7 @@ const Home = () => {
 
         <div className='home-hero5-content'>
           <div className='home-hero5-content-left'>
-            <img src= {flat} alt='photo' id='flat' />
+            <img src= {flat} alt='flat-icon' id='flat' />
           </div>
           <div className='home-hero5-content-right'>
             <p className='home-hero5-content-right-p1'>What you see is what you get</p>

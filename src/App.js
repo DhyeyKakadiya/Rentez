@@ -39,7 +39,6 @@ function App() {
     '/dashboard/create-listing',
     '/dashboard/my-listing',
     '/property',
-    '/properties',
   ];
 
   const isWhiteNavbar = whiteNavbarPaths.some((path) => location.pathname.startsWith(path));
