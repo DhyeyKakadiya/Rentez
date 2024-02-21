@@ -158,7 +158,7 @@
 
   @media (max-width: 768px) {
     .home-hero5 {
-      padding: 30px 10px 50px 10px; /* Adjust padding for smaller screens */
+      padding: 30px 10px 50px 10px;
     }
   
     .home-hero5-content-wrapper {
@@ -166,6 +166,6 @@
     }
   
     .home-hero5-content {
-      max-width: 100%; /* Make content full-width on smaller screens */
+      max-width: 100%;
     }
 }
