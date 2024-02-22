@@ -1440,9 +1440,7 @@ form .input input:valid~i {
   justify-content: space-between;
   align-items: center;
   background-color: #daf2ff ;
-  /* border-bottom: 1px solid lightgray; */
   transition: 0.3s ease-in-out;
-  /* box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%); */
   padding: 15px 4% 15px 7%;
   /* border-width: 50%;
   border-bottom: 1px solid lightgray; */
