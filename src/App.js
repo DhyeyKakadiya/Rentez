@@ -49,6 +49,8 @@ function App() {
     '/dashboard/settings',
     '/dashboard/create-listing',
     '/dashboard/my-listing',
+    '/login',
+    '/signup',
   ];
   
   const shouldHideFooter = hideFooterPaths.some(path => location.pathname.startsWith(path));

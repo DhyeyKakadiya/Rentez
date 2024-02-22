@@ -53,7 +53,7 @@ const Navbar = ({ whiteBackground }) => {
   ];
   console.log(NavbarLinks);
 
-  // white navbar on sscroll
+  // white navbar on scroll
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
 
@@ -107,12 +107,6 @@ const Navbar = ({ whiteBackground }) => {
           }
         </ul>
        </div>
-
-       {/* <li><button onClick={() => navigate('/')}>Home</button></li>
-          <li><button onClick={() => navigate('/properties')}>Properties</button></li>
-          <li><button onClick={() => navigate('/plans')}>Plans</button></li>
-          <li><button onClick={() => navigate('/about')}>About Us</button></li>
-          <li><button onClick={() => navigate('/contact')}>Contact Us</button></li> */}
 
     {/* nav-right */}
     <div className="nav-right">

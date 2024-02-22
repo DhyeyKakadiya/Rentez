@@ -25,7 +25,6 @@ import equality from '../assests/images/equality.png'
 import flat from '../assests/images/flat.png' 
 import fairprice from '../assests/images/fair-price.png' 
 
-import Footer from './Footer'
 import Card from '../components/common/Card'
 
 import { getAllProperty } from "../services/operations/propertyAPI";
@@ -61,9 +60,11 @@ const Home = () => {
   // const randomProperties = getRandomProperties();
 
   return (
-    <div className='container selector'  style={{display:'flex',
+    <div className='container selector'  
+    style={{display:'flex',
     flexWrap:'wrap',
-    flexDirection:'column'}}>
+    flexDirection:'column'}}
+    >
       {/* section-1 hero */}
         <section className='section-wrapper wrap'>
         <div className='home-hero1 flex wrapper'>
@@ -75,7 +76,7 @@ const Home = () => {
           <div className='home-hero1-left'>
             <Fade triggerOnce direction='left' duration='2000'>
               <h1>
-                <span className='text-description'>Unlock the Door to Your Dream Space: Seamlessly Rent Your Next </span>
+                <span className='text-description'>Unlock the Door to Your Dream Space, Seamlessly Rent Your Next </span>
                 <span className='typeanimation'>
                   <TypeAnimation
                   style={{whiteSpace: 'pre-line'}}

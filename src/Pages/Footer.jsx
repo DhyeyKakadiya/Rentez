@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from '../assests/logo/Logo-svg-rbg.svg'
 
@@ -9,6 +9,15 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa6";
 
 const Footer = () => {
+
+  useEffect(() => {
+    // Scroll to the top of the footer section when the component mounts
+    const footerSection = document.getElementById("footer-section");
+    if (footerSection) {
+      footerSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, []);
+
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -46,7 +55,7 @@ const Footer = () => {
               <p><a href="/properties">Properties</a></p>
               <p><a href="/aboutus">About Us</a></p>
               <p><a href="/plans">Plans</a></p>
-              <p><a href="/contactus">Contact Us</a></p>
+              <p><Link to="/about#footer-section">Contact Us</Link></p>
             </div>
 
             <div className="footer-section">
