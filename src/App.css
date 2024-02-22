@@ -1452,7 +1452,6 @@ form .input input:valid~i {
   background-color: white;
   border-bottom: 1px solid lightgray;
   /* box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%) !important; */
-
 }
 
 .navbar.blue-background {
@@ -1518,7 +1517,7 @@ ul li button span.active:after {
   left: 50%;
   position: absolute;
   width: 0%;
-  height: 2px;
+  height: 1px;
   background-color: #3770FF;
   transition: width 0.4s ease, left 0.4s ease;
 }
@@ -2323,7 +2322,7 @@ ul li button span.active::after {
 .select-button {
   bottom: 0;
   display: flex;
-  background-color: #1a1a1a; 
+  background-color: darkblue; 
   color: #ffffff;
   padding: 0.5rem 1rem;
   border: none;
@@ -2375,7 +2374,7 @@ ul li button span.active::after {
 
 /* Back Button Styles */
 .back-button {
-  background-color: #000;
+  background-color: darkblue;
   color: #ffffff;
   cursor: pointer;
   border: none;
@@ -2775,7 +2774,7 @@ ul li button span.active::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  height: 35px;
   color: #FFF;
   background-color: #e74c3c;
 }
@@ -2784,7 +2783,7 @@ ul li button span.active::after {
   border: 1px solid red;
   background-color: #FFF;
   color: red;
-  transform: scale(0.97);
+  transform: scale(0.96);
 }
 
 /* properties page */
@@ -3458,10 +3457,10 @@ ul li button span.active::after {
 .stats-container {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; /* gap-10 */
+  gap: 1.25rem; 
   justify-content: space-between;
-  width: 91.666667%; /* w-11/12 */
-  max-width: 1440px; /* max-w-maxContent */
+  width: 91.666667%; 
+  max-width: 1440px;
   color: white;
   margin: 0 auto;
 }
@@ -3472,7 +3471,7 @@ ul li button span.active::after {
   grid-auto-columns: 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   /* grid-template-columns: repeat(2, 1fr);  */
-  gap: 1rem; /* gap-4 */
+  gap: 1rem; 
   text-align: center;
 }
 
@@ -3484,15 +3483,15 @@ ul li button span.active::after {
 }
 
 .count {
-  font-size: 1.875rem; /* text-[30px] */
-  font-weight: 700; /* font-bold */
-  color: #f5f5f5; /* text-richblack-5 */
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #f5f5f5; 
 }
 
 .label-h2 {
-  font-weight: 600; /* font-semibold */
-  font-size: 1rem; /* text-[16px] */
-  color: #7f7f7f; /* text-richblack-500 */
+  font-weight: 600; 
+  font-size: 1rem; 
+  color: #7f7f7f; 
 }
 
 
@@ -3504,17 +3503,17 @@ ul li button span.active::after {
 }
 
 .title {
-  font-size: 2.5rem; /* text-4xl */
-  font-weight: 600; /* font-semibold */
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 .description {
-  color: #4b5563; /* text-richblack-300 */
-  margin-top: 0.75rem; /* mt-3 */
+  color: #4b5563;
+  margin-top: 0.75rem; 
 }
 
 .form {
-  margin-top: 3rem; /* mt-12 */
+  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   max-width: 670px;
@@ -3580,15 +3579,15 @@ ul li button span.active::after {
 
 .submit-button {
   cursor: pointer;
-    background-color: #e6efff;
-    color: #3b82f6;
-    border: none;
-    border-radius: 8px;
-    width: 100%;
-    height: 45px;
-    font-size: 15px;
-    font-weight: 600;
-    transition: .3s;
+  background-color: #e6efff;
+  color: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  height: 45px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: .3s;
 }
 
 .button-hover:hover {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../components/core/Dashboard/Sidebar'
@@ -23,10 +23,9 @@ const Dashboard = () => {
       </div>
     )
   }
-
+  
 
   return (
-
     <div className="dashboard-wrapper flex">
       <Sidebar />
       <div className="outlet-container">

@@ -145,7 +145,7 @@ const About = () => {
 
       <div className="partition" />
 
-
+      {/* contact form */}
       <section className="footer-section">
         <div className="content-wrapper">
           <ContactFormSection />
