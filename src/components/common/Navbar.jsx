@@ -46,10 +46,6 @@ const Navbar = ({ whiteBackground }) => {
       title: "About Us",
       path: "/about",
     },
-    // {
-    //   title: "Contact Us",
-    //   path: "/contact",
-    // },
   ];
   console.log(NavbarLinks);
 
@@ -63,7 +59,7 @@ const Navbar = ({ whiteBackground }) => {
   }, []);
 
   const handleScroll = () => {
-    // Your scroll handling logic here
+    // scroll handling logic here
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 0) {
       navbar.classList.add('scrolled');
@@ -89,7 +85,6 @@ const Navbar = ({ whiteBackground }) => {
             NavbarLinks.map((link, index) => (
               <li key={index}>
                 <button onClick={() => navigate(link?.path)}>
-                {/* { */}
                   <span
                     className={`${
                       matchRoute(link?.path)
@@ -99,8 +94,6 @@ const Navbar = ({ whiteBackground }) => {
                   >
                     {link.title}
                   </span>
-
-                 {/* } */}
                 </button>
               </li>
             ))
