@@ -25,7 +25,7 @@ const Card = ({className,img, city, state, bhk, size, bath, price, pricePer, typ
     const getProperty = async () => {
       setLoading(true);
       const result = await getPropertyDetail(propertyId);
-      console.log(result);
+      // console.log(result);
       if (result) {
         setProperties(result);
       }
