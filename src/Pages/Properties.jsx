@@ -4,16 +4,20 @@ import { useEffect, useState } from "react";
 
 import { getAllProperty } from "../services/operations/propertyAPI";
 import { useSelector } from 'react-redux';
+import FilterModal from "../components/common/FilterModal"
 
 const Properties = () => {
 
     const [properties, setProperties] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [filterModal, setFilterModal] = useState(null);
+
+    const { filterData } = useSelector((state) => state.filter);
     
     useEffect(() => {
       const getProperty = async () => {
         setLoading(true);
-        const result = await getAllProperty();
+        const result = await getAllProperty(filterData);
         if (result) {
           setProperties(result);
           console.log('result: ',result)
@@ -23,7 +27,7 @@ const Properties = () => {
       getProperty();
       setLoading(false);
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [filterData]);
 
 
     return (
@@ -50,6 +54,18 @@ const Properties = () => {
                         </>
                       ) : (
                         <>
+                <div className="properties-filter-section">
+                <button
+                  className="filter-btn"
+                  onClick={() =>
+                    setFilterModal({
+                      cancelBtnHandler: () => setFilterModal(null),
+                    })
+                  }
+                >
+                  Filters
+                </button>
+              </div>
                         {properties?.map((property, index) => {
                           return (
                             <Card
@@ -74,6 +90,7 @@ const Properties = () => {
                     }
                     
                   </div>
+                  {filterModal && <FilterModal modalData={filterModal} />}
               </>
         </div>
       </div>
