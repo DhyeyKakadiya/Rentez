@@ -8,7 +8,7 @@ const { GET_SELLERS_LISTINGS } = profileEndpoints;
 export const getAllProperty = async(filterData) => {
     let result = [];
     try {
-        const response = await apiConnector("GET", GET_ALL_LISTINGS_API, null, null, filterData );
+        const response = await apiConnector("GET", GET_ALL_LISTINGS_API, null, null, filterData);
 
         if(!response.data.success){
             throw new Error("Could Not fetch Featured Properties")
