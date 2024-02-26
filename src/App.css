@@ -57,12 +57,12 @@ body{
     /* background-color: #DAF2FF; */
 }
 
-/* .selector ::selection{
-    background-color: #cec2eb;
-} */
+.container{
+  overflow: hidden;
+}
 
 .properties-filter-section {
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -325,14 +325,6 @@ body{
 }
 
   
-
-/* .container{
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-inline: auto;
-} */
-
 /*-----------------Errorpage------------ */
 .error{
   display: flex;

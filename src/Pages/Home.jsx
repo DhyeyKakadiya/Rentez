@@ -60,7 +60,7 @@ const Home = () => {
   // const randomProperties = getRandomProperties();
 
   return (
-    <div className='container selector'  
+    <div className='container'  
     style={{display:'flex',
     flexWrap:'wrap',
     flexDirection:'column'}}
