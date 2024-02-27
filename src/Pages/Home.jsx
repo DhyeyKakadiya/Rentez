@@ -67,10 +67,6 @@ const Home = () => {
       {/* section-1 hero */}
         <section className='section-wrapper wrap'>
         <div className='home-hero1 flex wrapper'>
-          
-        <div className='home-hero1-right floating'>
-              <img src={house} alt='house'></img>
-          </div>
 
           <div className='home-hero1-left'>
             <Fade triggerOnce direction='left' duration='2000'>
@@ -92,6 +88,10 @@ const Home = () => {
               </div>
             </Fade>
               
+          </div>
+
+          <div className='home-hero1-right floating'>
+              <img src={house} alt='house'></img>
           </div>
 
         </div>
@@ -119,7 +119,7 @@ const Home = () => {
                 Discover Your Perfect Appointment Effortlessly.
               </h3>
 
-              <button style={{alignItems:'flex-end',display:'flex'}} className="custom-btn btn-1" onClick={() => navigate('/signup')} >Learn More</button>
+              <button className="custom-btn btn-1" onClick={() => navigate('/signup')} >Learn More</button>
             </div>
           </div>
 
@@ -173,57 +173,55 @@ const Home = () => {
         <div className="home-hero3-under-1">
               <img src={allcoins} alt='search'></img>
               <div>
-                <p style={{fontSize: '2.188rem',fontWeight: '600',paddingTop: '15px'}}>
+                <p className='home-hero3-under-1-price'>
                   ₹2.1L
                 </p>
-                <p style={{fontSize: '1.563rem',fontWeight: '500',paddingTop: '15px'}}>
+                <p className='home-hero3-under-1-p-top'>
                   Total
                 </p>
-                <p style={{fontSize: '1.563rem',fontWeight: '500'}}>Properties transactions</p>
+                <p className='home-hero3-under-1-p-bottom'>Properties transactions</p>
               </div>
             </div>
 
           <div className="home-hero3-under-2">
             <img src={chart} alt='search'></img>
             <div>
-              <p style={{fontSize: '2.188rem',fontWeight: '600',paddingTop: '15px'}}>
+              <p className='home-hero3-under-1-price'>
               520+
               </p>
-              <p style={{fontSize: '1.563rem',fontWeight: '500',paddingTop: '15px'}}>
+              <p className='home-hero3-under-1-p-top'>
               Properties for Rent
               </p>
-              <p style={{fontSize: '1.563rem',fontWeight: '500'}}>Successfully</p>
+              <p className='home-hero3-under-1-p-bottom'>Successfully</p>
             </div>
           </div>
           
           <div className="home-hero3-under-3">
             <img src={coins} alt='search'></img>
             <div>
-              <p style={{fontSize: '2.188rem',fontWeight: '600',paddingTop: '15px'}}>
+              <p className='home-hero3-under-1-price'>
                 150
               </p>
-              <p style={{fontSize: '1.563rem',fontWeight: '500',paddingTop: '15px'}}>
+              <p className='home-hero3-under-1-p-top'>
                 Daily completed
               </p>
-              <p style={{fontSize: '1.563rem',fontWeight: '500'}}>transactions</p>
+              <p className='home-hero3-under-1-p-bottom'>transactions</p>
             </div>
           </div>
 
           <div className="home-hero3-under-4">
             <img src={globe} alt='search'></img>
             <div>
-              <p style={{fontSize: '2.188rem',fontWeight: '600',paddingTop: '15px'}}>
+              <p className='home-hero3-under-1-price'>
                 300+
               </p>
-              <p style={{fontSize: '1.563rem',fontWeight: '500',paddingTop: '15px'}}>
+              <p className='home-hero3-under-1-p-top'>
                 Regular Clients
               </p>
-              <p style={{fontSize: '1.563rem',fontWeight: '500'}}>Across Globe</p>
+              <p className='home-hero3-under-1-p-bottom'>Across Globe</p>
             </div>
           </div>
         </div>
-            
-
         </section>
 
       {/* tilt */}
@@ -345,13 +343,6 @@ const Home = () => {
 
       </section>
 
-                  {/* book */}
-      {/* <div class="custom-shape-divider-top-1707836000">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M1200,0H0V120H281.94C572.9,116.24,602.45,3.86,602.45,3.86h0S632,116.24,923,120h277Z" class="shape-fill"></path>
-            </svg>
-        </div> */}
-
       {/* testimonials */}
 
       {/* tilt 2 */}
@@ -361,10 +352,6 @@ const Home = () => {
           <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
           </svg>
         </div>
-
-      {/* footer */}
-
-      {/* <Footer/> */}
 
     </div>
   )

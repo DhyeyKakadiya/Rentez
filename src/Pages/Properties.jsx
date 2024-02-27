@@ -20,12 +20,13 @@ const Properties = () => {
         const result = await getAllProperty(filterData);
         if (result) {
           setProperties(result);
-          console.log('result: ',result)
+          setLoading(false);
+          console.log('result: ', result);
         }
       };
-      
+    
       getProperty();
-      setLoading(false);
+      // setLoading(false);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filterData]);
 
