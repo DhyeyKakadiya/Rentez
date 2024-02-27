@@ -14,7 +14,6 @@ import { BsFillPenFill } from "react-icons/bs";
 import { FaPenFancy } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import logo from '../assests/logo/Logo-svg-rbg.svg'
-import logo1 from '../assests/logo/new-logo.svg'
 
 function Signup() {
 

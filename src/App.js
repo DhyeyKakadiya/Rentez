@@ -22,7 +22,7 @@ import Properties from './Pages/Properties';
 import PropertyDetails from './Pages/PropertyDetails';
 import Plans from './Pages/Plans'
 import AboutUs from './Pages/About'
-import Footer from './Pages/Footer';
+import Footer from './components/common/Footer';
 // import ToTop from './components/common/ToTop';
 
 

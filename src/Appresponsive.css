@@ -169,3 +169,10 @@
       max-width: 100%;
     }
 }
+
+/* filter modal */
+@media (max-width: 770px){
+  .filter-price {
+    flex-direction: column;
+  }
+}

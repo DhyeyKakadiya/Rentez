@@ -1,8 +1,7 @@
 import React, { useRef } from "react";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { getPropertyDetail, notifySeller } from "../services/operations/propertyAPI";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { IoIosPricetags } from "react-icons/io";
 import { SlLocationPin  } from "react-icons/sl";
 import { TbResize } from "react-icons/tb";
@@ -12,10 +11,6 @@ import { LuBath } from "react-icons/lu";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import { Carousel } from 'react-responsive-carousel';
-
-import Footer from "./Footer";
 import ReadMore from "./ReadMore";
 
 const PropertyDetails = () => {
@@ -24,7 +19,6 @@ const PropertyDetails = () => {
   const [loading, setLoading] = useState(true);
 
   const { propertyId } = useParams();
-  const { user } = useSelector((state) => state.profile)
 
   useEffect(() => {
     const getProperty = async () => {
@@ -105,7 +99,7 @@ const PropertyDetails = () => {
     autoplay: true,
     arrows: false,
     autoplaySpeed: 3000,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     focusOnSelect: true,
     centerMode: true,
@@ -126,7 +120,7 @@ const PropertyDetails = () => {
         <Slider ref={mainCarouselRef} {...mainSettings}>
           {properties.photos?.map((photo, index) => (
             <div key={index}>
-              <img src={photo} alt={`main-photo-${index}`} onClick={() => handleMainImageClick(index)} />
+              <img src={photo} alt={`main-pics-${index}`} onClick={() => handleMainImageClick(index)} />
             </div>
           ))}
         </Slider>
@@ -137,7 +131,7 @@ const PropertyDetails = () => {
         <Slider ref={subCarouselRef} {...subSettings}>
           {properties.photos?.map((photo, index) => (
             <div key={index}>
-              <img src={photo} alt={`sub-photo-${index}`} onClick={() => handleSubImageClick(index)} />
+              <img src={photo} alt={`sub-pics-${index}`} onClick={() => handleSubImageClick(index)} />
             </div>
           ))}
         </Slider>
@@ -228,7 +222,7 @@ const PropertyDetails = () => {
 
       <div className="property-seller">
 
-        <img src={`${properties.seller?.image}`} alt="profile-photo" style={{width:'70px', height:'70px',borderRadius: '30px'}} />
+        <img src={`${properties.seller?.image}`} alt="profile-pic" style={{width:'70px', height:'70px',borderRadius: '30px'}} />
       
         <div className="flex flex-col" style={{ width:'100%',justifyContent:'center', gap:'10px'}}>
 

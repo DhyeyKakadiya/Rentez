@@ -6,7 +6,6 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { FaLock } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import {login} from '../services/operations/authAPI'
-import logo from '../assests/logo/Logo-svg-rbg.svg'
 
 
 function Login () {

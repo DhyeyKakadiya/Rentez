@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from '../assests/logo/Logo-svg-rbg.svg'
+import logo from '../../assests/logo/Logo-svg-rbg.svg'
 
 import { FaXTwitter } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa6";

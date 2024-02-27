@@ -3,7 +3,6 @@ import React from "react"
 import aboutusheader from '../assests/images/aboutus-header.svg'
 
 import ContactFormSection from "../components/core/AboutPage/ContactFormSection"
-import StatsComponenet from "../components/core/AboutPage/Stats"
 
 import foundingstory1 from '../assests/images/foundingstory.svg'
 import ourmission from '../assests/images/ourmission.svg'
@@ -11,7 +10,7 @@ import ourvision from '../assests/images/ourvision.svg'
 
 const About = () => {
   return (
-    <div className="aboutus-wrapper">
+      <div className="aboutus-wrapper">
       <section className="aboutus-section1">
         <div className="aboutus-section1-left">
           <header className="header">
@@ -26,8 +25,8 @@ const About = () => {
           </p>
         </div>
 
-        <div className="aboutus-section1-right floating">
-          <div><img src={aboutusheader} alt="" /></div>
+        <div className="aboutus-section1-right floating1">
+          <div><img src={aboutusheader} alt="aboutusheader"/></div>
         </div>
         
       </section>
@@ -151,7 +150,9 @@ const About = () => {
           <ContactFormSection />
         </div>
       </section>
-    </div>
+      </div>
+    
+    
   );
 };
 

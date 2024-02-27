@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, matchPath, useLocation } from 'react-router-dom'
 import logo from '../../assests/logo/Logo-svg-rbg.svg'
-import logo1 from '../../assests/logo/new-logo.svg'
-import logo2 from '../../assests/logo/logo2.svg'
 import { useSelector, useDispatch } from 'react-redux'
-import { ACCOUNT_TYPE } from "../../utils/contsants"
 import { TbLogout } from "react-icons/tb";
 import { logout } from "../../services/operations/authAPI"
 import ConfirmationModal from '../common/ConfirmationModal'

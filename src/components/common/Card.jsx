@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { FaBath } from "react-icons/fa";
 import { IoBedSharp } from "react-icons/io5";
-import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useDispatch, useSelector } from 'react-redux';

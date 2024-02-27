@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import house from '../assests/images/house.png'
 import { TypeAnimation } from 'react-type-animation'
 import { Link } from 'react-router-dom'
@@ -12,7 +12,7 @@ import search from '../assests/logo/wired-gradient-19-magnifier-zoom-search.gif'
 // import search from '../assests/logo/search1.svg'
 import { useNavigate } from 'react-router-dom'
 // import './section3.css'
-import { Fade, JackInTheBox, Slide } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 
 // import location from '../assests/logo/wired-gradient-18-location-pin.webp'
 import chart from '../assests/images/wired-gradient-153-bar-chart (2).webp'
@@ -21,7 +21,6 @@ import globe from '../assests/images/wired-gradient-27-globe.webp'
 import allcoins from '../assests/images/wired-gradient-298-coins (2).webp'
 
 import deal from '../assests/images/deal.png'
-import equality from '../assests/images/equality.png'
 import flat from '../assests/images/flat.png' 
 import fairprice from '../assests/images/fair-price.png' 
 
@@ -174,52 +173,52 @@ const Home = () => {
         <div className="home-hero3-under-1">
               <img src={allcoins} alt='search'></img>
               <div>
-                <p style={{fontSize: '35px',fontWeight: '600',paddingTop: '15px'}}>
+                <p style={{fontSize: '2.188rem',fontWeight: '600',paddingTop: '15px'}}>
                   ₹2.1L
                 </p>
-                <p style={{fontSize: '25px',fontWeight: '500',paddingTop: '15px'}}>
+                <p style={{fontSize: '1.563rem',fontWeight: '500',paddingTop: '15px'}}>
                   Total
                 </p>
-                <p style={{fontSize: '25px',fontWeight: '500'}}>Properties transactions</p>
+                <p style={{fontSize: '1.563rem',fontWeight: '500'}}>Properties transactions</p>
               </div>
             </div>
 
           <div className="home-hero3-under-2">
             <img src={chart} alt='search'></img>
             <div>
-              <p style={{fontSize: '35px',fontWeight: '600',paddingTop: '15px'}}>
+              <p style={{fontSize: '2.188rem',fontWeight: '600',paddingTop: '15px'}}>
               520+
               </p>
-              <p style={{fontSize: '25px',fontWeight: '500',paddingTop: '15px'}}>
+              <p style={{fontSize: '1.563rem',fontWeight: '500',paddingTop: '15px'}}>
               Properties for Rent
               </p>
-              <p style={{fontSize: '25px',fontWeight: '500'}}>Successfully</p>
+              <p style={{fontSize: '1.563rem',fontWeight: '500'}}>Successfully</p>
             </div>
           </div>
           
           <div className="home-hero3-under-3">
             <img src={coins} alt='search'></img>
             <div>
-              <p style={{fontSize: '35px',fontWeight: '600',paddingTop: '15px'}}>
+              <p style={{fontSize: '2.188rem',fontWeight: '600',paddingTop: '15px'}}>
                 150
               </p>
-              <p style={{fontSize: '25px',fontWeight: '500',paddingTop: '15px'}}>
+              <p style={{fontSize: '1.563rem',fontWeight: '500',paddingTop: '15px'}}>
                 Daily completed
               </p>
-              <p style={{fontSize: '25px',fontWeight: '500'}}>transactions</p>
+              <p style={{fontSize: '1.563rem',fontWeight: '500'}}>transactions</p>
             </div>
           </div>
 
           <div className="home-hero3-under-4">
             <img src={globe} alt='search'></img>
             <div>
-              <p style={{fontSize: '35px',fontWeight: '600',paddingTop: '15px'}}>
+              <p style={{fontSize: '2.188rem',fontWeight: '600',paddingTop: '15px'}}>
                 300+
               </p>
-              <p style={{fontSize: '25px',fontWeight: '500',paddingTop: '15px'}}>
+              <p style={{fontSize: '1.563rem',fontWeight: '500',paddingTop: '15px'}}>
                 Regular Clients
               </p>
-              <p style={{fontSize: '25px',fontWeight: '500'}}>Across Globe</p>
+              <p style={{fontSize: '1.563rem',fontWeight: '500'}}>Across Globe</p>
             </div>
           </div>
         </div>
