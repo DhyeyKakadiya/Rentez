@@ -1,6 +1,6 @@
 
   
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 1100px) {
   
 /* home */
 
@@ -17,6 +17,48 @@
     .home-hero1-left h1 {
         font-size: 24px;
       }
+}
+
+@media (min-width: 800px) and (max-width: 1410px) {
+
+  .home-hero2 {
+    padding: 0px 50px 50px 50px;
+  }
+
+  .home-hero3{
+    padding: 30px;
+  }
+
+  .home-hero4 {
+    padding: 50px 20px;
+  }
+
+  .my-properties{
+    width: 100%;
+    gap: 0px;
+  }
+
+  /* .home-hero5 {
+    padding: 0px 20px 50px 20px;
+  }
+
+  .home-hero5-content-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .home-hero5-content{
+    width: fit-content;
+    height: 230px;
+  } */
+
+}
+
+
+@media only screen and (max-width: 968px){
+
+  .home-hero4 {
+    padding: 50px 50px;
+  }
 
 }
   
@@ -255,6 +297,13 @@
       justify-content: space-between;
     }
 
+    /* totop */
+    .totop {
+      height: 45px; 
+      width: 45px;
+      font-size: 22px; 
+    }
+
     /* filter modal */
     .filter-price {
       flex-direction: column;
@@ -431,6 +480,7 @@
 
   .home-hero5-content {
     width: 100%;
+    height: 100%;
   }
 
   /* tilt-2*/
@@ -472,12 +522,9 @@
   /* totop */
 
   .totop {
-    height: 50px;
-    width: 50px;
-    font-size: 24px;
-    bottom: 50px;
-    left: 340px;
-    /* right: 20px; */
+    height: 45px;
+    width: 45px;
+    font-size: 22px;
   }
 
 }
