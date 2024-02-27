@@ -92,6 +92,10 @@
       padding: 35px;
     }
 
+    .custom-left-under{
+      gap: 25px;
+    }
+
     .custom-right {
       flex: 1 1 100%;
       min-width: 100%;
@@ -121,10 +125,9 @@
 
     /* wave */
 
-  .custom-shape-divider-top-1707325734 svg{
-    height: 100%;
-  }
-
+    .custom-shape-divider-top-1707325734 svg{
+      height: 100%;
+    }
 
     /* section 3 */
     .home-hero3{
@@ -133,12 +136,16 @@
 
     .padding{
       justify-content: center;
+      align-items: center;
     }
 
-    /* .home-hero3-under-1, .home-hero3-under-2, .home-hero3-under-3, .home-hero3-under-4 {
+    .home-hero3-under-1,
+    .home-hero3-under-2,
+    .home-hero3-under-3,
+    .home-hero3-under-4 {
       flex-basis: calc(100% - 20px); 
-       max-width: calc(50% - 50px);
-    } */
+      max-width: calc(50% - 50px);
+    }
     
     .home-hero3-under-1-price{
       font-size: 20px;
@@ -187,10 +194,11 @@
   
     .my-properties {
       width: 100%;
+      gap: 20px;
     }
   
     .property-card {
-      width: calc(40% - 15px); 
+      width: calc(45% - 5px); 
       margin: 10px;
     }
 
@@ -236,6 +244,17 @@
       width: 45px;
     }
 
+    /* footer */
+
+    .footer{
+      padding: 20px;
+    }
+
+    .footer-sub-content-right{
+      width: 100%;
+      justify-content: space-between;
+    }
+
     /* filter modal */
     .filter-price {
       flex-direction: column;
@@ -258,17 +277,19 @@
   }
 
   .get-started-div{
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     justify-content: flex-start !important;
   }
 
   .custom-btn{
-    width: 105px;
-    height: 25px;
-    font-size: 7px;
+    width: 110px;
+    height: 100%;
+    font-size: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 8px 0px;
   }
 
   .home-hero1-left h1 {
@@ -298,7 +319,7 @@
   /* curve img*/
 
   .custom-shape-divider-top-1705728335 svg {
-    height: 80px;
+    height: 100%;
   }
 
   /* section 2 */
@@ -346,9 +367,13 @@
     width: 100%;
   }
 
-  /* .home-hero3-under-1, .home-hero3-under-2, .home-hero3-under-3, .home-hero3-under-4 {
+  .home-hero3-under-1, 
+  .home-hero3-under-2, 
+  .home-hero3-under-3, 
+  .home-hero3-under-4 {
     flex-basis: calc(100% - 20px);
-  } */
+    max-width: calc(50% - 20px);
+  }
 
   /* divider-home-3 */
 
