@@ -71,7 +71,7 @@ const Navbar = ({ whiteBackground }) => {
       {/*nav-left */}
         <div className="nav-left">
           <Link to='/'>
-            <img style={{height:'100%', width:'150px'}}  src={logo} alt='logo' />
+            <img src={logo} alt='logo' />
           </Link>
         </div>
 

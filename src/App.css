@@ -922,9 +922,11 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.2s linear;
 }
 
 .footer-icons:hover{
+  transform: translateY(-3px) scale(1.1);
   cursor: pointer;
   color: #3770FF;
 }
@@ -932,6 +934,15 @@ body{
 .footer-section h2{
   font-weight: 600;
   /* color: #3770FF; */
+}
+
+.footer-section p{
+  cursor: pointer;
+  width: fit-content;
+  transition: transform 0.2s linear;
+}
+.footer-section p:hover{
+  transform: translateX(3px);
 }
 
 .footer-section p a{
@@ -1473,6 +1484,11 @@ form .input input:valid~i {
 
 .nav-left{
   display: flex;
+}
+
+.nav-left a img{
+  height: 100%;
+  width: 150px;
 }
 
 .nav-middle{

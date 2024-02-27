@@ -1,6 +1,6 @@
 
   
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1200px) {
   
 /* home */
 
@@ -16,6 +16,18 @@
 
     .home-hero1-left h1 {
         font-size: 24px;
+      }
+
+      /* propertiesmpage */
+
+      .myproperties-container{
+        padding: 20px 20px;
+      }
+
+      /* footer */
+
+      .footer{
+        padding: 50px;
       }
 }
 
@@ -314,6 +326,14 @@
   
 
 @media only screen and (max-width: 468px) {
+
+  /* navbar */
+
+  .nav-left a img{
+    width: 130px !important;
+  }
+
+  /* homepage */
   .home-hero1 {
     padding: 0 20px;
     flex-direction: column-reverse;
@@ -482,6 +502,11 @@
     width: 100%;
     height: 100%;
   }
+
+  .home-hero5-content-right-p2 {
+    text-align: justify;
+    font-size: 15px;
+}
 
   /* tilt-2*/
 

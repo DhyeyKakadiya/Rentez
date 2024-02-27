@@ -29,11 +29,11 @@ const Footer = () => {
           </div>
 
           <div className="footer-icons-wrapper">
-            <div className="footer-icons" ><FaXTwitter style={{height:'21px', width:'21px'}}/></div>
-            <div className="footer-icons"><FaLinkedinIn style={{height:'21px', width:'21px'}}/></div>
-            <div className="footer-icons"><FaGithub style={{height:'21px', width:'21px'}}/></div>
-            <div className="footer-icons"><FaFacebook style={{height:'21px', width:'21px'}}/></div>
-            <div className="footer-icons"><FaInstagram style={{height:'21px', width:'21px'}}/></div>
+            <div className="footer-icons" ><FaXTwitter style={{height:'22px', width:'22px'}}/></div>
+            <div className="footer-icons"><FaLinkedinIn style={{height:'22px', width:'22px'}}/></div>
+            <div className="footer-icons"><FaGithub style={{height:'22px', width:'22px'}}/></div>
+            <div className="footer-icons"><FaFacebook style={{height:'22px', width:'22px'}}/></div>
+            <div className="footer-icons"><FaInstagram style={{height:'22px', width:'22px'}}/></div>
           </div>
         </div>
 
