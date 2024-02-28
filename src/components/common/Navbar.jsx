@@ -18,6 +18,8 @@ const Navbar = ({ whiteBackground }) => {
   const location = useLocation()
   const [confirmationModal, setConfirmationModal] = useState(null)
 
+  const [scrollLocked, setScrollLocked] = useState(false); 
+
   const hamburgerRef = useRef(null);
 
   //no logout button in dashboard
@@ -74,6 +76,7 @@ const Navbar = ({ whiteBackground }) => {
 
   const closeHamburgerMenu = () => {
     setShowNavLinks(false);
+    setScrollLocked(false);
   };
 
   const handleNavLinkClick = (path) => {
@@ -89,6 +92,7 @@ const Navbar = ({ whiteBackground }) => {
         !event.target.closest('.mobile-nav-middle')
       ) {
         setShowNavLinks(false);
+        setScrollLocked(false);
       }
     };
 
@@ -97,6 +101,17 @@ const Navbar = ({ whiteBackground }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  useEffect(() => {
+    // Lock or unlock scroll based on showNavLinks state
+    if (showNavLinks) {
+      document.body.style.overflow = 'hidden'; // Lock scroll
+      setScrollLocked(true);
+    } else {
+      document.body.style.overflow = ''; // Unlock scroll
+      setScrollLocked(false);
+    }
+  }, [showNavLinks]);
 
   return (
     <nav className={`navbar ${whiteBackground ? 'white-background' : 'blue-background'}`}>
