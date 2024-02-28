@@ -1446,6 +1446,18 @@ form .input input:valid~i {
 
 /* Navbar */
 
+/* dahboard navbar */
+
+.profile-button-wrapper {
+  position: relative;
+}
+
+.dashboard-menu {
+  display: none;
+}
+
+/*  */
+
 .navbar{
   position: sticky;
   top: 0;
@@ -1460,7 +1472,7 @@ form .input input:valid~i {
   align-items: center;
   background-color: #daf2ff ;
   transition: 0.3s ease-in-out;
-  padding: 15px 4% 15px 7%;
+  padding: 15px 2% 15px 2%;
   /* border-width: 50%;
   border-bottom: 1px solid lightgray; */
 }
@@ -1733,6 +1745,10 @@ form .input input:valid~i {
 /* Dashboard */
 
 /* dashboard */
+
+.nav-right .dashboard-menu ul {
+  display: none;
+}
 
 .dashboard-wrapper{
   position: relative;

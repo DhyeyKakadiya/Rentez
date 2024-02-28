@@ -15,7 +15,6 @@ export default function SidebarLink({ link, iconName }) {
     <NavLink 
       to={link.path}
       className={`sidebar-link ${matchRoute(link.path) ? 'active' : ''}`}
-    //   onClick={() => dispatch(resetCourseState())}
     >
       <div className="sidebar-link-inside">
         {/* Icon Goes Here */}

@@ -6,8 +6,8 @@ import { TbLogout } from "react-icons/tb";
 import { logout } from "../../services/operations/authAPI"
 import ConfirmationModal from '../common/ConfirmationModal'
 
-import { IoCloseOutline } from "react-icons/io5";
-import { RxHamburgerMenu } from "react-icons/rx";
+import SidebarLink from '../core/Dashboard/SidebarLink'
+import { sidebarLinks } from "../../data/dashboard-links"
 
 const Navbar = ({ whiteBackground }) => {
 
@@ -27,6 +27,9 @@ const Navbar = ({ whiteBackground }) => {
   const isDashboardPage = dashboardRoutes.some(route => location.pathname.includes(route));
 
   const [showNavLinks, setShowNavLinks] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  const animationDelay = user && user.accountType === 'Customer' ? '0.6s' : '1s';
   
   //css active on nav routes
   const matchRoute = (route) => {
@@ -72,7 +75,19 @@ const Navbar = ({ whiteBackground }) => {
     }
   };
 
-
+  useEffect(() => {
+    const closeMenuOnLinkClick = () => {
+      setIsMenuOpen(false); // Close the dashboard menu
+    };
+  
+    // Listen for changes in the location (i.e., link clicks)
+    const unlisten = () => {
+      closeMenuOnLinkClick();
+    };
+  
+    // Return a function to stop listening for location changes
+    return unlisten;
+  }, [location]); // Run this effect whenever location changes
 
   const closeHamburgerMenu = () => {
     setShowNavLinks(false);
@@ -87,12 +102,21 @@ const Navbar = ({ whiteBackground }) => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        hamburgerRef.current &&
-        !hamburgerRef.current.contains(event.target) &&
-        !event.target.closest('.mobile-nav-middle')
+        // Check if click occurred outside of hamburger menu and outside of dashboard menu
+        (
+          hamburgerRef.current &&
+          !hamburgerRef.current.contains(event.target) &&
+          !event.target.closest('.mobile-nav-middle')
+        )
+        &&
+        (
+          // Check if click occurred outside of dashboard menu
+          !event.target.closest('.dashboard-menu')
+        )
       ) {
         setShowNavLinks(false);
         setScrollLocked(false);
+        setIsMenuOpen(false); 
       }
     };
 
@@ -104,31 +128,36 @@ const Navbar = ({ whiteBackground }) => {
 
   useEffect(() => {
     // Lock or unlock scroll based on showNavLinks state
-    if (showNavLinks) {
+    if (showNavLinks || isMenuOpen) {
       document.body.style.overflow = 'hidden'; // Lock scroll
       setScrollLocked(true);
     } else {
       document.body.style.overflow = ''; // Unlock scroll
       setScrollLocked(false);
     }
-  }, [showNavLinks]);
+  }, [showNavLinks, isMenuOpen]);
+
+
+
+
+  const toggleMenu = () => {
+    if (window.innerWidth <= 1000) {
+      setIsMenuOpen(!isMenuOpen);
+    } else {
+      // Redirect to 'dashboard/my-profile' if screen size > 1000px
+      window.location.href = '/dashboard/my-profile';
+    }
+  };
+
 
   return (
     <nav className={`navbar ${whiteBackground ? 'white-background' : 'blue-background'}`}>
 
-    {/* <div className={`hamburger-menu ${showNavLinks ? 'active' : ''}`} ref={hamburgerRef}>
-      {!showNavLinks ? (
-        <Link to="#" onClick={() => setShowNavLinks(true)}>
-          <RxHamburgerMenu />
-        </Link>
-      ) : (
-        <Link to="#" onClick={() => setShowNavLinks(false)}>
-          <IoCloseOutline />
-        </Link>
-      )}
-    </div> */}
-
-      <button className={`hamburger-menu ${showNavLinks ? 'active' : ''}`} ref={hamburgerRef} onClick={() => setShowNavLinks(!showNavLinks)}>
+      <button 
+      className={`hamburger-menu ${showNavLinks ? 'active' : ''}`} 
+      ref={hamburgerRef} 
+      onClick={() => setShowNavLinks(!showNavLinks)}
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -174,10 +203,11 @@ const Navbar = ({ whiteBackground }) => {
           <button onClick={() => navigate('/signup')}>
             Sign Up
           </button>
-      </div>
+        </div>
       )}
+      
       {/* nav-right after login */}
-      <div >
+      {/* <div className='nav-right-login'>
         <Link style={{textDecoration:'none'}} to={'dashboard/my-profile'}>
           <button className="f-name">
             {token !== null && <p>{user.firstName}</p>}
@@ -192,7 +222,65 @@ const Navbar = ({ whiteBackground }) => {
             }
           </button>
         </Link>
+      </div> */}
+
+      {/* nav-right after login for dashboard */}
+      <div className='nav-right-login'>
+      {token !== null && (
+        <div className="profile-button-wrapper">
+          <button className="f-name" onClick={toggleMenu}>
+            {user.firstName && <p>{user.firstName}</p>}
+            {user.image && (
+              <div className="profilepic">
+                <img
+                  src={user.image}
+                  alt={`profile-${user.firstName}`}
+                  className=""
+                />
+              </div>
+            )}
+          </button>
+          {isMenuOpen && (
+            <div className="dashboard-menu sidebar-top-under">
+              {sidebarLinks.map((link) => {
+                if (link.type && user?.accountType !== link.type) return null
+                return (
+                <SidebarLink 
+                  key={link.id} 
+                  link={link} 
+                  iconName={link.icon} 
+                  onClick={() => handleNavLinkClick(link.path)}
+                />
+                )
+              })}
+
+              <div className="partition-mob"/>
+
+              <div className="sidebar-bottom" style={{ animationDelay }}>
+                  <button
+                      onClick={() =>
+                      setConfirmationModal({
+                          text1: "Are you sure?",
+                          text2: "You will be logged out of your account.",
+                          btn1Text: "Logout",
+                          btn2Text: "Cancel",
+                          btn1Handler: () => dispatch(logout(navigate)),
+                          btn2Handler: () => setConfirmationModal(null),
+                      })
+                      }
+                  >
+                      <div className="logout-sidebar">
+                          <TbLogout className="logout-icon-sidebar" />
+                          <span>Logout</span>
+                      </div>
+                  </button>
+              </div>
+            </div>
+          )}
+        </div>
+          )}
       </div>
+      {/*  */}
 
         {token !==null && !isDashboardPage && (
           <div className="nav-right3">
