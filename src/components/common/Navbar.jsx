@@ -141,11 +141,15 @@ const Navbar = ({ whiteBackground }) => {
 
 
   const toggleMenu = () => {
-    if (window.innerWidth <= 1000) {
-      setIsMenuOpen(!isMenuOpen);
+    if (isMenuOpen) {
+      setIsMenuOpen(false); // Close the dashboard menu
     } else {
-      // Redirect to 'dashboard/my-profile' if screen size > 1000px
-      window.location.href = '/dashboard/my-profile';
+      if (window.innerWidth <= 1000) {
+        setIsMenuOpen(true); // Open the dashboard menu
+      } else {
+        // Redirect to 'dashboard/my-profile' if screen size > 1000px
+        window.location.href = '/dashboard/my-profile';
+      }
     }
   };
 
@@ -156,7 +160,12 @@ const Navbar = ({ whiteBackground }) => {
       <button 
       className={`hamburger-menu ${showNavLinks ? 'active' : ''}`} 
       ref={hamburgerRef} 
-      onClick={() => setShowNavLinks(!showNavLinks)}
+      onClick={() => {
+        setShowNavLinks(!showNavLinks); // Toggle mobile menu
+        if (isMenuOpen) {
+          setIsMenuOpen(false); // Close dashboard menu if open
+        }
+      }}
       >
         <span></span>
         <span></span>
