@@ -1154,6 +1154,7 @@ form .input input:valid~i {
     align-items: center;
     display: flex;
     font-size: 15px;
+    height: 100%;
 }
 
 .link{
@@ -1452,6 +1453,7 @@ form .input input:valid~i {
   padding-top: 10px;
   z-index: 1;
   display: flex;
+  gap: 20px;
   width: 100%;
   padding: 10px;
   justify-content: space-between;
@@ -1493,17 +1495,14 @@ form .input input:valid~i {
 
 .nav-middle{
   display: flex;
-  /* box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
-  background-color: white;
-  border-radius: 30px; */
 }
 
-ul{
+.nav-middle ul{
   flex: 1;
   list-style: none;
   text-align: center;
 }
-ul li{
+.nav-middle ul li{
   display: inline-block;
   margin: 10px 20px;
   font-size: 18px;
@@ -1512,7 +1511,7 @@ ul li{
 
 /*  */
 
-ul li button {
+.nav-middle ul li {
   font-size: 18px;
   color: #3f5269;
   font-family: inherit;
@@ -1523,28 +1522,28 @@ ul li button {
   transition: color 0.4s ease;
 }
 
-ul li button:focus,
-ul li button:hover,
-ul li button span.active {
+.nav-middle ul li:focus,
+.nav-middle ul li:hover,
+.nav-middle ul li span.active {
   color: #3770FF;
 }
 
-ul li button:after,
-ul li button span.active:after {
+.nav-middle ul li:after,
+.nav-middle ul li span.active:after {
   content: "";
   pointer-events: none;
   bottom: -2px;
   left: 50%;
   position: absolute;
   width: 0%;
-  height: 1px;
+  height: 1.5px;
   background-color: #3770FF;
   transition: width 0.4s ease, left 0.4s ease;
 }
 
-ul li button:hover:after,
-ul li button:focus:after,
-ul li button span.active::after {
+.nav-middle ul li:hover:after,
+.nav-middle ul li:focus:after,
+.nav-middle ul li span.active::after {
   width: 100%;
   left: 0%;
 }
@@ -1556,6 +1555,7 @@ ul li button span.active::after {
   justify-content: center;
   display: flex;
   gap: 15px;
+  position: relative;
 }
 
 .nav-right1 button {
@@ -1596,7 +1596,8 @@ ul li button span.active::after {
   border-width: 2px;
   border-color: rgba(255, 255, 255, 0.333);
   border-radius: 40px;
-  padding: 16px 24px 16px 28px;
+  /* padding: 16px 24px 16px 28px; */
+  padding: 10px 15px 10px 20px;
   transform: translate(0px, 0px) rotate(0deg);
   transition: 0.2s;
   cursor: pointer;
@@ -1619,9 +1620,6 @@ ul li button span.active::after {
   border-radius: 30px;
 }
 
-/* .profilepic:hover{
-  transform: scale(0.97);
-} */
 
 .profilepic img{
   display: flex;
@@ -1696,7 +1694,41 @@ ul li button span.active::after {
   color: #3770FF;
 }
 
+/* Mobile menu styles */
+/* .mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 100;
+}
 
+.mobile-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.mobile-menu li {
+  padding: 10px;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #333;
+} */
+
+
+.navbar-div{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.hamburger-menu{
+  display: none;
+}
 
 /* Dashboard */
 

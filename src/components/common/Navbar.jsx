@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, matchPath, useLocation } from 'react-router-dom'
 import logo from '../../assests/logo/Logo-svg-rbg.svg'
 import { useSelector, useDispatch } from 'react-redux'
@@ -6,7 +6,8 @@ import { TbLogout } from "react-icons/tb";
 import { logout } from "../../services/operations/authAPI"
 import ConfirmationModal from '../common/ConfirmationModal'
 
-
+import { IoCloseOutline } from "react-icons/io5";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = ({ whiteBackground }) => {
 
@@ -17,10 +18,14 @@ const Navbar = ({ whiteBackground }) => {
   const location = useLocation()
   const [confirmationModal, setConfirmationModal] = useState(null)
 
+  const hamburgerRef = useRef(null);
+
   //no logout button in dashboard
   const dashboardRoutes = ['/dashboard/my-profile', '/dashboard/settings','/dashboard/my-listing','/dashboard/create-listing'];
   const isDashboardPage = dashboardRoutes.some(route => location.pathname.includes(route));
 
+  const [showNavLinks, setShowNavLinks] = useState(false);
+  
   //css active on nav routes
   const matchRoute = (route) => {
     return matchPath({ path: route }, location.pathname)
@@ -66,52 +71,94 @@ const Navbar = ({ whiteBackground }) => {
   };
 
 
+
+  const closeHamburgerMenu = () => {
+    setShowNavLinks(false);
+  };
+
+  const handleNavLinkClick = (path) => {
+    closeHamburgerMenu(); // Close hamburger menu before navigating
+    navigate(path); // Navigate to the desired page
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(event.target) &&
+        !event.target.closest('.mobile-nav-middle')
+      ) {
+        setShowNavLinks(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className={`navbar ${whiteBackground ? 'white-background' : 'blue-background'}`}>
+
+    {/* <div className={`hamburger-menu ${showNavLinks ? 'active' : ''}`} ref={hamburgerRef}>
+      {!showNavLinks ? (
+        <Link to="#" onClick={() => setShowNavLinks(true)}>
+          <RxHamburgerMenu />
+        </Link>
+      ) : (
+        <Link to="#" onClick={() => setShowNavLinks(false)}>
+          <IoCloseOutline />
+        </Link>
+      )}
+    </div> */}
+
+      <button className={`hamburger-menu ${showNavLinks ? 'active' : ''}`} ref={hamburgerRef} onClick={() => setShowNavLinks(!showNavLinks)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+    <div className="navbar-div">
       {/*nav-left */}
-        <div className="nav-left">
+      <div className="nav-left">
           <Link to='/'>
             <img src={logo} alt='logo' />
           </Link>
         </div>
 
       {/*nav-middle */}
-       <div className="nav-middle flex">
-        <ul>
-          {
-            NavbarLinks.map((link, index) => (
-              <li key={index}>
-                <button onClick={() => navigate(link?.path)}>
-                  <span
-                    className={`${
-                      matchRoute(link?.path)
-                        ? 'active'
-                        : ''
-                    }`}
-                  >
-                    {link.title}
-                  </span>
-                </button>
+
+        <div className={showNavLinks ? 'mobile-nav-middle' : 'nav-middle flex'}>
+          <ul>
+            {NavbarLinks.map((link, index) => (
+              <li key={index} onClick={() => handleNavLinkClick(link.path)}>
+                <span
+                  className={`${matchRoute(link.path) ? 'active' : ''}`}
+                  onClick={() => handleNavLinkClick(link.path)}
+                >
+                  {link.title}
+                </span>
               </li>
-            ))
-          }
-        </ul>
-       </div>
+            ))}
+          </ul>
+        </div>
 
     {/* nav-right */}
     <div className="nav-right">
       {token === null && (
-         <div className="nav-right1">
-         <button onClick={() => navigate('/login')}>
-           Log In
-         </button>
-       </div>
+        <div className="nav-right1">
+          <button onClick={() => navigate('/login')}>
+            Log In
+          </button>
+        </div>
       )}
       {token === null && (
         <div className="nav-right2">
-        <button onClick={() => navigate('/signup')}>
-          Sign Up
-        </button>
+          <button onClick={() => navigate('/signup')}>
+            Sign Up
+          </button>
       </div>
       )}
       {/* nav-right after login */}
@@ -129,7 +176,7 @@ const Navbar = ({ whiteBackground }) => {
               </div>
             }
           </button>
-        </Link>   
+        </Link>
       </div>
 
         {token !==null && !isDashboardPage && (
@@ -149,11 +196,12 @@ const Navbar = ({ whiteBackground }) => {
           </div>
         )}
     </div>
+    </div>
+
+
     {confirmationModal && <ConfirmationModal modalData={confirmationModal} />}
 
     </nav>
-    
-    
 
   )
 }
