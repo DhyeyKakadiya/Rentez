@@ -30,7 +30,7 @@ const Navbar = ({ whiteBackground }) => {
   const [showNavLinks, setShowNavLinks] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  const animationDelay = user && user.accountType === 'Customer' ? '0.6s' : '0.7s';
+  const animationDelay = user && user.accountType === 'Customer' ? '0.55s' : '0.7s';
   
   //css active on nav routes
   const matchRoute = (route) => {

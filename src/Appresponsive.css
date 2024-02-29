@@ -359,7 +359,7 @@
 
   .sidebar-link{
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .sidebar-bottom {
@@ -383,8 +383,7 @@
     justify-content: flex-end;
     margin-left: auto;
     margin-right: auto;
-    /* margin-top: 1.5rem;
-    margin-bottom: 1.5rem; */
+    margin: 10px 10px;
     height: 1.5px;
     width: 83.333333%;
     background-color: lightgray;
