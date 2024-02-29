@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import aboutusheader from '../assests/images/aboutus-header.svg'
 
@@ -9,6 +9,11 @@ import ourmission from '../assests/images/ourmission.svg'
 import ourvision from '../assests/images/ourvision.svg'
 
 const About = () => {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
       <div className="aboutus-wrapper">
       <section className="aboutus-section1">

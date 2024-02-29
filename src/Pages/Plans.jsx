@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FcInfo } from "react-icons/fc";
 import { buyCourse } from "../services/operations/paymentAPI";
 import { useSelector } from "react-redux";
@@ -44,6 +44,11 @@ const Plans = () => {
         popular: false,
       },
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   return (
     <div className="bg-circle">

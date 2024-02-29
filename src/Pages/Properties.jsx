@@ -30,6 +30,11 @@ const Properties = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filterData]);
 
+    useEffect(() => {
+      window.scrollTo(0, 0); 
+    }, []);
+  
+
 
     return (
       <div className="myproperties-container">
