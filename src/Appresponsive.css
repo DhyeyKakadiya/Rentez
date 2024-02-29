@@ -1055,6 +1055,9 @@
   .custom-sub-container{
     flex-direction: column;
   }
+  #dateOfBirth{
+    width: 100%;
+  }
   .select-button {
     height: 35px;
   }
@@ -1090,6 +1093,20 @@
   .delete-account-button{
     padding: 15px;
     /* width: 100%; */
+  }
+
+  /* properties page */
+  .filter{
+    width: 90%;
+    height: 85vh;
+  }
+  
+  .filter-form{
+    padding: 0px;
+  }
+
+  .filter-form-bottom input{
+    width: 270px;
   }
 
 
