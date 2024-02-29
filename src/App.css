@@ -1523,7 +1523,7 @@ form .input input:valid~i {
 
 /*  */
 
-.nav-middle ul li {
+/* .nav-middle ul li {
   font-size: 18px;
   color: #3f5269;
   font-family: inherit;
@@ -1558,8 +1558,47 @@ form .input input:valid~i {
 .nav-middle ul li span.active::after {
   width: 100%;
   left: 0%;
+} */
+
+.nav-middle ul li {
+  font-size: 18px;
+  color: #3f5269;
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  transition: color 0.4s ease;
 }
 
+.nav-middle ul li:focus,
+.nav-middle ul li:hover,
+.nav-middle ul li span.active {
+  color: #3770FF;
+}
+
+.nav-middle ul li:after,
+.nav-middle ul li span.active:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  right: 0;
+  position: absolute;
+  width: 0%;
+  height: 1.5px;
+  background-color: #3770FF;
+  transition: width 0.4s ease, right 0.4s ease; /* Changed from left to right */
+}
+
+.nav-middle ul li:hover:after,
+.nav-middle ul li:focus:after,
+.nav-middle ul li span.active::after {
+  width: 100%;
+  right: auto;
+  left: 0;
+}
+
+/*  */
 
 /* nav right */
 .nav-right{

@@ -245,12 +245,14 @@
     content: "";
     pointer-events: none;
     bottom: -2px;
-    left: 50%;
+    /* left: 50%; */
+    right: 0;
     position: absolute;
     width: 0%;
     height: 1.5px;
     background-color: #3770FF;
-    transition: width 0.4s ease, left 0.4s ease;
+    /* transition: width 0.4s ease, left 0.4s ease; */
+    transition: width 0.4s ease, right 0.4s ease; /* Changed from left to right */
   }
 
   .mobile-nav-middle ul li:hover:after,
@@ -258,6 +260,8 @@
   .mobile-nav-middle ul li span.active::after {
     width: 100%;
     left: 0%;
+
+    right: auto;
   }
 
   .sidebar{

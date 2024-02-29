@@ -53,7 +53,7 @@ const Footer = () => {
               <h2>Quick Links</h2>
               <p><a href="/">Home</a></p>
               <p><a href="/properties">Properties</a></p>
-              <p><a href="/aboutus">About Us</a></p>
+              <p><a href="/about">About Us</a></p>
               <p><a href="/plans">Plans</a></p>
               <p><Link to="/about#footer-section">Contact Us</Link></p>
             </div>
