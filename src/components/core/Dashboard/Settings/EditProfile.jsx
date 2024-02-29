@@ -35,8 +35,8 @@ const EditProfile = () => {
         className="edit-profile-detail"
       >
         <div className="edit-profile-details">
-          <div className="edit-profile-details-column">
-            <div className="edit-profile-details-column-data">
+          <div className="edit-profile-details-row">
+            <div className="edit-profile-details-row-data">
               <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
@@ -48,7 +48,23 @@ const EditProfile = () => {
               />
               {errors?.firstName && <span>Please enter your first name.</span>}
             </div>
-            <div className="edit-profile-details-column-data">
+
+            <div className="edit-profile-details-row-data">
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                placeholder="Enter first name"
+                {...register("lastName", { required: false })}
+                defaultValue={user?.lastName}
+              />
+              {errors?.lastName && <span>Please enter your last name.</span>}
+            </div>
+          </div>
+
+          <div className="edit-profile-details-row">
+            <div className="edit-profile-details-row-data">
               <label htmlFor="dateOfBirth">Date of Birth</label>
               <input
                 type="date"
@@ -70,7 +86,29 @@ const EditProfile = () => {
                 <span>{errors?.dateOfBirth.message}</span>
               )}
             </div>
-            <div className="edit-profile-details-column-data">
+
+            <div className="edit-profile-details-row-data">
+              <label htmlFor="gender">Gender</label>
+              <select
+                type="text"
+                name="gender"
+                id="gender"
+                {...register("gender", { required: false })}
+                defaultValue={user?.additionalDetails?.gender}
+              >
+                {genders.map((ele, i) => {
+                  return (
+                    <option key={i} value={ele}>
+                      {ele}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+          </div>
+
+          <div className="edit-profile-details-row">
+          <div className="edit-profile-details-row-data">
               <label htmlFor="contactNumber">Contact Number</label>
               <input
                 type="tel"
@@ -91,39 +129,8 @@ const EditProfile = () => {
                 <span>{errors?.contactNumber.message}</span>
               )}
             </div>
-          </div>
-          <div className="edit-profile-details-column">
-            <div className="edit-profile-details-column-data">
-              <label htmlFor="lastName">Last Name</label>
-              <input
-                type="text"
-                name="lastName"
-                id="lastName"
-                placeholder="Enter first name"
-                {...register("lastName", { required: false })}
-                defaultValue={user?.lastName}
-              />
-              {errors?.lastName && <span>Please enter your last name.</span>}
-            </div>
-            <div className="edit-profile-details-column-data">
-              <label htmlFor="gender">Gender</label>
-              <select
-                type="text"
-                name="gender"
-                id="gender"
-                {...register("gender", { required: false })}
-                defaultValue={user?.additionalDetails?.gender}
-              >
-                {genders.map((ele, i) => {
-                  return (
-                    <option key={i} value={ele}>
-                      {ele}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
-            <div className="edit-profile-details-column-data">
+
+            <div className="edit-profile-details-row-data">
               <label htmlFor="about">About</label>
               <input
                 type="text"

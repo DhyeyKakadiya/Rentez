@@ -34,7 +34,7 @@ const MyProfile = () => {
           </div>
         </div>
 
-          <button className="edit-btn"
+          <button className="edit-btn edit-btn-position"
               onClick={() => {
                 navigate("/dashboard/settings");
               }}>

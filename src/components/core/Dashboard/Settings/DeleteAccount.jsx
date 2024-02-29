@@ -36,7 +36,7 @@ export default function DeleteAccount() {
             className="delete-account-button"
             onClick={handleDeleteAccount}
           >
-            I want to delete my account.
+            Delete My Account
           </button>
         </div>
       </div>

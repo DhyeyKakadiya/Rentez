@@ -375,6 +375,12 @@
     width: 160px;
   }
 
+  /* delete acc */
+  .delete-account-description{
+    width: 100%;
+    text-align: justify
+  }
+
 
   /* partition-mobile */
 
@@ -650,6 +656,36 @@
       width: 45px;
     }
 
+    /* dashboard */
+
+    /* my listing */
+
+    .card{
+      min-width: 220px;
+      width: calc(40% - 5px);
+    }
+
+    /* list property */
+
+    .my-listings-button-div{
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* update password */
+
+    .update-pass-input-container{
+      flex-direction: column;
+    }
+    /* delete acc */
+    .delete-account-container{
+      padding: 10px 15px;
+    }
+    .delete-account-description{
+      width: 100%;
+      text-align: justify
+    }
+
     /* footer */
 
     .footer{
@@ -673,6 +709,49 @@
       flex-direction: column;
     }
 
+
+}
+
+@media only screen and (max-width: 580px) {
+
+  /* dashboard */
+
+  /* create listing */
+
+  .create-listing-data-div{
+    flex-direction: column;
+  }
+
+  /* setting - edit profile */
+
+  .select-button {
+    height: 40px;
+  }
+
+  .icon-btn{
+    height: 40px;
+  }
+  
+  .back-button{
+    height: 40px;
+  }
+
+  .special-btn {
+    height: 40px;
+  }
+
+  .update-btn{
+    height: 40px;
+  }
+
+  .edit-profile-details-row{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .delete-account-content{
+    gap: 1rem;
+  }
 
 }
   
@@ -719,7 +798,7 @@
   /* dashboard-menu */
 
   .close-dashboard-menu{
-    font-size: 24px;
+    font-size: 23px;
   }
 
   /* signin page */
@@ -914,6 +993,105 @@
   .custom-shape-divider-bottom-272727 svg{
     height: 100%;
   }
+
+  /* dashboard */
+
+  /* my profile */
+
+  .profile-card h1{
+    font-size: 1.4rem;
+  }
+
+  .profile-details{
+    flex-direction: column;
+  }
+
+  .profile-info-container img{
+    width: 60px;
+  }
+
+  .space-y-1 {
+    gap: 5px;
+  }
+
+  .edit-btn-position{
+    bottom: 55px;
+  }
+
+  /* my listing */
+
+  .my-listings-wrapper-h1 {
+    font-size: 1.4rem;
+  }
+
+  .card{
+    min-width: 245px;
+    width: calc(40% - 5px);
+  }
+
+  /* create listing */
+
+  .create-listing-wrapper h1{
+    font-size: 1.4rem;
+  }
+
+  .create-listing-data select, 
+  .create-listing-data input, 
+  .create-listing-data textarea{
+    height: 45px;
+  }
+
+  /* setting */
+  /* edit profile */
+  .my-profile-title{
+    font-size: 1.4rem;
+  }
+  .custom-image {
+    width: 60px;
+  }
+  .custom-content p {
+    font-size: 14px;
+  }
+  .custom-sub-container{
+    flex-direction: column;
+  }
+  .select-button {
+    height: 35px;
+  }
+  .icon-btn{
+    height: 35px;
+  }
+  .back-button{
+    height: 35px;
+  }
+  .special-btn {
+    height: 35px;
+  }
+  .update-btn{
+    height: 35px;
+  }
+
+  .edit-profile-detail {
+    padding: 0px;
+  }
+  /* update password */
+  .update-pass-form{
+    padding: 0px;
+  }
+  /* delete account */
+  .delete-account-container{
+    flex-direction: column;
+    padding: 20px 15px;
+  }
+
+  .delete-account-description p{
+    font-size: 15px;
+  }
+  .delete-account-button{
+    padding: 15px;
+    /* width: 100%; */
+  }
+
 
   /* footer */
 

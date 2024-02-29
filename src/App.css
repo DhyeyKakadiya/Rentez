@@ -1969,7 +1969,7 @@ form .input input:valid~i {
   border: none;
   border-radius: 0.375rem;
   padding: 0.5rem 1.25rem 0.5rem 1.25rem;
-  /* font-weight: 600; */
+  width: 115px;
   gap: 7px;
   text-align: center;
   background-color: #3770FF;
@@ -2075,7 +2075,7 @@ form .input input:valid~i {
 .profile-card h1 {
   margin-bottom: 14px;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #1a1a1a;
 }
 
@@ -2153,7 +2153,7 @@ form .input input:valid~i {
   justify-content: space-between;
 }
 .details-header p{
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .edit-btn {
@@ -2162,6 +2162,11 @@ form .input input:valid~i {
   cursor: pointer;
   color: #1a1a1a;
   font-size: large;
+}
+
+.edit-btn-position{
+  bottom: 28px;
+  position: relative;
 }
 
 .about-txt{
@@ -2301,6 +2306,7 @@ form .input input:valid~i {
   font-size: 24px;
   margin-bottom: 20px;
   color: #333;
+  font-weight: 500;
 }
 
 .create-listing-data label {
@@ -2314,6 +2320,7 @@ form .input input:valid~i {
   width: 100%;
   height: 50px;
   padding: 10px;
+  margin-top: 5px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -2343,26 +2350,12 @@ form .input input:valid~i {
   font-size: 15px;
 }
 
-/* .create-listing-data button {
-  padding: 10px 15px;
-  background-color: #DAF2FF;
-  color: #3770FF;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 20px 0px 0px 0px;
-}
-
-.create-listing-data button:hover {
-  background-color: #3770FF;
-  color: #FFF;
-} */
-
 .custom-file-upload {
   position: relative;
   display: flex;
-  gap: 25px;
-  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  align-items: start;
   margin: 20px 0px;
 }
 
@@ -2394,9 +2387,15 @@ form .input input:valid~i {
   margin-bottom: 15px;
 }
 
+.create-listing-data-div{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .col {
   flex: 1;
   padding: 0 10px;
+  margin-bottom: 10px;
 }
 
 /* ------------settings--------- */
@@ -2468,8 +2467,9 @@ form .input input:valid~i {
 
 .select-button {
   bottom: 0;
+  width: 115px;
   display: flex;
-  background-color: darkblue; 
+  background-color: #00008be6; 
   color: #ffffff;
   padding: 0.5rem 1rem;
   border: none;
@@ -2521,7 +2521,10 @@ form .input input:valid~i {
 
 /* Back Button Styles */
 .back-button {
-  background-color: darkblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00008be6;
   color: #ffffff;
   cursor: pointer;
   border: none;
@@ -2558,7 +2561,7 @@ form .input input:valid~i {
 .edit-profile-detail {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
   padding: 12px 45px;
   color: #fff;
   border: none;
@@ -2570,42 +2573,43 @@ form .input input:valid~i {
 .edit-profile-details {
   display: flex;
   gap: 50px;
+  flex-direction: column;
   
 }
 
-.edit-profile-details-column {
+.edit-profile-details-row {
   display: flex;
-  flex-direction: column;
   gap: 10px;
   width: 100%;
 }
 
-.edit-profile-details-column-data {
+.edit-profile-details-row-data {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  width: 100%;
 }
 
-.edit-profile-details-column-data label {
+.edit-profile-details-row-data label {
   font-size: 14px;
   color: #1a1a1a;
 }
 
-.edit-profile-details-column-data input,
-.edit-profile-details-column-data select {
+.edit-profile-details-row-data input,
+.edit-profile-details-row-data select {
   padding: 12px;
   border: 1px solid lightgray;
   border-radius: 4px;
   background-color: #fff;
   color: #000;
 }
-.edit-profile-details-column-data input:focus{
+.edit-profile-details-row-data input:focus{
   border-color: #3770FF;
   outline: 1px solid #3770FF;
   color: #3770FF;
 }
 
-.edit-profile-details-column-data span {
+.edit-profile-details-row-data span {
   margin-top: -1px;
   font-size: 120px;
   color: #3770FF;

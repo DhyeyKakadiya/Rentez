@@ -113,7 +113,7 @@ const ListProperty = () => {
       <h1>Create Property Listing</h1>
       <form className="create-listing-data" onSubmit={handleSubmit}>
 
-        <div className="row">
+        <div className="create-listing-data-div">
          <div className="col">
           <label >
             Property Type:
@@ -150,7 +150,7 @@ const ListProperty = () => {
         
 
         {propertyTypeSelected && formData.propertyType !== "Land" && (
-          <div className="row">
+          <div className="create-listing-data-div">
             <div className="col">
             <label>
               Bathrooms:
@@ -178,7 +178,7 @@ const ListProperty = () => {
           )}
 
           {propertyTypeSelected && (
-          <div className="row">
+          <div className="create-listing-data-div">
             <div className="col">
               <label>
                 Price:
@@ -211,7 +211,7 @@ const ListProperty = () => {
           )}
 
         {propertyTypeSelected && (
-          <div className="row">
+          <div className="create-listing-data-div">
             <div className="col">
               <label>
                 Pincode:
@@ -239,7 +239,7 @@ const ListProperty = () => {
           )}
 
           {propertyTypeSelected && (
-          <div className="row">
+          <div className="create-listing-data-div">
             <div className="col">
               <label>
                 State:
@@ -283,22 +283,19 @@ const ListProperty = () => {
           )}
             
           {propertyTypeSelected && (
-            <div className="row">
-              <div className="col" style={{justifyContent:'center'}}>
-                <label className="custom-file-upload">
+            <div className="row my-listings-button-div">
+              <div className="col my-listings-button">
+                <div className="custom-file-upload">
                   Thumbnail:
                   <button type="button" onClick={handleFileClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Thumbnail Image</button>
                   <input type="file" ref={fileInputRef} id="inp" name="thumbnail" onChange={handleFileChange} />
                   
-                </label>
+                </div>
               </div>
 
-            <div className="col">
-              <label className="custom-file-upload">
-                <div className="flex" style={{display:'flex', gap:'60px',justifyContent:'center', alignItems:'center'}}>
+            <div className="col my-listings-button">
+              <div className="custom-file-upload">
                   Photos: 
-                  {/* <div style={{fontSize:'15px', fontWeight:'300'}}>(press 'ctrl' for multiple select)</div> */}
-                  
                   <button type="button" onClick={handlePhotosClick} className="profile-edit-button"><PiUploadSimpleBold/>  Upload Multiple Photos</button>
                   <input
                     type="file"
@@ -308,8 +305,7 @@ const ListProperty = () => {
                     multiple
                     onChange={handlePhotosChange}
                   /> 
-                </div>
-              </label>
+              </div>
             </div>
           </div>
         )}
