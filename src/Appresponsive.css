@@ -765,14 +765,32 @@
     align-items: center;
     justify-content: space-between;
     height: 55px;
+    gap: 5px;
   }
 
   .nav-left a img{
     width: 130px !important;
   }
-  
+
+  .nav-right{
+    gap: 0px;
+  }
+
   .nav-right1{
-    display: none;
+    margin-right: 10px;
+  }
+
+  .nav-right1 button{
+    padding: 5px 10px;
+  }
+  
+  .nav-right2{
+    display: flex;
+  }
+
+  .nav-right2 button{
+    border-radius: 5px;
+    padding: 5px 5px;
   }
 
   .f-name p{
@@ -1112,7 +1130,7 @@
   /* footer */
 
   .footer {
-    padding: 20px; /* Adjust padding for smaller screens */
+    padding: 20px;
   }
 
   .footer-top {
