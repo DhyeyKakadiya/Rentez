@@ -40,18 +40,18 @@ const Properties = () => {
                     {
                       loading ? (
                         <>
-                        {properties?.slice(0, 6).map((property, index) => (
-                          <div className="skeleton-loader" key={index}>
-                            <div className="skeleton-loader-wrapper">
-                              <div className="skeleton-loader-circle"></div> 
-                              <div className="line-1"></div>
-                              <div className="line-2"></div>
-                              <div className="line-3"></div>
-                              <div className="line-3a"></div>
-                              <div className="line-4"></div>
+                          {Array.from({ length: 6 }).map((_, index) => ( // Use a fixed number of loaders
+                            <div className="skeleton-loader" key={index}>
+                              <div className="skeleton-loader-wrapper">
+                                <div className="skeleton-loader-circle"></div>
+                                <div className="line-1"></div>
+                                <div className="line-2"></div>
+                                <div className="line-3"></div>
+                                <div className="line-3a"></div>
+                                <div className="line-4"></div>
+                              </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
                         </>
                       ) : (
                         <>

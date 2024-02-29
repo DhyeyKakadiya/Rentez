@@ -1653,6 +1653,7 @@ form .input input:valid~i {
   justify-content: center;
   align-items: center;
   color: #160a38a5;
+  transition: all 0.3s ease;
 }
 .f-name:hover{
   color: #3770FF;

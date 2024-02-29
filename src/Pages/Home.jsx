@@ -35,28 +35,22 @@ const Home = () => {
 
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    const getProperty = async () => {
-      setLoading(true);
-      const result = await getAllProperty();
-      if (result) {
+    const fetchProperties = async () => {
+      try {
+        setLoading(true);
+        const result = await getAllProperty();
         setProperties(result);
-        console.log('result: ',result)
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching properties:', error);
+        setLoading(false);
       }
     };
-    
-    getProperty();
-    setLoading(false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    fetchProperties();
   }, []);
-
-  // for random cards
-  // const getRandomProperties = () => {
-  //   const shuffledProperties = properties.sort(() => 0.5 - Math.random());
-  //   return shuffledProperties.slice(0, 6);
-  // };
-
-  // const randomProperties = getRandomProperties();
 
   return (
     <div className='container'  
@@ -135,7 +129,7 @@ const Home = () => {
               <div className="custom-element">
                   <img className="custom-icon" src={eye} alt='eye'></img>
                   <p className="custom-item-text">
-                    Visit <br /> Appointment
+                    Visit <br /> your Location
                   </p>
               </div>
               <div className="custom-element">
@@ -147,7 +141,7 @@ const Home = () => {
               <div className="custom-element">
                   <img className="custom-icon" src={happyface} alt='happyface'></img>
                   <p className="custom-item-text">
-                    Enjoy your <br /> Appointment
+                    Enjoy your <br /> new Home
                   </p>
               </div>
             </div>
@@ -252,19 +246,19 @@ const Home = () => {
                   {
                     loading ? (
                       <>
-                      {properties?.slice(0, 6).map((property, index) => (
-                        <div className="skeleton-loader" key={index}>
-                          <div className="skeleton-loader-wrapper">
-                            <div className="skeleton-loader-circle"></div> 
-                            <div className="line-1"></div>
-                            <div className="line-2"></div>
-                            <div className="line-3"></div>
-                            <div className="line-3a"></div>
-                            <div className="line-4"></div>
+                        {Array.from({ length: 3 }).map((_, index) => (
+                          <div className='skeleton-loader' key={index}>
+                            <div className='skeleton-loader-wrapper'>
+                              <div className='skeleton-loader-circle'></div>
+                              <div className='line-1'></div>
+                              <div className='line-2'></div>
+                              <div className='line-3'></div>
+                              <div className='line-3a'></div>
+                              <div className='line-4'></div>
+                            </div>
                           </div>
-                        </div>
-                      ))}
-                      </>
+                        ))}
+              </>
                     ) : (
                       <>
                       {properties?.slice(0, 6).map((property, index) => {
