@@ -1964,6 +1964,7 @@ form .input input:valid~i {
 .icon-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   height: 45px;
   border: none;

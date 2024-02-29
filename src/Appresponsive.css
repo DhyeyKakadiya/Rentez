@@ -731,6 +731,10 @@
   .icon-btn{
     height: 40px;
   }
+
+  .your-modal-custom-button {
+    height: 40px;
+  }
   
   .back-button{
     height: 40px;
@@ -761,11 +765,11 @@
   /* navbar */
 
   .navbar{
-    padding: 0px 20px;
+    padding: 0px 10px 0px 20px;
     align-items: center;
     justify-content: space-between;
     height: 55px;
-    gap: 5px;
+    gap: 10px;
   }
 
   .nav-left a img{
@@ -774,23 +778,34 @@
 
   .nav-right{
     gap: 0px;
+    flex-direction: row-reverse;
   }
 
+  /* login btn */
   .nav-right1{
     margin-right: 10px;
   }
-
   .nav-right1 button{
+    border-radius: 5px;
     padding: 5px 10px;
+    font-size: 14.5px;
+    transition: all 0.3s ease;
   }
-  
+  .nav-right1 button:hover{
+    border: none;
+    transform: scale(1.03);
+    background-color: #fff;
+    box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 5px 0px rgb(95 157 231 / 48%);
+  }
+
+  /* signup btn */
   .nav-right2{
     display: flex;
   }
-
   .nav-right2 button{
     border-radius: 5px;
     padding: 5px 5px;
+    box-shadow: none;
   }
 
   .f-name p{
@@ -1080,6 +1095,10 @@
     height: 35px;
   }
   .icon-btn{
+    height: 35px;
+  }
+  /* log out modal cancel btn */
+  .your-modal-custom-button {
     height: 35px;
   }
   .back-button{

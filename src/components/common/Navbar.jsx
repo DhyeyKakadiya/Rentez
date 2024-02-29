@@ -221,22 +221,6 @@ const Navbar = ({ whiteBackground }) => {
       )}
       
       {/* nav-right after login */}
-      {/* <div className='nav-right-login'>
-        <Link style={{textDecoration:'none'}} to={'dashboard/my-profile'}>
-          <button className="f-name">
-            {token !== null && <p>{user.firstName}</p>}
-            {token !== null && 
-              <div className="profilepic">
-                <img
-                  src={user?.image}
-                  alt={`profile-${user?.firstName}`}
-                  className=""
-                />
-              </div>
-            }
-          </button>
-        </Link>
-      </div> */}
 
       {/* nav-right after login for dashboard */}
       <div className='nav-right-login'>
@@ -283,7 +267,8 @@ const Navbar = ({ whiteBackground }) => {
                           text2: "You will be logged out of your account.",
                           btn1Text: "Logout",
                           btn2Text: "Cancel",
-                          btn1Handler: () => dispatch(logout(navigate)),
+                          btn1Handler: () => {dispatch(logout(navigate));
+                                              setConfirmationModal(null)},
                           btn2Handler: () => setConfirmationModal(null),
                       })
                       }
