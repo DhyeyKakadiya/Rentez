@@ -66,46 +66,6 @@ body{
     margin: auto;
 }
 
-
-/* .spinner{
-    width: 44.8px;
-    height: 44.8px;
-    color: #3770FF;
-    position: relative;
-    background: radial-gradient(11.2px,currentColor 94%,#0000);
-  }
-  
-  .spinner:before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: radial-gradient(10.08px at bottom right,#0000 94%,currentColor) top    left,
-            radial-gradient(10.08px at bottom left ,#0000 94%,currentColor) top    right,
-            radial-gradient(10.08px at top    right,#0000 94%,currentColor) bottom left,
-            radial-gradient(10.08px at top    left ,#0000 94%,currentColor) bottom right;
-    background-size: 22.4px 22.4px;
-    background-repeat: no-repeat;
-    animation: loader 1.5s infinite cubic-bezier(0.3,1,0,1);
-  }
-  
-  @keyframes loader {
-    33% {
-      inset: -11.2px;
-      transform: rotate(0deg);
-    }
-  
-    66% {
-      inset: -11.2px;
-      transform: rotate(90deg);
-    }
-  
-    100% {
-      inset: 0;
-      transform: rotate(90deg);
-    }
-  } */
-
   /* loader */
   .loader {
     width: 200px;
@@ -1473,14 +1433,11 @@ form .input input:valid~i {
   background-color: #daf2ff ;
   transition: 0.3s ease-in-out;
   padding: 15px 2% 15px 2%;
-  /* border-width: 50%;
-  border-bottom: 1px solid lightgray; */
 }
 
 .navbar.white-background {
   background-color: white;
   border-bottom: 1px solid lightgray;
-  /* box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%) !important; */
 }
 
 .navbar.blue-background {
@@ -1488,7 +1445,6 @@ form .input input:valid~i {
 }
 
 .navbar.scrolled {
-  /* box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06); */
   box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%) !important;
   background-color: #FFF !important;
   border: none;
@@ -1523,7 +1479,7 @@ form .input input:valid~i {
 
 /*  */
 
-/* .nav-middle ul li {
+.nav-middle ul li {
   font-size: 18px;
   color: #3f5269;
   font-family: inherit;
@@ -1558,9 +1514,9 @@ form .input input:valid~i {
 .nav-middle ul li span.active::after {
   width: 100%;
   left: 0%;
-} */
+}
 
-.nav-middle ul li {
+/* .nav-middle ul li {
   font-size: 18px;
   color: #3f5269;
   font-family: inherit;
@@ -1587,7 +1543,7 @@ form .input input:valid~i {
   width: 0%;
   height: 1.5px;
   background-color: #3770FF;
-  transition: width 0.4s ease, right 0.4s ease; /* Changed from left to right */
+  transition: width 0.4s ease, right 0.4s ease;
 }
 
 .nav-middle ul li:hover:after,
@@ -1596,7 +1552,7 @@ form .input input:valid~i {
   width: 100%;
   right: auto;
   left: 0;
-}
+} */
 
 /*  */
 
