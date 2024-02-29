@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { TbLogout } from "react-icons/tb";
 import { logout } from "../../services/operations/authAPI"
 import ConfirmationModal from '../common/ConfirmationModal'
+import { IoMdClose } from "react-icons/io";
 
 import SidebarLink from '../core/Dashboard/SidebarLink'
 import { sidebarLinks } from "../../data/dashboard-links"
@@ -29,7 +30,7 @@ const Navbar = ({ whiteBackground }) => {
   const [showNavLinks, setShowNavLinks] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
-  const animationDelay = user && user.accountType === 'Customer' ? '0.6s' : '1s';
+  const animationDelay = user && user.accountType === 'Customer' ? '0.6s' : '0.7s';
   
   //css active on nav routes
   const matchRoute = (route) => {
@@ -54,7 +55,7 @@ const Navbar = ({ whiteBackground }) => {
       path: "/about",
     },
   ];
-  console.log(NavbarLinks);
+  // console.log(NavbarLinks);
 
   // white navbar on scroll
   useEffect(() => {
@@ -80,7 +81,7 @@ const Navbar = ({ whiteBackground }) => {
       setIsMenuOpen(false); // Close the dashboard menu
     };
   
-    // Listen for changes in the location (i.e., link clicks)
+    // Listen for changes in the location (i.e. link clicks)
     const unlisten = () => {
       closeMenuOnLinkClick();
     };
@@ -151,6 +152,10 @@ const Navbar = ({ whiteBackground }) => {
         window.location.href = '/dashboard/my-profile';
       }
     }
+  };
+
+  const closeDashboardMenu = () => {
+    setIsMenuOpen(false);
   };
 
 
@@ -251,6 +256,10 @@ const Navbar = ({ whiteBackground }) => {
           </button>
           {isMenuOpen && (
             <div className="dashboard-menu sidebar-top-under">
+              <Link className="close-dashboard-menu" onClick={closeDashboardMenu}>
+                <IoMdClose  />
+              </Link>
+
               {sidebarLinks.map((link) => {
                 if (link.type && user?.accountType !== link.type) return null
                 return (
@@ -259,6 +268,7 @@ const Navbar = ({ whiteBackground }) => {
                   link={link} 
                   iconName={link.icon} 
                   onClick={() => handleNavLinkClick(link.path)}
+                  className="dashboard-menu-link"
                 />
                 )
               })}
