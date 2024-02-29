@@ -137,22 +137,18 @@ const Navbar = ({ whiteBackground }) => {
     }
   }, [showNavLinks, isMenuOpen]);
 
-
-
-
   const toggleMenu = () => {
-    if (isMenuOpen) {
-      setIsMenuOpen(false); // Close the dashboard menu
+    if (isMenuOpen && !showNavLinks) {
+      setIsMenuOpen(false); // Close the dashboard menu if it's open and the click is not on the dashboard menu button
     } else {
       if (window.innerWidth <= 1000) {
-        setIsMenuOpen(true); // Open the dashboard menu
+        setIsMenuOpen(!isMenuOpen); // Toggle the dashboard menu if the screen width is less than or equal to 1000px
       } else {
-        // Redirect to 'dashboard/my-profile' if screen size > 1000px
+        // Redirect to 'dashboard/my-profile' if screen width > 1000px
         window.location.href = '/dashboard/my-profile';
       }
     }
   };
-
 
   return (
     <nav className={`navbar ${whiteBackground ? 'white-background' : 'blue-background'}`}>
