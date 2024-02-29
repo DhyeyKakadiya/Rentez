@@ -67,7 +67,7 @@ const otpTemplate = (otp) => {
 	<body>
 		<div class="container">
 			<a href="website link"><img class="logo"
-					src="https://i.ibb.co/xDgK8gy/rentez-rbg.png" alt="Rentez Logo"></a>
+					src="https://i.ibb.co/99sCYRD/Untitled-design.png" alt="Rentez Logo"></a>
 			<div class="message">OTP Verification Email</div>
 			<div class="body">
 				<p>Dear User,</p>
@@ -87,5 +87,5 @@ const otpTemplate = (otp) => {
 module.exports = otpTemplate;
 
 
-// removed bg
+// removed bg   https://i.ibb.co/xDgK8gy/rentez-rbg.png
 // white bg     https://i.ibb.co/99sCYRD/Untitled-design.png

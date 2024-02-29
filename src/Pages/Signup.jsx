@@ -14,7 +14,6 @@ import { BsFillPenFill } from "react-icons/bs";
 import { FaPenFancy } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import logo from '../assests/logo/Logo-svg-rbg.svg'
-import logo1 from '../assests/logo/new-logo.svg'
 
 function Signup() {
 
@@ -105,13 +104,13 @@ function Signup() {
 
       {
         loading? (
-          <div class="loader">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="shadow"></div>
-            <div class="shadow"></div>
-            <div class="shadow"></div>
+          <div className="loader">
+            <div className="circle"></div>
+            <div className="circle"></div>
+            <div className="circle"></div>
+            <div className="shadow"></div>
+            <div className="shadow"></div>
+            <div className="shadow"></div>
         </div>
         ) 
         : 
@@ -129,32 +128,34 @@ function Signup() {
       {/* Form */}
         <form onSubmit={handleOnSubmit} className='login-form'>
 
-          <div className="input flex">
-          <BsFillPenFill className='user-icon'/>
-            <input
-              required
-              type="text"
-              name="firstName"
-              value={firstName}
-              onChange={handleOnChange}
-            />
-              <label for="" style={{}}>First Name <sup style={{color:'red'}}>*</sup></label>
+          <div className="flex" style={{gap:'15px'}}>
+            <div className="input flex">
+            <BsFillPenFill style={{width:'14px', height:'14px'}} className='user-icon'/>
+              <input
+                required
+                type="text"
+                name="firstName"
+                value={firstName}
+                onChange={handleOnChange}
+              />
+                <label for="">First Name <sup style={{color:'red'}}>*</sup></label>
+            </div>
+
+            <div className="input flex">
+            <FaPenFancy style={{width:'14px', height:'14px'}} className='user-icon'/>
+              <input
+                required
+                type="text"
+                name="lastName"
+                value={lastName}
+                onChange={handleOnChange}
+              />
+                <label for="">Last Name <sup style={{color:'red'}}>*</sup></label>
+            </div>
           </div>
 
           <div className="input flex">
-          <FaPenFancy className='user-icon'/>
-            <input
-              required
-              type="text"
-              name="lastName"
-              value={lastName}
-              onChange={handleOnChange}
-            />
-              <label for="">Last Name <sup style={{color:'red'}}>*</sup></label>
-          </div>
-
-          <div className="input flex">
-              <IoMail fontSize={18} className='user-icon'/>
+              <IoMail fontSize={17} className='user-icon'/>
                 <input
                   required
                   type="text"
@@ -162,11 +163,11 @@ function Signup() {
                   value={email}
                   onChange={handleOnChange}
                 />
-                <label for="">Email Address<sup style={{color:'red'}}> *</sup></label>
+                <label for="">Email Address<sup style={{color:'red',marginLeft:'5px'}}> *</sup></label>
           </div>
 
           <div className="input flex">
-            <FaLock className='lock-icon'/>
+            <FaLock style={{width:'14px', height:'14px'}} className='lock-icon'/>
               <input
                 required
                 type={showPassword ? "text" : "password"}
@@ -189,7 +190,7 @@ function Signup() {
           </div>
 
           <div className="input flex">
-            <FaLock className='lock-icon'/>
+            <FaLock style={{width:'14px', height:'14px'}} className='lock-icon'/>
               <input
                 required
                 type={showConfirmPassword ? "text" : "password"}
@@ -209,6 +210,18 @@ function Signup() {
                     <AiOutlineEye fontSize={22} fill="#000000" />
                 )}
               </span>     
+          </div>
+
+          <div className="signup-bottom">
+            <div className="tandc">
+              <input required type="checkbox"/><label>I agree to <span id="tandc">Privacy Policy</span><sup style={{color: 'red'}}>*</sup> and 
+              <span id="tandc"> Terms & Conditions</span><sup style={{color: 'red'}}>*</sup>
+              </label>
+            </div>
+            
+            {/* <div className="tandc">
+              <input required type="checkbox"/><label>I agree to all <span id="tandc">Terms & Conditions</span><sup style={{color: 'red'}}>*</sup></label>
+            </div> */}
           </div>
 
           <div className="signin-btn flex"

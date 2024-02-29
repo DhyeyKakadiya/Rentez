@@ -6,7 +6,6 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { FaLock } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import {login} from '../services/operations/authAPI'
-import logo from '../assests/logo/Logo-svg-rbg.svg'
 
 
 function Login () {
@@ -40,14 +39,14 @@ function Login () {
 
         {
           loading? (
-            <div class="loader">
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="circle"></div>
-              <div class="shadow"></div>
-              <div class="shadow"></div>
-              <div class="shadow"></div>
-          </div>
+            <div className="loader">
+              <div className="circle"></div>
+              <div className="circle"></div>
+              <div className="circle"></div>
+              <div className="shadow"></div>
+              <div className="shadow"></div>
+              <div className="shadow"></div>
+            </div>
           ) : (
 
           <div className='login-page flex wrap flex-col'>
@@ -58,7 +57,7 @@ function Login () {
           <h1>Login</h1>
           <form onSubmit={handleOnSubmit} className='login-form'>
           
-            <div className="input flex">
+            <div className="input flex" style={{marginTop:'30px'}}>
             <IoMail fontSize={18} className='user-icon' />
               <input
                 required
@@ -110,8 +109,10 @@ function Login () {
                 </button>
               </div>
 
+              {/* <div className="partition1"/> */}
+
               <div className="link flex wrap">
-                  Don't have account? <a href="/signup">Sign up!</a>
+                Don't have an account? <a href="/signup">Sign up!</a>
               </div>
             </div>
             

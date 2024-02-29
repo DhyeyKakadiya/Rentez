@@ -3,14 +3,16 @@ const router = express.Router()
 
 const { auth, isSeller } = require("../middlewares/auth")
 
-const {createListing, getAllListings, getPropertyDetail, deleteListing} = require("../controllers/Property")
+const {createListing, getAllListings, getPropertyDetail, deleteListing, notifySeller} = require("../controllers/Property")
 
 router.post("/createListing", auth, isSeller, createListing);
 
 router.get("/getAllListings", getAllListings);
 
-router.get("/getPropertyDetail", getPropertyDetail);
+router.post("/getPropertyDetail", getPropertyDetail);
 
-router.delete("/deleteListing", deleteListing);
+router.delete("/deleteListing", auth, isSeller, deleteListing);
+
+router.post("/notifySeller", notifySeller);
 
 module.exports = router;
