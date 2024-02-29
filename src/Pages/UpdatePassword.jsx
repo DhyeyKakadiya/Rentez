@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 
 import { resetPassword } from "../services/operations/authAPI"
-import { FaLock } from "react-icons/fa"
 
 function UpdatePassword() {
   const navigate = useNavigate()
@@ -36,71 +35,69 @@ function UpdatePassword() {
   }
 
   return (
-    <div className="change-pass-container">
+    <div>
       {loading ? (
-        <div className="loader">
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="shadow"></div>
-          <div className="shadow"></div>
-          <div className="shadow"></div>
+        <div class="loader">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
         </div>
       ) : (
-        <div className="change-pass-page">
+        <div>
           <h1>
             Choose new password
           </h1>
           <p>
-            Enter your new password and youre all set.
+            Almost done. Enter your new password and youre all set.
           </p>
           <form onSubmit={handleOnSubmit}>
-
-            <div className="input flex">
-            <FaLock style={{width:'14px', height:'14px'}} className='lock-icon'/>
+            <label>
+              <p>
+                New Password <sup className="text-pink-200">*</sup>
+              </p>
               <input
                 required
                 type={showPassword ? "text" : "password"}
                 name="password"
                 value={password}
                 onChange={handleOnChange}
+                placeholder="Enter Password"
               />
-              <label for="">New Password<sup style={{color:'red'}}> *</sup></label>
-
               <span
                 onClick={() => setShowPassword((prev) => !prev)}
-                className='eye-btn'
               >
                 {showPassword ? (
-                  <AiOutlineEyeInvisible fontSize={22} fill="#000000" />
-                  ) : (
-                    <AiOutlineEye fontSize={22} fill="#000000" />
-                  )}
+                  <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+                ) : (
+                  <AiOutlineEye fontSize={24} fill="#AFB2BF" />
+                )}
               </span>
-          </div>
-
-          <div className="input flex">
-            <FaLock style={{width:'14px', height:'14px'}} className='lock-icon'/>
+            </label>
+            <label>
+              <p>
+                Confirm New Password <sup className="text-pink-200">*</sup>
+              </p>
               <input
                 required
                 type={showConfirmPassword ? "text" : "password"}
                 name="confirmPassword"
                 value={confirmPassword}
                 onChange={handleOnChange}
+                placeholder="Confirm Password"
               />
-              <label for="">Confirm New Password<sup style={{color:'red'}}> *</sup></label>
               <span
                 onClick={() => setShowConfirmPassword((prev) => !prev)}
-                className='eye-btn'
               >
                 {showConfirmPassword ? (
-                  <AiOutlineEyeInvisible fontSize={22} fill="#000000" 
-                />
-                  ) : (
-                    <AiOutlineEye fontSize={22} fill="#000000" />
+                  <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
+                ) : (
+                  <AiOutlineEye fontSize={24} fill="#AFB2BF" />
                 )}
-              </span>     
-          </div>
+              </span>
+            </label>
 
             <button
               type="submit"
@@ -108,7 +105,7 @@ function UpdatePassword() {
               Reset Password
             </button>
           </form>
-          <div  className="link-back">
+          <div>
             <Link to="/login">
               <p>
                 <BiArrowBack /> Back To Login

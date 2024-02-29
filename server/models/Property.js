@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
 const propertySchema = new mongoose.Schema({
-    seller : {
+    Seller : {
         type : mongoose.Schema.Types.ObjectId,
         required : true,
-        ref : "User",
+        ref : 'User',
     },
     propertyType : {
         type : String,
@@ -28,17 +28,16 @@ const propertySchema = new mongoose.Schema({
     },
     pricePer : {
         type: String, 
-        enum : ["Day", "Week", "Month", "Year"],
+        enum : ["day", "week", "month", "year"],
         required : true,
     },
     thumbnail : {
         type : String,
         required : true,
     },
-    photos: {
-        type: [String], // Assuming an array of photo URLs
-        default: [],
-    },
+    photos : {
+        type: Array,
+    }, 
     description : {
         type : String,
         required : true,

@@ -47,31 +47,27 @@ function VerifyEmail() {
   };
 
   return (
-    <div  className="otp-wrapper">
+    <div>
       {loading ? (
         <div>
-          <div className="loader">
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="shadow"></div>
-          <div className="shadow"></div>
-          <div className="shadow"></div>
+          <div class="loader">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
+          <div class="shadow"></div>
         </div>
         </div>
       ) : (
         <div>
-          <form onSubmit={handleVerifyAndSignup} className="otp-Form">
-          <h1 className="main-heading">
+          <h1>
             Verify Email
           </h1>
-          <p className="otp-subheading">
-          A verification code has been sent to
-           <p style={{fontWeight:'700', marginTop:'3px'}}> {signupData.email} </p>
+          <p>
+            A verification code has been sent to you. Enter the code below
           </p>
-          
-          
-          
+          <form onSubmit={handleVerifyAndSignup}>
             <OtpInput
               value={otp}
               onChange={setOtp}
@@ -79,41 +75,34 @@ function VerifyEmail() {
               renderInput={(props) => (
                 <input
                   {...props}
-                  style={{boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",}}
-                  className="otp-input"
+                  placeholder="-"
                   />
               )}
               containerStyle={{
-                // display:"flex",
                 justifyContent: "space-between",
                 gap: "0 6px",
-                // width: '100%'
               }}
             />
-            
-
-            <button className="verifyButton"
+            <button
               type="submit"
             >
-              Verify OTP
+              Verify Email
             </button>
+          </form>
           
-          
-          <div className="link-signup">
+          <div>
             <Link to="/signup">
               <p>
                 <BiArrowBack /> Back To Signup
               </p>
             </Link>
-            <button className="resendBtn"
-              onClick={() => dispatch(sendOtp(signupData.email, navigate))}
+            <button
+              onClick={() => dispatch(sendOtp(signupData.email))}
             >
               <RxCountdownTimer />
-              Resend Code
+              Resend it
             </button>
           </div>
-
-          </form>
         </div>
       )}
     </div>

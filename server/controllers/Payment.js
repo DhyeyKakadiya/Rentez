@@ -4,23 +4,22 @@ const crypto = require("crypto")
 const User = require("../models/User")
 const mailSender = require("../utils/mailSender")
 const mongoose = require("mongoose")
-// const { courseEnrollmentEmail } = require("../mail/templates/courseEnrollmentEmail")
+const { courseEnrollmentEmail } = require("../mail/templates/courseEnrollmentEmail")
 const { paymentSuccessEmail } = require("../mail/templates/paymentSuccessEmail")
 
 // Capture the payment and initiate the Razorpay order
 exports.capturePayment = async (req, res) => {
   const userId = req.user.id
-  // console.log(userId)
-  const {plan} = req.body;
   if (!userId) {
     return res.json({ success: false, message: "Please Provide User ID" })
   }
 
-  let total_amount = plan;
+  let total_amount = 499
 
+  
     try {
-        const user = await User.findOne({_id : userId});
-      if (user.subscriptionExpires.getTime() > new Date(Date.now()).getTime()) {
+        const user = await User.findOne(userId);
+      if (user.subscribed !== false) {
         return res
           .status(200)
           .json({ success: false, message: "You are already subscribed!!" })
@@ -28,7 +27,7 @@ exports.capturePayment = async (req, res) => {
 
     } catch (error) {
       console.log(error)
-      return res.status(500).json({ success: false, message: error })
+      return res.status(500).json({ success: false, message: error.message })
     }
   
 
@@ -41,7 +40,7 @@ exports.capturePayment = async (req, res) => {
   try {
     // Initiate the payment using Razorpay
     const paymentResponse = await instance.orders.create(options)
-    // console.log(paymentResponse)
+    console.log(paymentResponse)
     res.json({
       success: true,
       data: paymentResponse,
@@ -59,28 +58,18 @@ exports.verifyPayment = async (req, res) => {
   const razorpay_order_id = req.body?.razorpay_order_id
   const razorpay_payment_id = req.body?.razorpay_payment_id
   const razorpay_signature = req.body?.razorpay_signature
-  const plan = req.body?.plan
-  const planType = req.body?.planType;
+  const courses = req.body?.courses
+
   const userId = req.user.id
 
   if (
     !razorpay_order_id ||
     !razorpay_payment_id ||
     !razorpay_signature ||
-    !plan ||
-    !planType ||
+    !courses ||
     !userId
   ) {
-    return res.status(200).json({ success: false, message: "Detail not found" })
-  }
-
-  let day;
-
-  if(plan <= 1499){
-    day = 29;
-  }
-  else {
-    day = 365
+    return res.status(200).json({ success: false, message: "Payment Failed" })
   }
 
   let body = razorpay_order_id + "|" + razorpay_payment_id
@@ -92,10 +81,7 @@ exports.verifyPayment = async (req, res) => {
 
   if (expectedSignature === razorpay_signature) {
     try {
-      var date = new Date(Date.now());
-      date.setDate(date.getDate() + day);
-
-        const user = await User.findOneAndUpdate({ _id : userId}, { subscriptionExpires : date, planType }, { new : true })
+        const user = await User.findOneAndUpdate({ _id : userId}, { subscribed : true}, { new : true })
 
         const emailResponse = await mailSender(
             user.email,
@@ -106,7 +92,7 @@ exports.verifyPayment = async (req, res) => {
             )
           )
     
-          // console.log("Email sent successfully: ", emailResponse.response)/
+          console.log("Email sent successfully: ", emailResponse.response)
     } catch (error) {
         console.log(error)
         return res.status(400).json({ success: false, error: error.message })
@@ -130,13 +116,13 @@ exports.sendPaymentSuccessEmail = async (req, res) => {
   }
 
   try {
-    const user = await User.findById(userId)
+    const enrolledStudent = await User.findById(userId)
 
     await mailSender(
-      user.email,
+      enrolledStudent.email,
       `Payment Received`,
       paymentSuccessEmail(
-        `${user.firstName} ${user.lastName}`,
+        `${enrolledStudent.firstName} ${enrolledStudent.lastName}`,
         amount / 100,
         orderId,
         paymentId
@@ -146,6 +132,7 @@ exports.sendPaymentSuccessEmail = async (req, res) => {
     console.log("error in sending mail", error)
     return res
       .status(400)
-      .json({ success: false, message: "Could not send payment receiving email" })
+      .json({ success: false, message: "Could not send email" })
   }
 }
+

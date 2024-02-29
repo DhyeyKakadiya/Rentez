@@ -7,32 +7,32 @@ const mongoose = require("mongoose")
 exports.updateProfile = async (req, res) => {
   try {
     const {
-      firstName = "",
-      lastName = "",
       dateOfBirth = "",
       about = "",
       contactNumber = "",
-      gender = "",
+      gender = ""
     } = req.body
+
+
     const id = req.user.id
+    console.log("id: ",id)
 
     // Find the profile by id
     const userDetails = await User.findById(id)
-    const profile = await Profile.findById(userDetails.additionalDetails)
+    const profileId = userDetails.additionalDetails;
+    const profileDetails = await Profile.findById(profileId);
 
-    userDetails.firstName = firstName
-    userDetails.lastName = lastName
-
-    await userDetails.save()
-
+    // const profile = await Profile.findById(userDetails.additionalDetails)
+    
     // Update the profile fields
-    profile.dateOfBirth = dateOfBirth
-    profile.about = about
-    profile.contactNumber = contactNumber
-    profile.gender = gender
+    profileDetails.dateOfBirth = dateOfBirth;
+    profileDetails.about = about;
+    profileDetails.gender = gender;
+    profileDetails.contactNumber = contactNumber;
 
     // Save the updated profile
-    await profile.save()
+    await profileDetails.save()
+    console.log("profile:", profileDetails);
 
     // Find the updated user details
     const updatedUserDetails = await User.findById(id)
@@ -136,26 +136,25 @@ exports.updateDisplayPicture = async (req, res) => {
   }
 }
 
+
 exports.getSellerListings = async (req, res) => {
-  try {
-      const sellerId = req.user.id;
-      // console.log(req.user);
+    try {
+        const sellerId = req.user.id;
 
-      const Listings = await Property.find({
-          seller: sellerId,
-      }).sort("createdAt");
+        const Listings = await Property.find({
+            Seller: sellerId,
+        }).sort("createdAt");
 
-      res.status(200).json({
-          success: true,
-          data: Listings,
-      })
-
-  } catch (error) {
-      console.error(error)
-      res.status(500).json({
-      success: false,
-      message: "Failed to retrieve Seller's Listings",
-      error: error.message,
-  })
-  }
+        res.status(200).json({
+            success: true,
+            data: Listings,
+        })
+     } catch (error) {
+        console.error(error)
+        res.status(500).json({
+        success: false,
+        message: "Failed to retrieve Seller's Listings",
+        error: error.message,
+    })
+    }
 }
