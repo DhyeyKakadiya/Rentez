@@ -716,6 +716,12 @@
     height: 270px;
   }
 
+  /* dashboard-menu */
+
+  .close-dashboard-menu{
+    font-size: 24px;
+  }
+
   /* signin page */
 
   .signin-btn button{
