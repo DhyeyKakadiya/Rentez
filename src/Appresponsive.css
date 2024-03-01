@@ -65,10 +65,17 @@
   
 
 @media (max-width: 800px){
-.my-properties{
-  gap: 0px;
+  .my-properties{
+    gap: 0px;
+  }
 }
-}
+
+/* @media (max-width: 860) {
+  .sub-carousel-img-div img{
+    height: 80px;
+    width: 120px
+  }
+} */
 
 /* for navbar */
 
@@ -401,6 +408,53 @@
     z-index: 0;
   }
 
+  /* property detail page */
+
+  .sub-carousel{
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .sub-carousel img{
+    width: 180px;
+    height: 120px;
+  }
+  
+
+  .property-content{
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .property-highlights-wrapper{
+    width: 100%;
+  }
+
+  .seller-form{
+    top: 0;
+    position: relative !important;
+    /* padding: 10px;
+    border: 1px solid rgb(234, 234, 234);
+    border-radius: 10px; */
+  }
+  .seller-form-container {
+    width: 100%;
+    padding: 0px;
+  }
+  .seller-form-input-div{
+    margin-top: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .input-seller-form{
+    width: 100%;
+    max-width: 550px;
+  }
+  .send-req{
+    max-width: 550px;
+  }
 
 }
 
@@ -414,6 +468,20 @@
 
   .navbar{
     height: 70px;
+  }
+
+  .property-details-container {
+    padding: 25px 50px;
+  }
+
+  .main-carousel img{
+    height: 250px;
+    width: 450px;
+  }
+
+  .sub-carousel img{
+    width: 150px;
+    height: 100px;
   }
 
 }
@@ -686,6 +754,24 @@
       text-align: justify
     }
 
+    /* property details page */
+
+    .property-details-container{
+      padding: 20px;
+    }
+
+    .sub-carousel{
+      flex-direction: row;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 10px;
+    }
+
+    .sub-carousel img{
+      width: 150px;
+      height: 100px;
+    }
+
     /* footer */
 
     .footer{
@@ -755,6 +841,18 @@
 
   .delete-account-content{
     gap: 1rem;
+  }
+
+  .main-carousel img{
+    width: 100%;
+  }
+
+  .property-highlights{
+    padding: 10px;
+  }
+
+  .property-seller{
+    padding: 10px;
   }
 
 }
@@ -1144,6 +1242,88 @@
 
   .filter-form-bottom input{
     width: 270px;
+  }
+
+  /* property details page */
+
+  .main-carousel img{
+    width: 100%;
+    height: 190px;
+  }
+
+  .sub-carousel img{
+    width: 120px;
+    height: 80px;
+  }
+
+  .property-type {
+    font-size: 24px;
+  }
+
+  .property-address-inside{
+    align-items: start;
+    font-size: 18px;
+  }
+  .property-address-inside svg{
+    position: relative;
+    top: 7px;
+  }
+  .property-price{
+    font-size: 18px;
+  }
+  .property-description h3{
+    font-size: 20px;
+  }
+  .read-more-div button{
+    font-size: 16px !important;
+  }
+
+  .property-features h2{
+    font-size: 20px;
+  }
+
+  .feature-item-container {
+    flex-direction: column;
+  }
+
+  .feature-item{
+    padding: 5px;
+    border-radius: 10px !important;
+    flex-direction: row !important;
+    width: 100%;
+  }
+
+  .feature-item svg{
+    font-size: 20px !important;
+  }
+
+  .feature-item-sub{
+    font-size: 18px !important;
+  }
+
+  .property-seller{
+    flex-direction: column;
+    gap: 8px;
+  }
+  .property-seller img{
+    width: 55px;
+    height: 55px;
+  }
+  .property-seller-description{
+    font-size: 16px;
+  }
+  .property-seller-sub-div {
+    flex-direction: column;
+    font-size: 18px;
+  }
+  .seller-form h1{
+    font-size: 24px;
+  }
+  .input-seller-form{
+    height: 45px;
+  }
+  .send-req button{
+    height: 40px;
   }
 
   /* footer */

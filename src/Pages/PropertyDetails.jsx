@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useEffect, useState } from "react";
 import { getPropertyDetail, notifySeller } from "../services/operations/propertyAPI";
 import { useParams } from "react-router-dom";
@@ -7,10 +7,6 @@ import { SlLocationPin  } from "react-icons/sl";
 import { TbResize } from "react-icons/tb";
 import { IoBedOutline } from "react-icons/io5";
 import { LuBath } from "react-icons/lu";
-
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import ReadMore from "./ReadMore";
 
 const PropertyDetails = () => {
@@ -62,50 +58,23 @@ const PropertyDetails = () => {
     });
   };
 
-  const mainCarouselRef = useRef(null);
-  const subCarouselRef = useRef(null);
+  const [detail, setDetail] = useState();
+  const [images, setImages] = useState([]);
+  const [activeImg, setActiveImage] = useState("");
 
-  const [mainSelectedIndex, setMainSelectedIndex] = useState(0);
-  const [subSelectedIndex, setSubSelectedIndex] = useState(0);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getPropertyDetail(propertyId);
+      if (response && response.photos) {
+        const newImages = [...response.photos];
+        setImages(newImages);
+        setActiveImage(newImages[0]);
+        setDetail(response);
+      }
+    };
 
-  const handleMainImageClick = (index) => {
-    setMainSelectedIndex(index);
-    setSubSelectedIndex(index);
-    subCarouselRef.current.slickGoTo(index);
-  };
-
-  const handleSubImageClick = (index) => {
-    setMainSelectedIndex(index);
-    setSubSelectedIndex(index);
-    mainCarouselRef.current.slickGoTo(index);
-  };
-
-  const mainSettings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    arrows: false,
-    autoplaySpeed: 3000,
-    afterChange: (current) => setMainSelectedIndex(current),
-  };
-
-  const subSettings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    arrows: false,
-    autoplaySpeed: 3000,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    focusOnSelect: true,
-    centerMode: true,
-    centerPadding: '40px',
-    afterChange: (current) => setSubSelectedIndex(current),
-  };
+    fetchData();
+  }, [propertyId]);
 
   document.body.scrollTop=document.documentElement.scrollTop=0;
 
@@ -115,28 +84,31 @@ const PropertyDetails = () => {
     <div className="property-details-container">
 
       {/* main slider */}
-      <div className="flex flex-col" style={{gap:'30px'}}>
-      <div className="main-carousel">
-        <Slider ref={mainCarouselRef} {...mainSettings}>
-          {properties.photos?.map((photo, index) => (
-            <div key={index}>
-              <img src={photo} alt={`main-pics-${index}`} onClick={() => handleMainImageClick(index)} />
-            </div>
-          ))}
-        </Slider>
-      </div>
+      <div className="carousel-div">
+        <div className="main-carousel">
+          <img src={activeImg} alt="" />
+        </div>
 
       {/* sub slider */}
       <div className="sub-carousel">
-        <Slider ref={subCarouselRef} {...subSettings}>
-          {properties.photos?.map((photo, index) => (
-            <div key={index}>
-              <img src={photo} alt={`sub-pics-${index}`} onClick={() => handleSubImageClick(index)} />
-            </div>
-          ))}
-        </Slider>
+          {properties.photos?.map((photo, index) => {
+            return(
+            <img
+                    style={
+                      activeImg === photo
+                        ? { border: "2px solid #3770FF" }
+                        : { border: "none" }
+                    }
+                    key={index}
+                    src={photo}
+                    alt="pics"
+                    onClick={() => setActiveImage(photo)}
+                  />
+              ) 
+          })}
       </div>
-      </div>
+
+    </div>
 
 
     <div className="property-content">
@@ -185,32 +157,32 @@ const PropertyDetails = () => {
           <h2>
             Home Details
           </h2>
-          <div className="feature-item-container flex">
+          <div className="feature-item-container">
             
-            <div className="feature-item flex flex-col">
-            <IoBedOutline style={{color:'#3770FF', fontSize:'30px'}}/>
-              <div style={{fontSize:'20px' , gap:"5px",display:'flex'}}>
-                <span style={{color:'#3770FF'}}>
+            <div className="feature-item">
+              <IoBedOutline />
+              <div className="feature-item-sub">
+                <span>
                   {properties.bhk}
                 </span>
                 BHK
               </div>
             </div>
 
-            <div className="feature-item flex flex-col">
-              <LuBath style={{color:'#3770FF', fontSize:'30px'}}/>
-              <div style={{fontSize:'20px', gap:"5px",display:'flex'}}>
-                <span style={{color:'#3770FF'}}>
+            <div className="feature-item">
+              <LuBath/>
+              <div className="feature-item-sub">
+                <span>
                   {properties.bathrooms}
                 </span> 
                 Baths
               </div>
             </div>
 
-            <div className="feature-item flex flex-col">
-              <TbResize style={{color:'#3770FF', fontSize:'30px'}}/>
-              <div style={{fontSize:'20px', gap:"5px",display:'flex'}}>
-                <span style={{color:'#3770FF'}}>
+            <div className="feature-item">
+              <TbResize/>
+              <div className="feature-item-sub">
+                <span>
                   {properties.size}
                 </span> 
                 Sq.ft
@@ -222,11 +194,11 @@ const PropertyDetails = () => {
 
       <div className="property-seller">
 
-        <img src={`${properties.seller?.image}`} alt="profile-pic" style={{width:'70px', height:'70px',borderRadius: '30px'}} />
+        <img src={`${properties.seller?.image}`} alt="profile-pic" />
       
-        <div className="flex flex-col" style={{ width:'100%',justifyContent:'center', gap:'10px'}}>
+        <div className="property-seller-div">
 
-          <div className="flex" style={{justifyContent:'space-between', width:'100%',alignItems:'center'}}>
+          <div className="property-seller-sub-div">
             <p style={{textTransform:'capitalize'}}>
             {`${properties.seller?.firstName}
             ${properties.seller?.lastName}`}
@@ -235,7 +207,7 @@ const PropertyDetails = () => {
             <p>{`${properties.seller?.email}`}</p>
           </div>
 
-          <p style={{fontSize: '18px',fontWeight: '300'}}>{properties.seller?.additionalDetails?.about ?? "About Seller"}</p>
+          <p className="property-seller-description">{properties.seller?.additionalDetails?.about ?? "About Seller"}</p>
 
         </div>
 
@@ -246,6 +218,7 @@ const PropertyDetails = () => {
       <div className="seller-form-container">
             <form className="seller-form" onSubmit={handleOnSubmit}>
               <h1>Request an Inquiry</h1>
+              <div className="seller-form-input-div">
               <input
                 required
                 type="text"
@@ -289,6 +262,7 @@ const PropertyDetails = () => {
                 <button type="submit" className="special-btn">
                   Send Request
                 </button>
+              </div>
               </div>
             </form>
       </div>
