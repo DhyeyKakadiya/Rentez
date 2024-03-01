@@ -70,13 +70,6 @@
   }
 }
 
-/* @media (max-width: 860) {
-  .sub-carousel-img-div img{
-    height: 80px;
-    width: 120px
-  }
-} */
-
 /* for navbar */
 
 @media only screen and (max-width: 1000px) {
@@ -1266,7 +1259,7 @@
   }
   .property-address-inside svg{
     position: relative;
-    top: 7px;
+    font-size: 30px !important;
   }
   .property-price{
     font-size: 18px;
@@ -1274,8 +1267,11 @@
   .property-description h3{
     font-size: 20px;
   }
+  .read-more-div p{
+    font-size: 15px;
+  }
   .read-more-div button{
-    font-size: 16px !important;
+    font-size: 15px !important;
   }
 
   .property-features h2{
