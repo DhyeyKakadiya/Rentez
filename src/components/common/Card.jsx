@@ -35,6 +35,7 @@ const Card = ({className,img, city, state, bhk, size, bath, price, pricePer, typ
   }, [propertyId]);
 
   return (
+    <>
           <div className={`card ${className}`}>
             <div className='card-img'>
               <img src={img} alt='' />
@@ -97,10 +98,12 @@ const Card = ({className,img, city, state, bhk, size, bath, price, pricePer, typ
                 )
               }
             </div>
-            {
-              confirmationModal && <ConfirmationModal modalData={confirmationModal} />
-            }
+            
           </div>
+          {
+            confirmationModal && <ConfirmationModal modalData={confirmationModal} />
+          }
+        </>
   )
 }
 
