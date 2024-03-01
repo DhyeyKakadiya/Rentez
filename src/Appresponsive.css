@@ -449,6 +449,18 @@
     max-width: 550px;
   }
 
+  /* plans page */
+
+  .pricing-grid{
+    width: 360px;
+    flex-direction: column;
+  }
+
+  .pricing-package{
+    border-color: lightgray;
+    background-color: #FFF;
+  }
+
 }
 
 
@@ -481,6 +493,11 @@
   
  
 @media only screen and (max-width: 768px) {
+
+  /* plans page */
+  .pricing-container{
+    padding: 0px 40px 40px 40px;
+  }
 
   /* navbar */
 
@@ -853,10 +870,52 @@
     padding: 10px;
   }
 
+  /* plans page */
+
+  .pricing-container{
+    padding: 20px;
+  }
+
 }
   
 
 @media only screen and (max-width: 468px) {
+
+  /* plans page */
+  .pricing-title {
+    font-size: 1.8rem;
+  }
+  .pricing-description {
+    font-size: 15px;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    margin-top: 1rem;
+  }
+  .pricing-grid{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .pricing-package{
+    max-width: 300px;
+  }
+  .pricing-package-name {
+    font-size: 1.8rem;
+  }
+  .pricing-package-price {
+    font-size: 2rem;
+  }
+  .pricing-package-description{
+    font-size: 15px;
+  }
+  .feature svg {
+    height: 20px;
+    width: 20px;
+  }
+  .feature-text{
+    font-size: 15px;
+  }
 
   /* navbar */
 
