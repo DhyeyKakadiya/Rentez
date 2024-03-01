@@ -726,6 +726,11 @@
       width: calc(40% - 5px);
     }
 
+    .skeleton-loader{
+      min-width: 220px;
+      width: calc(40% - 5px);
+    }
+
     /* list property */
 
     .my-listings-button-div{
@@ -1244,6 +1249,11 @@
 
   .filter-form-bottom input{
     width: 270px;
+  }
+
+  .skeleton-loader{
+    min-width: 245px;
+    width: calc(40% - 5px);
   }
 
   /* property details page */

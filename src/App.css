@@ -932,6 +932,7 @@ body{
 }
 
 .footer-sub-content-right{
+  flex-direction: row-reverse;
   display: flex;
   justify-content: center;
   gap: 40px;

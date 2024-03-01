@@ -26,7 +26,6 @@ const Properties = () => {
       };
     
       getProperty();
-      // setLoading(false);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filterData]);
 
