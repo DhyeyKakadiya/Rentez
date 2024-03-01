@@ -3484,6 +3484,7 @@ input:focus {
   overflow: hidden; 
   background: linear-gradient(180deg, rgba(218, 242, 255, 1) 20%,
    rgba(227, 230, 255, 0) 100%);
+   scroll-behavior: smooth;
 }
 
 /* .bg-circle::before {
@@ -3623,12 +3624,13 @@ input:focus {
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
-  backdrop-filter: blur(16px) saturate(200%);
-  background-color: rgba(255, 255, 255, 0.52);
+  background-color: #FFF;
+  /* backdrop-filter: blur(16px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.52); */
   border: 1px solid rgba(209, 213, 219, 0.436);
 }
 .pricing-package:hover{
-  box-shadow: 0 4px 8px rgba(0.2, 0.2, 0.2, 0.2);
+  box-shadow: 0 4px 8px rgba(143, 176, 204, 0.366);
 }
 
 .pricing-package-name {
