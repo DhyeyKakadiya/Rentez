@@ -1107,6 +1107,15 @@
     height: 100%;
   }
 
+  .home-hero5-content-left img{
+    height: 40px;
+    width: 40px;
+  }
+
+  .home-hero5-content-right-p1 {
+    font-size: 16px;
+  }
+
   .home-hero5-content-right-p2 {
     text-align: justify;
     font-size: 15px;
@@ -1329,29 +1338,43 @@
   }
 
   .footer-top {
-    flex-direction: column;
     gap: 10px;
     align-items: center;
   }
 
+  .company-logo a img{
+    width: 130px !important;
+  }
+
+  .footer-icons-wrapper {
+    gap: 15px;
+    justify-content: center; 
+  }
+
+  .footer-icons svg{
+    height: 20px !important;
+    width: 20px !important;
+  }
+
   .footer-section h2 {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .footer-section p{
+    font-size: 15px;
   }
 
   .footer-sub-content-left {
     width: 100%; 
+    font-size: 15px;
     margin: 0;
     align-items: center;
     height: auto;
   }
 
   .footer-sub-content-right {
-    gap: 10px;
+    gap: 30px;
     margin-top: 10px;
-  }
-
-  .footer-icons-wrapper {
-    justify-content: center; 
   }
 
   .partition2 {
