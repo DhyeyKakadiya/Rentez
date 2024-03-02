@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { RiEditBoxLine } from "react-icons/ri";
 import { formattedDate } from "../../../utils/dateFormatter"
 import dateFormat from "dateformat";
+import { FiEdit } from "react-icons/fi";
 
 const MyProfile = () => {
 
@@ -35,16 +36,17 @@ const MyProfile = () => {
         </div>
 
         <div className="edit-btn-div">
-                <button
-                className="edit-btn"
-                onClick={() => {
-                  navigate("/dashboard/settings");
-                }}
-              >
-                <RiEditBoxLine />
-              </button>
-              Edit
-              </div>
+          <button
+            className="edit-btn"
+            onClick={() => {
+            navigate("/dashboard/settings");
+          }}
+          >
+            <FiEdit />
+            Edit
+          </button>
+              
+        </div>
 
       </div>
 
@@ -54,6 +56,7 @@ const MyProfile = () => {
         <div className="details-container">
             <div className="details-header">
               <p className="text-richblack-5">Personal Details</p>
+
               <div className="edit-btn-div">
                 <button
                 className="edit-btn"
@@ -61,9 +64,10 @@ const MyProfile = () => {
                   navigate("/dashboard/settings");
                 }}
               >
-                <RiEditBoxLine />
+                <FiEdit />
+                Edit
               </button>
-              Edit
+              
               </div>
             </div>
             <div className="personal-details">
@@ -106,14 +110,18 @@ const MyProfile = () => {
         <div className="details-container" style={{marginBottom:'40px'}}>
           <div className="details-header">
             <p className="text-richblack-5">About</p>
-            <button
-              className="edit-btn"
-              onClick={() => {
-                navigate("/dashboard/settings");
-              }}
-            >
-              <RiEditBoxLine />
-            </button>
+            <div className="edit-btn-div">
+                <button
+                className="edit-btn"
+                onClick={() => {
+                  navigate("/dashboard/settings");
+                }}
+              >
+                <FiEdit />
+                Edit
+              </button>
+              
+              </div>
           </div>
           <p
             className={`${

@@ -25,7 +25,7 @@ const MyListing = () => {
       } catch (error) {
         console.error("Failed to fetch properties", error);
       } finally {
-        setLoading(false); // Stop loading regardless of the result
+        setLoading(true); // Stop loading regardless of the result
       }
     };
   
@@ -48,6 +48,7 @@ const MyListing = () => {
                  <div className="line-3"></div>
                  <div className="line-3a"></div>
                  <div className="line-4"></div>
+                 <div className="line-4a"></div>
                </div>
              </div>
            ))}

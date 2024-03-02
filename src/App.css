@@ -193,47 +193,47 @@ body{
 
 .skeleton-loader .line-1 {
     position: absolute;
-    top: 165px; /* Changed from margin-top to top */
+    top: 165px; 
     height: 30px;
     width: 180px;
-    background-color: #e2e1e1; /* Added background color */
+    background-color: #e2e1e1;
 }
 
 .skeleton-loader .line-2 {
     position: absolute;
-    top: 210px; /* Adjusted position */
+    top: 210px;
     left: 0;
     height: 20px;
     width: 160px;
-    background-color: #e2e1e1; /* Added background color */
+    background-color: #e2e1e1;
 }
 
 .skeleton-loader .line-3 {
     position: absolute;
-    top: 245px; /* Adjusted position */
+    top: 245px; 
     left: 0;
     height: 15px;
     width: 130px;
-    background-color: #e2e1e1; /* Added background color */
+    background-color: #e2e1e1;
 }
 
 .skeleton-loader .line-3a {
   position: absolute;
-  top: 275px; /* Adjusted position */
+  top: 275px; 
   left: 0;
   height: 15px;
   width: 100px;
-  background-color: #e2e1e1; /* Added background color */
+  background-color: #e2e1e1;
 }
 
 .skeleton-loader .line-4 {
     position: absolute;
-    top: 305px; /* Adjusted position */
+    top: 305px; 
     left: 17px;
     height: 36px;
     border-radius: 4px;
-    width: 266.4px; /* Adjusted width */
-    background-color: #e2e1e1; /* Added background color */
+    width: 266.4px;
+    background-color: #e2e1e1; 
 }
 
 @keyframes gradient-animation_2 {
@@ -2083,7 +2083,7 @@ form .input input:valid~i {
 
 .profile-info-container {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   /* border: 1px solid #1a1a1a; */
   border-radius: 10px;
@@ -2159,11 +2159,26 @@ form .input input:valid~i {
 }
 
 .edit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   color: #1a1a1a;
-  font-size: large;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  padding: 2px 5px;
+  transition: all 0.3s ease;
+}
+.edit-btn svg{
+  font-size: 14px;
+}
+
+.edit-btn:hover{
+  transform: scale(0.97);
 }
 
 .edit-btn-position{

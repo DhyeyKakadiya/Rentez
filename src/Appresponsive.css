@@ -1211,6 +1211,13 @@
     gap: 5px;
   }
 
+  .edit-btn{
+    font-size: 12px;
+  }
+  .edit-btn svg{
+    font-size: 12px;
+  }
+
   .edit-btn-position{
     bottom: 55px;
   }
