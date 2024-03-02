@@ -4,7 +4,7 @@ import IconBtn from '../../common/IconBtn'
 import { Link, useNavigate } from 'react-router-dom'
 import { RiEditBoxLine } from "react-icons/ri";
 import { formattedDate } from "../../../utils/dateFormatter"
-import dateFormat, { masks } from "dateformat";
+import dateFormat from "dateformat";
 
 const MyProfile = () => {
 
@@ -34,12 +34,17 @@ const MyProfile = () => {
           </div>
         </div>
 
-          <button className="edit-btn edit-btn-position"
-              onClick={() => {
-                navigate("/dashboard/settings");
-              }}>
-            <RiEditBoxLine />
-          </button>
+        <div className="edit-btn-div">
+                <button
+                className="edit-btn"
+                onClick={() => {
+                  navigate("/dashboard/settings");
+                }}
+              >
+                <RiEditBoxLine />
+              </button>
+              Edit
+              </div>
 
       </div>
 
@@ -49,7 +54,8 @@ const MyProfile = () => {
         <div className="details-container">
             <div className="details-header">
               <p className="text-richblack-5">Personal Details</p>
-              <button
+              <div className="edit-btn-div">
+                <button
                 className="edit-btn"
                 onClick={() => {
                   navigate("/dashboard/settings");
@@ -57,6 +63,8 @@ const MyProfile = () => {
               >
                 <RiEditBoxLine />
               </button>
+              Edit
+              </div>
             </div>
             <div className="personal-details">
               <div className="detail">

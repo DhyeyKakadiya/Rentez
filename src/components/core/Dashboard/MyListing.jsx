@@ -15,7 +15,7 @@ const MyListing = () => {
   
   useEffect(() => {
     const getProperty = async () => {
-      setLoading(true);
+      setLoading(true); // Start loading
       try {
         const result = await getSellersListings(token);
         if (result) {
@@ -25,7 +25,7 @@ const MyListing = () => {
       } catch (error) {
         console.error("Failed to fetch properties", error);
       } finally {
-        setLoading(false);
+        setLoading(false); // Stop loading regardless of the result
       }
     };
   
@@ -35,19 +35,25 @@ const MyListing = () => {
 
   return (
     <div className="mylisting-container">
+      <h1 className="my-listings-wrapper-h1">My Listings</h1>
       <div className="my-listings-wrapper">
         {loading ? (
-          <div className="loader">
-            <div className="circle"></div>
-            <div className="circle"></div>
-            <div className="circle"></div>
-            <div className="shadow"></div>
-            <div className="shadow"></div>
-            <div className="shadow"></div>
-          </div>
+           <>
+           {Array.from({ length: 3 }).map((_, index) => (
+             <div className="skeleton-loader" key={index}>
+               <div className="skeleton-loader-wrapper">
+                 <div className="skeleton-loader-circle"></div>
+                 <div className="line-1"></div>
+                 <div className="line-2"></div>
+                 <div className="line-3"></div>
+                 <div className="line-3a"></div>
+                 <div className="line-4"></div>
+               </div>
+             </div>
+           ))}
+         </>
         ) : properties.length > 0 ? (
           <>
-            <h1 className="my-listings-wrapper-h1">My Listings</h1>
             <div className="my-listings">
               {properties.map((property, index) => (
                 <Card

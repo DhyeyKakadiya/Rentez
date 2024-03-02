@@ -1226,6 +1226,16 @@
     width: calc(40% - 5px);
   }
 
+  .no-listing-found{
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 15px;
+  }
+  .no-listing-found button{
+    font-size: 12px;
+  }
+
   /* create listing */
 
   .create-listing-wrapper h1{
