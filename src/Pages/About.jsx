@@ -57,7 +57,7 @@ const About = () => {
                 customizable, and premium rental options in an 
                 ever-expanding urban landscape.
               </p>
-              <p className="text">
+              <p id="text2" className="text">
                 With years of experience in property management, 
                 we encountered firsthand the constraints and complexities of 
                 traditional renting processes.We firmly believed that 
@@ -82,7 +82,7 @@ const About = () => {
               property listings, facilitating a streamlined and 
               hassle-free renting process.
               </p>
-              <p className="text">
+              <p id="text2" className="text">
               Drawing from our extensive experience in property 
               management, we encountered the shortcomings and 
               complexities of traditional renting methods. 
@@ -108,7 +108,7 @@ const About = () => {
               actively promote this culture through discussion forums, 
               live events, and networking opportunities.
               </p>
-              <p className="text">
+              <p id="text2" className="text">
               Leveraging our expertise in property management, 
               we firsthandly observed the limitations and hurdles of 
               traditional rental processes. We firmly believed in 
