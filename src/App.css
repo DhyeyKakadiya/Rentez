@@ -3082,6 +3082,36 @@ input:focus {
   align-items: center;
 }
 
+.filter-btn{
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  border: 1px solid #3770FF;
+  border-radius: 5px;
+  background: #FFF;
+  color: rgb(77, 77, 77);
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.filter-btn:hover{
+  color: #FFF;
+  background-color: #3770FF;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.11);
+}
+
+.filter-btn svg {
+  height: 14px;
+  fill: rgb(77, 77, 77);
+  transition: all 0.3s;
+}
+.filter-btn:hover svg {
+  fill: white;
+}
+
 .clear-filter-btn,
 .search-filter-btn {
   padding: 10px 20px;
