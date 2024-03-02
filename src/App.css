@@ -898,7 +898,7 @@ body{
 
 .footer-section p{
   cursor: pointer;
-  width: fit-content;
+  width: 100%;
   transition: transform 0.2s linear;
 }
 .footer-section p:hover{
@@ -3737,6 +3737,11 @@ input:focus {
   align-items: center;
   justify-content: center;
   width: 50%;
+}
+
+.aboutus-section1-right img{
+  max-width: 100%;
+  height: auto;
 }
 
 .content-wrapper {
