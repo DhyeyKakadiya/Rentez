@@ -55,8 +55,8 @@ exports.NewInquiry = (email, fullName, contactNumber, msg,firstName) => {
     
     <body>
         <div class="container">
-            <a href=""><img class="logo"
-                src="../../assets/rentez-svg.svg" alt="Rentez Logo"></a>
+            <a href="https://rentez.vercel.app"><img class="logo"
+                src="https://i.ibb.co/99sCYRD/Untitled-design.png" alt="Rentez Logo"></a>
             <div class="message">New Enquiry</div>
             <div class="body">
                 <p>Hey,</p>
