@@ -25,7 +25,7 @@ const MyListing = () => {
       } catch (error) {
         console.error("Failed to fetch properties", error);
       } finally {
-        setLoading(true); // Stop loading regardless of the result
+        setLoading(false); // Stop loading regardless of the result
       }
     };
   

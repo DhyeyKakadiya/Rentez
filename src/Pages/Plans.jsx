@@ -2,12 +2,8 @@ import { useState } from "react";
 import { buyCourse } from "../services/operations/paymentAPI";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
-// import { TfiClose } from "react-icons/tfi";
 import { IoCheckmark } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
-
-import { FaCircle } from "react-icons/fa";
 
 const Plans = () => {
   const [isYearly, setIsYearly] = useState(false);
