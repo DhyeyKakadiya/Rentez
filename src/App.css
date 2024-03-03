@@ -986,9 +986,15 @@ body{
     align-items: center;
     max-width: 420px;
     margin: 0 auto;
-    padding: 0px 30px;
+    padding: 20px 30px;
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 16px;
+  }
+
+  .signup-top{
+    display: flex;
+    gap: 15px;
+    width: 100%;
   }
 
 .login-page h1{

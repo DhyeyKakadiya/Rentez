@@ -115,7 +115,7 @@ function Signup() {
         ) 
         : 
         (
-        <div className="signup-page flex wrap flex-col" style={{height:'650px'}}>
+        <div className="signup-page flex wrap flex-col">
 
           <div className="flex flex-col">
             <img style={{height:'100px', width:'200px'}}  src={logo} alt="logo"/>
@@ -128,7 +128,7 @@ function Signup() {
       {/* Form */}
         <form onSubmit={handleOnSubmit} className='login-form'>
 
-          <div className="flex" style={{gap:'15px'}}>
+          <div className="signup-top">
             <div className="input flex">
             <BsFillPenFill style={{width:'14px', height:'14px'}} className='user-icon'/>
               <input

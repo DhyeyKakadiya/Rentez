@@ -39,7 +39,7 @@ const Properties = () => {
                     {
                       loading ? (
                         <>
-                          {Array.from({ length: 6 }).map((_, index) => ( // Use a fixed number of loaders
+                          {Array.from({ length: 6 }).map((_, index) => (
                             <div className="skeleton-loader" key={index}>
                               <div className="skeleton-loader-wrapper">
                                 <div className="skeleton-loader-circle"></div>

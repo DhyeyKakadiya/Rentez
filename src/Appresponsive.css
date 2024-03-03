@@ -975,6 +975,50 @@
 
 @media only screen and (max-width: 468px) {
 
+  /* login page */
+
+  .login-page h1{
+    font-size: 30px;
+  }
+
+  .login-page {
+    padding: 15px;
+  }
+
+  .login-bottom{
+    gap: 10px;
+  }
+
+  /* signup page */
+
+  .signup-top{
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .user-icon,.lock-icon{
+    height: 12px !important;
+    width: 12px !important;
+  }
+
+  .eye-btn svg{
+    font-size: 18px;
+  }
+
+  .input input{
+    height: 45px;
+  }
+
+  .input label{
+    font-size: 14px;
+    left: 40px;
+  }
+
+  .link {
+    font-size: 14px;
+    gap: 5px;
+  }
+
   /* aboutus page */
 
   .header{
