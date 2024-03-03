@@ -76,7 +76,7 @@ const PropertyDetails = () => {
     fetchData();
   }, [propertyId]);
 
-  document.body.scrollTop=document.documentElement.scrollTop=0;
+  // document.body.scrollTop=document.documentElement.scrollTop=0;
 
   return(
 
@@ -243,8 +243,6 @@ const PropertyDetails = () => {
                 type="number"
                 name="contactNumber"
                 value={contactNumber}
-                max="10"
-                min="10"
                 onChange={handleOnChange}
                 placeholder="Phone Number*"
                 className="input-seller-form"
