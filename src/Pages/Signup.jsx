@@ -117,8 +117,8 @@ function Signup() {
         (
         <div className="signup-page flex wrap flex-col">
 
-          <div className="flex flex-col">
-            <img style={{height:'100px', width:'200px'}}  src={logo} alt="logo"/>
+          <div className="signup-logo">
+            <img src={logo} alt="logo"/>
             <div className="tab">
               <Tab tabData={tabData} field={accountType} setField={setAccountType} />
             </div>
@@ -214,7 +214,8 @@ function Signup() {
 
           <div className="signup-bottom">
             <div className="tandc">
-              <input required type="checkbox"/><label>I agree to <span id="tandc">Privacy Policy</span><sup style={{color: 'red'}}>*</sup> and 
+              <input required type="checkbox"/>
+              <label>I agree to <span id="tandc">Privacy Policy</span><sup style={{color: 'red'}}>*</sup> and 
               <span id="tandc"> Terms & Conditions</span><sup style={{color: 'red'}}>*</sup>
               </label>
             </div>

@@ -975,6 +975,24 @@
 
 @media only screen and (max-width: 468px) {
 
+  /* update pass page */
+
+  .change-pass-container{
+    padding: 10px;
+  }
+  .change-pass-page h1{
+    font-size: 22px;
+  }
+  .change-pass-page p{
+    font-size: 14px;
+  }
+
+  /* forgot pass page */
+
+  .forgot-pass-container{
+    padding: 20px;
+  }
+
   /* login page */
 
   .login-page h1{
@@ -982,7 +1000,12 @@
   }
 
   .login-page {
+    width: 100%;
     padding: 15px;
+  }
+
+  .forgot-password-div{
+    font-size: 14px;
   }
 
   .login-bottom{
@@ -990,6 +1013,23 @@
   }
 
   /* signup page */
+
+  .login-wrapper{
+    padding: 10px;
+  }
+
+  .signup-page {
+    gap: 20px;
+  }
+
+  .signup-logo img{
+    height: 80px;
+    width: 160px;
+  }
+
+  .tab{
+    height: 35px;
+  }
 
   .signup-top{
     flex-direction: column;
@@ -1014,9 +1054,17 @@
     left: 40px;
   }
 
+  .tandc label{
+    font-size: 14px;
+  }
+
   .link {
     font-size: 14px;
     gap: 5px;
+  }
+
+  .signin-btn button {
+    font-size: 14px;
   }
 
   /* aboutus page */

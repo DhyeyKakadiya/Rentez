@@ -991,6 +991,40 @@ body{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 16px;
   }
 
+  .signup-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .signup-logo img{
+    height: 100px;
+    width: 200px;
+  }
+
+.tab{
+  display: flex;
+  width: 100%;
+  background-color: #daf2ff;
+  padding: 1px;
+  box-shadow: inset 0px -1px 0px lightgrey;
+  border-radius: 9999px; 
+  transition-duration: .5s;
+}
+
+.tab button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8px; 
+  padding-bottom: 8px;
+  padding-left: 20px; 
+  padding-right: 20px; 
+  border-radius: 9999px;
+  transition-property: all;
+  transition-duration: .5s;
+}
+
   .signup-top{
     display: flex;
     gap: 15px;
@@ -1136,24 +1170,9 @@ form .input input:valid~i {
     text-decoration: none;
 }
 
-.tab{
-    display: flex;
-    background-color: #daf2ff;
-    padding: 1px;
-    gap: 15px;
-    box-shadow: inset 0px -1px 0px lightgrey;
-    border-radius: 9999px; 
-    transition-duration: .5s;
-}
-
-.tab button{
-    padding-top: 8px; 
-    padding-bottom: 8px;
-    padding-left: 20px; 
-    padding-right: 20px; 
-    border-radius: 9999px;
-    transition-property: all;
-    transition-duration: .5s;
+.tab1{
+  display: flex;
+  gap: 15px;
 }
 
 .signup-bottom{

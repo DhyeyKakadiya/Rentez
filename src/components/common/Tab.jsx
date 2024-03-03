@@ -1,6 +1,6 @@
 export default function Tab({ tabData, field, setField }) {
   return (
-    <div className="tab">
+    <div className="tab1">
       {tabData.map((tab) => (
         <button
           style={
