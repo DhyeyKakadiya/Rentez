@@ -21,7 +21,6 @@ const Properties = () => {
         if (result) {
           setProperties(result);
           setLoading(false);
-          console.log('result: ', result);
         }
       };
     

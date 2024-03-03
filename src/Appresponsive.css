@@ -1169,8 +1169,10 @@
   }
   .nav-right1 button{
     border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 14.5px;
+    padding: 2px 10px;
+    font-size: 16px;
+    color: #3770FF;
+    border: 1px solid #3770FF;
     transition: all 0.3s ease;
   }
   .nav-right1 button:hover{
@@ -1182,7 +1184,8 @@
 
   /* signup btn */
   .nav-right2{
-    display: flex;
+    display: none
+    /* display: flex; */
   }
   .nav-right2 button{
     border-radius: 5px;
