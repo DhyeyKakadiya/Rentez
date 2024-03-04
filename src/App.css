@@ -2207,11 +2207,6 @@ form .input input:valid~i {
   transform: scale(0.97);
 }
 
-.edit-btn-position{
-  bottom: 28px;
-  position: relative;
-}
-
 .about-txt{
   font-size: 16px;
   font-weight: 500;
@@ -3117,7 +3112,8 @@ input:focus {
   border: 1px solid #3770FF;
   border-radius: 5px;
   background: #FFF;
-  color: rgb(77, 77, 77);
+  color: #3770FF;
+  /* color: rgb(77, 77, 77); */
   font-weight: 500;
   font-size: 15px;
   cursor: pointer;
@@ -3131,7 +3127,8 @@ input:focus {
 
 .filter-btn svg {
   height: 14px;
-  fill: rgb(77, 77, 77);
+  fill: #3770FF;
+  /* fill: rgb(77, 77, 77); */
   transition: all 0.3s;
 }
 .filter-btn:hover svg {
@@ -3179,7 +3176,6 @@ input:focus {
 .my-properties {
   width: 100%;
   display: flex;
-  gap: 50px;
   flex-wrap: wrap;
   justify-content: space-around !important;
 } 

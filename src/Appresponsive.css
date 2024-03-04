@@ -1170,7 +1170,7 @@
   .nav-right1 button{
     border-radius: 5px;
     padding: 2px 10px;
-    font-size: 16px;
+    font-size: 15px;
     color: #3770FF;
     border: 1px solid #3770FF;
     transition: all 0.3s ease;
@@ -1448,8 +1448,9 @@
     font-size: 12px;
   }
 
-  .edit-btn-position{
-    bottom: 55px;
+  #edit-btn-div1{
+    position: relative;
+    right: 30px;
   }
 
   /* my listing */

@@ -35,7 +35,7 @@ const MyProfile = () => {
           </div>
         </div>
 
-        <div className="edit-btn-div">
+        <div id='edit-btn-div1' className="edit-btn-div">
           <button
             className="edit-btn"
             onClick={() => {
