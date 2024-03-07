@@ -1340,9 +1340,12 @@
   .home-hero3-under-2, 
   .home-hero3-under-3, 
   .home-hero3-under-4 {
-    height: 230px;
+    /* height: 230px;
     flex-basis: calc(100% - 20px);
-    max-width: calc(50% - 20px);
+    max-width: calc(50% - 20px); */
+
+    flex-basis: calc(100% - 20px);
+    min-width: 85%;
   }
 
   /* divider-home-3 */
