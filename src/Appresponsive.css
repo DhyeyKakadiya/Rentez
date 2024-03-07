@@ -975,6 +975,12 @@
 
 @media only screen and (max-width: 468px) {
 
+  /* outlet */
+
+  .outlet-content{
+    width: 100%;
+  }
+
   /* update pass page */
 
   .change-pass-container{
@@ -1451,17 +1457,21 @@
 
   #edit-btn-div1{
     position: relative;
-    right: 30px;
+    /* right: 30px; */
   }
 
   /* my listing */
+
+  .mylisting-container{
+    padding: 10px 20px;
+  }
 
   .my-listings-wrapper-h1 {
     font-size: 1.4rem;
   }
 
   .card{
-    min-width: 245px;
+    min-width: 250px;
     width: calc(40% - 5px);
   }
 
