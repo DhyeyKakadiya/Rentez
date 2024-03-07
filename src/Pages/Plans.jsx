@@ -97,6 +97,7 @@ const Plans = () => {
                   }`}
                 ></div>
               </div>
+
               <span className="pricing-toggle-yearly">Yearly</span>
             </label>
             <input
@@ -129,7 +130,7 @@ const Plans = () => {
               </p>
               <p className="pricing-package-description">{pkg.description}</p>
 
-              {/* Dynamic feature list with different icons */}
+              {/* Dynamic different icons */}
               <ul className="pricing-package-features">
                 {pkg.featureList.map((feature, idx) => (
                   <li key={idx} className="feature">

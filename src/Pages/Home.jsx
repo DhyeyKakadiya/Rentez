@@ -336,9 +336,7 @@ const Home = () => {
         </div>
 
       </section>
-
-      {/* testimonials */}
-
+      
       {/* tilt 2 */}
 
         <div className="custom-shape-divider-bottom-272727">
