@@ -100,7 +100,7 @@ exports.verifyPayment = async (req, res) => {
         const emailResponse = await mailSender(
             user.email,
             `Successfully Subscribed into Rentez`,
-            courseEnrollmentEmail(
+            paymentSuccessEmail(
               "Rentez plan",
               `${user.firstName} ${user.lastName}`
             )
