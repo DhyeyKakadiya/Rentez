@@ -11,7 +11,6 @@ import happyface from '../assests/logo/wired-gradient-261-emoji-smile.gif'
 import search from '../assests/logo/wired-gradient-19-magnifier-zoom-search.gif'
 // import search from '../assests/logo/search1.svg'
 import { useNavigate } from 'react-router-dom'
-// import './section3.css'
 import { Fade } from "react-awesome-reveal";
 
 // import location from '../assests/logo/wired-gradient-18-location-pin.webp'

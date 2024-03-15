@@ -55,7 +55,6 @@ const Navbar = ({ whiteBackground }) => {
       path: "/about",
     },
   ];
-  // console.log(NavbarLinks);
 
   // white navbar on scroll
   useEffect(() => {
