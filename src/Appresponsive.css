@@ -1575,6 +1575,7 @@
   .filter{
     width: 90%;
     height: 85vh;
+    padding-bottom: 20px;
   }
   
   .filter-form{
