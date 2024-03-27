@@ -56,7 +56,7 @@ const ContactUsForm = () => {
             {...register("firstname", { required: true })}
           />
           {errors.firstname && (
-            <span className="error-message">Please enter your name.</span>
+            <span className="error-message">Please enter your first name.</span>
           )}
         </div>
         <div className="form-col">
@@ -68,10 +68,13 @@ const ContactUsForm = () => {
             className="form-input"
             {...register("lastname")}
           />
+          {errors.firstname && (
+            <span className="error-message">Please enter your last name.</span>
+          )}
         </div>
       </div>
 
-      <div className="form-row">
+      <div className="form-row" style={{flexDirection:'column'}}>
         <input
           type="email"
           name="email"
@@ -87,7 +90,7 @@ const ContactUsForm = () => {
         )}
       </div>
 
-      <div className="form-row">
+      <div className="form-row" style={{flexDirection:'column'}}>
         <div className="phone-input">
           <select
             name="countrycode"
@@ -124,7 +127,7 @@ const ContactUsForm = () => {
         )}
       </div>
 
-      <div className="form-row">
+      <div className="form-row" style={{flexDirection:'column'}}>
         <textarea
           name="message"
           id="message"

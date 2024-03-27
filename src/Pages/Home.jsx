@@ -8,18 +8,14 @@ import happyface from '../assests/logo/wired-gradient-261-emoji-smile.gif'
 import search from '../assests/logo/wired-gradient-19-magnifier-zoom-search.gif'
 import { useNavigate } from 'react-router-dom'
 import { Fade } from "react-awesome-reveal";
-
 import chart from '../assests/images/wired-gradient-153-bar-chart (2).webp'
 import coins from '../assests/logo/wired-gradient-290-coin.webp'
 import globe from '../assests/images/wired-gradient-27-globe.webp'
 import allcoins from '../assests/images/wired-gradient-298-coins (2).webp'
-
 import deal from '../assests/images/deal.png'
 import flat from '../assests/images/flat.png' 
 import fairprice from '../assests/images/fair-price.png' 
-
 import Card from '../components/common/Card'
-
 import { getAllProperty } from "../services/operations/propertyAPI";
 
 
