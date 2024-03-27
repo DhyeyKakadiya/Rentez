@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { buyCourse } from "../services/operations/paymentAPI";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +8,6 @@ import { IoMdClose } from "react-icons/io";
 const Plans = () => {
   const [isYearly, setIsYearly] = useState(false);
   const navigate = useNavigate();
-
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
 
@@ -18,6 +17,10 @@ const Plans = () => {
       return;
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const packages = [
     {

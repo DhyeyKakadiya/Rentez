@@ -11,9 +11,12 @@ const Properties = () => {
     const [properties, setProperties] = useState([]);
     const [loading, setLoading] = useState(true);
     const [filterModal, setFilterModal] = useState(null);
-
     const { filterData } = useSelector((state) => state.filter);
     
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
     useEffect(() => {
       const getProperty = async () => {
         setLoading(true);

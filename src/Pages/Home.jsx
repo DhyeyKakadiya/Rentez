@@ -22,9 +22,12 @@ import { getAllProperty } from "../services/operations/propertyAPI";
 const Home = () => {
 
   const navigate = useNavigate();
-
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const fetchProperties = async () => {

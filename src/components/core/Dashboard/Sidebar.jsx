@@ -49,10 +49,6 @@ const Sidebar = () => {
         <div className="partition" />
         
         <div className="sidebar-bottom">
-            {/* <SidebarLink
-                link={{ name: "Settings", path: "/dashboard/settings" }}
-                iconName="VscSettingsGear"
-            /> */}
             <button
                 onClick={() =>
                 setConfirmationModal({

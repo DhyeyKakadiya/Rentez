@@ -1,9 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import IconBtn from '../../common/IconBtn'
 import { Link, useNavigate } from 'react-router-dom'
-import { RiEditBoxLine } from "react-icons/ri";
-import { formattedDate } from "../../../utils/dateFormatter"
 import dateFormat from "dateformat";
 import { FiEdit } from "react-icons/fi";
 
@@ -110,7 +107,7 @@ const MyProfile = () => {
         <div className="details-container" style={{marginBottom:'40px'}}>
           <div className="details-header">
             <p className="text-richblack-5">About</p>
-            <div className="edit-btn-div">
+              <div className="edit-btn-div">
                 <button
                 className="edit-btn"
                 onClick={() => {
@@ -119,8 +116,7 @@ const MyProfile = () => {
               >
                 <FiEdit />
                 Edit
-              </button>
-              
+              </button>              
               </div>
           </div>
           <p

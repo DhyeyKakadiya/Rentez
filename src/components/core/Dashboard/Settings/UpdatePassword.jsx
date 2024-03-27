@@ -6,12 +6,10 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { changePassword } from "../../../../services/operations/SettingsAPI";
-import IconBtn from "../../../common/IconBtn";
 
 const UpdatePasword = () => {
   const { token } = useSelector((state) => state.auth);
   const navigate = useNavigate();
-
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
 
