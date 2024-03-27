@@ -546,6 +546,12 @@
  
 @media only screen and (max-width: 768px) {
 
+  /* skeleton card */
+
+  .skeleton-loader .line-4 {
+    width: 250.4px;
+  }
+
   /* aboutus page */
 
   .header{
@@ -974,6 +980,13 @@
   
 
 @media only screen and (max-width: 468px) {
+
+  /* skeleton card */
+
+  .skeleton-loader .line-4 {
+    width: 211.4px;
+  }
+
 
   /* outlet */
 
