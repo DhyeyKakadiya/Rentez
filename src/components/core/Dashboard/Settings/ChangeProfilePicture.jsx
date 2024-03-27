@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateDisplayPicture } from "../../../../services/operations/SettingsAPI";
 import IconBtn from "../../../common/IconBtn";
 
+import { toast } from "react-hot-toast";
+
 const ChangeProfilePicture = () => {
   const { token } = useSelector((state) => state.auth);
   const { user } = useSelector((state) => state.profile);
@@ -26,6 +28,8 @@ const ChangeProfilePicture = () => {
     if (file) {
       setImageFile(file);
       previewFile(file);
+    }else {
+      toast.error("Please select an image.");
     }
   };
 
@@ -38,12 +42,18 @@ const ChangeProfilePicture = () => {
   };
 
   const handleFileUpload = () => {
+    if (!imageFile) {
+      toast.error("Please select an image.");
+      return;
+    }
     try {
       setLoading(true);
       const formData = new FormData();
       formData.append("displayPicture", imageFile);
       dispatch(updateDisplayPicture(token, formData)).then(() => {
         setLoading(false);
+        // Clear the imageFile state after successful upload
+      setImageFile(null);
       });
     } catch (error) {
       console.log("ERROR MESSAGE - ", error.message);
