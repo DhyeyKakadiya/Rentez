@@ -20,7 +20,6 @@ const MyListing = () => {
         const result = await getSellersListings(token);
         if (result) {
           setProperties(result);
-          console.log('result: ', result);
         }
       } catch (error) {
         console.error("Failed to fetch properties", error);

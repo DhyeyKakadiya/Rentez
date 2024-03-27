@@ -49,9 +49,6 @@ export const createListings = async(token ,formData) => {
             if(!response?.data.success){
                 throw new Error("Could not create Listings");
             }
-
-            console.log(response?.data?.data);
-            // dispatch(setLoading(false));
             toast.success("Listing Added Successfully");
 
         } catch (error) {
